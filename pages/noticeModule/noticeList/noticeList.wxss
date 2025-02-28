@@ -1,0 +1,38 @@
+
+
+.noticeListPage {
+  padding: 22rpx 20rpx;
+  min-height: calc(100vh - 44px);
+  background-color: #F0F5F9;
+}
+
+.noticeItem {
+  margin-bottom: 22rpx;
+  padding: 20rpx 31rpx;
+  display: flex;
+  background-color: #fff;
+  border-radius: 24rpx;
+}
+
+.noticeItemInfo {
+  width: 100%;
+  margin-left: 29rpx;
+}
+
+.noticeItemTitle {
+  margin-top: 20rpx;
+  font-weight: 500;
+  font-size: 32rpx;
+  line-height: 44rpx;
+  font-family: PingFang SC;
+  color: #293247;
+}
+
+.noticeItemDate {
+  /* text-align: right; */
+  margin-top: 20rpx;
+  font-weight: 500;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  color: #4C5363;
+}

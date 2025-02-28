@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "入企扫码执法",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#1446A7",
+  "usingComponents": {
+    "van-switch": "@vant/weapp/switch/index",
+    "van-overlay": "@vant/weapp/overlay/index",
+    "component-multiPicker": "/pages/component/multiPicker/multiPicker",
+    "component-choosePicker": "/pages/component/choosePicker/choosePicker",
+    "component-fuzzyPicker": "/pages/component/fuzzyPicker/fuzzyPicker"
+  }
+}

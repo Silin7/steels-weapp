@@ -1,0 +1,29 @@
+<scroll-view scroll-y="{{ true }}" refresher-enabled="{{ true }}" refresher-triggered="{{ triggered }}" bindrefresherrefresh="permessagerePull" bindscrolltolower="onScrollBottom" style="height: 100vh;">
+  <view class="reportListPage">
+    <view wx:for="{{ reportList }}" wx:key="index" class="reportItem" bind:tap="goReportDetail" data-item="{{ item }}">
+      <view class="reportTop">
+        <view wx:if="{{ item.type === '执法乱作为' }}" class="imitateImage fccc" style="background: #F26565;">
+          <view>执法</view>
+          <view>乱作为</view>
+        </view>
+        <view wx:if="{{ item.type === '意见建议' }}" class="imitateImage fccc" style="background: #65A4F2;">
+          <view>意见</view>
+          <view>建议</view>
+        </view>
+        <view wx:if="{{ item.type === '其他' }}" class="imitateImage fccc" style="background: #50CCE7;">其他</view>
+        <view class="titleDateBox">
+          <view class="reportTitle to2">{{ item.message }}</view>
+          <view wx:if="{{ item.status === '已答复' }}" class="reportDate">{{ item.extra.mark_date }}</view>
+          <view wx:if="{{ item.status === '待处理' }}" class="reportDate">{{ item.extra.create_date }}</view>
+        </view>
+      </view>
+      <view class="frec">
+        <view wx:if="{{ item.status === '已答复' }}" class="answered frcc">已答复</view>
+        <view wx:if="{{ item.status === '待处理' }}" class="pending frcc">待处理</view>
+      </view>
+    </view>
+    <view wx:if="{{ reportList.length === 0 }}" class="nodataBox">
+      <image src="/images/systemModule/zwsj.png" mode="aspectFill"/>
+    </view>
+  </view>
+</scroll-view>

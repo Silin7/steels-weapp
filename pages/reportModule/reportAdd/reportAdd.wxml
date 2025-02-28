@@ -1,0 +1,69 @@
+<component-choosePicker pickerShow="{{ reportTypeShow }}" pickerTitle="选择投诉举报类型" dataList="{{ reportTypeList }}" bind:confirmItem="confirmReportType" />
+
+<!-- 选择企业 -->
+<component-fuzzyPicker pickerShow="{{ companiesShow }}" defaultValue="{{ reportAddForm.company_name }}" bind:confirmItem="confirmCompanies" />
+
+<view class="reportAddPage">
+  <view class="nameBox frbc">
+    <view class="itemTitle">是否实名</view>
+    <view class="frcc">
+      <view class="frcc" bind:tap="chooseShiming" data-state="{{ true }}">
+        <image wx:if="{{ reportAddForm.is_realname }}" src="/images/reportModule/checked.png" mode="aspectFill" style="width: 40rpx; height: 40rpx;" />
+        <image wx:else src="/images/reportModule/unchecked.png" mode="aspectFill" style="width: 40rpx; height: 40rpx;" />
+        <view wx:if="{{ reportAddForm.is_realname }}" class="checkedColor">是</view>
+        <view wx:else class="uncheckedColor">是</view>
+      </view>
+      <view class="frcc" bind:tap="chooseShiming" data-state="{{ false }}" style="margin-left: 40rpx;">
+        <image wx:if="{{ !reportAddForm.is_realname }}" src="/images/reportModule/checked.png" mode="aspectFill" style="width: 40rpx; height: 40rpx;" />
+        <image wx:else src="/images/reportModule/unchecked.png" mode="aspectFill" style="width: 40rpx; height: 40rpx;" />
+        <view wx:if="{{ !reportAddForm.is_realname }}" class="checkedColor">否</view>
+        <view wx:else class="uncheckedColor">否</view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{ reportAddForm.is_realname }}" class="enterpriseBox frbc">
+    <view class="itemTitle">选择企业</view>
+    <view class="frcc">
+      <input value="{{ reportAddForm.company_name }}" class="enterpriseInput" placeholder-class="placeholderClass" placeholder="请输入" disabled bind:tap="chooseCompanies" />
+      <image src="/images/reportModule/youjiantou.png" mode="aspectFill" style="width: 30rpx; height: 30rpx;" />
+    </view>
+  </view>
+  <view class="typesBox">
+    <view class="frbc">
+      <view class="itemTitle">投诉举报类型</view>
+      <view class="frcc" bind:tap="chooseReport">
+        <view class="moniValue">{{ reportAddForm.type }}</view>
+        <image src="/images/reportModule/youjiantou.png" mode="aspectFill" style="width: 30rpx; height: 30rpx;" />
+      </view>
+    </view>
+    <view wx:if="{{ reportAddForm.type === '执法乱作为' }}">
+      <view class="reflectingUnit frcc">反映单位</view>
+      <input value="{{ reportAddForm.target_name }}" class="reflectingUnitInput" placeholder-class="placeholderClass" placeholder="请输入" bind:input="reflectingUnitInput" />
+    </view>
+  </view>
+  <view class="describeBox">
+    <view class="itemTitle2">投诉举报问题详细描述</view>
+    <view class="textareaBox">
+      <textarea value="{{ reportAddForm.message }}" class="describeTextarea" placeholder-class="placeholderClass" placeholder="请输入" auto-height bind:input="describeInput" />
+    </view>
+    <view class="uploadImgBox">
+      <view wx:for="{{ reportAddForm.attachments }}" wx:key="index" class="dib uploadImgFlag">
+        <image src="/images/reportModule/close.png" class="closeImg" bind:tap="deleteImg" data-index="{{ index }}" />
+        <image src="https://api.gxrqzfsm.com{{ item.url }}" mode="aspectFill" class="uploadImg" bind:tap="previewImage" data-url="{{ item.url }}" />
+      </view>
+      <image src="/images/reportModule/upload.png" class="uploadImg" bind:tap="chooseFiles" />
+    </view>
+  </view>
+  <view class="replyBox">
+    <view class="frbc">
+      <view class="itemTitle">是否需要答复</view>
+      <view class="frcc">
+        <view wx:if="{{ reportAddForm.need_reply }}" class="switchChecked">是</view>
+        <view wx:else class="unswitchChecked">否</view>
+        <van-switch checked="{{ reportAddForm.need_reply }}" size="30rpx" active-color="#1446A7" inactive-color="#ccc" bind:change="isReplyChange" style="height: 34rpx;" />
+      </view>
+    </view>
+    <input wx:if="{{ reportAddForm.need_reply }}" value="{{ reportAddForm.phone }}" class="replyInput" placeholder-class="placeholderClass" placeholder="请填写答复手机号" bind:input="replyPhoneInput" />
+  </view>
+  <view class="saveBtn frcc" bind:tap="submitBtn">提交</view>
+</view>

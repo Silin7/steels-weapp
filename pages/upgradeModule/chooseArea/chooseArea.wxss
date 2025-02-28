@@ -1,0 +1,44 @@
+.homePage {
+  padding: 20rpx 30rpx;
+  min-height: 100vh;
+  background-color: #F0F5F9;
+}
+
+.countyItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20rpx 0;
+  padding: 10rpx 20rpx;
+  font-size: 36rpx;
+  font-weight: 600;
+  line-height: 120rpx;
+  text-align: center;
+  text-indent: 6rpx;
+  letter-spacing: 6rpx;
+  border-radius: 20rpx;
+  color: #333;
+  background-color: #fff;
+}
+
+.countyActive {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20rpx 0;
+  padding: 10rpx 20rpx;
+  font-size: 36rpx;
+  font-weight: 600;
+  line-height: 120rpx;
+  text-align: center;
+  text-indent: 6rpx;
+  letter-spacing: 6rpx;
+  border-radius: 20rpx;
+  color: #fff;
+  background-image: linear-gradient(90deg, #123EDF 0%, #4D80FD 100%);
+}
+
+.iconStyle {
+  width: 42rpx;
+  height: 42rpx;
+}

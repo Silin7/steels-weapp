@@ -1,0 +1,4 @@
+.fieldView {
+  padding: 20rpx 0;
+  /* border-bottom: 1rpx solid #f0f0f4; */
+}

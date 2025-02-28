@@ -1,0 +1,11 @@
+<view class="noticeDetailPage">
+  <view class="noticeTitle">
+    {{noticeForm.title}}
+  </view>
+  <view class="noticeDate frec">
+    {{noticeForm.post_date}}
+  </view>
+  <view class="richTextBox">
+   <rich-text nodes="{{noticeForm.content}}" />
+  </view>
+</view>

@@ -1,0 +1,13 @@
+<van-popup show="{{pickerShow}}" position="bottom">
+  <view class="picker__toolbar">
+    <view class="picker__cancel" bind:tap="onCancel">取消</view>
+    <view class="picker__title">{{ pickerTitle }}</view>
+    <view class="picker__confirm" bind:tap="onConfirm">确认</view>
+  </view>
+  <view class="dataBox">
+    <view wx:for="{{ dataList }}" wx:key="index" class="dataItem">
+      <view class="textStyle">{{ item.text }}</view>
+      <van-checkbox value="{{ item.checked }}" bind:change="checkChange" data-item="{{ item }}" />
+    </view>
+  </view>
+</van-popup>

@@ -1,0 +1,7 @@
+<view class="homePage">
+  <view wx:for="{{ areaData }}" wx:key="index" class="{{ activeArea === item ? 'countyActive' : 'countyItem' }}">
+    <view>{{ item }}</view>
+    <image wx:if="{{ activeArea === item }}" src="/images/homeModule/checked.png" mode="aspectFill" class="iconStyle" />
+    <image wx:else src="/images/homeModule/unchecked.png" mode="aspectFill" class="iconStyle" />
+  </view>
+</view>

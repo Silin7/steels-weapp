@@ -1,0 +1,44 @@
+/**app.wxss**/
+@import "./styleSheet/border.wxss";
+@import "./styleSheet/color.wxss";
+@import "./styleSheet/flex.wxss";
+@import "./styleSheet/font.wxss";
+@import "./styleSheet/mrpd.wxss";
+@import "./styleSheet/overflow.wxss";
+@import "./styleSheet/text.wxss";
+@import "./styleSheet/w_h.wxss";
+
+view {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 全局组件样式 */
+.van-picker__toolbar {
+  height: 100rpx !important;
+  line-height: 100rpx !important;
+  border-bottom: 1rpx solid #f0f0f4;
+}
+
+.van-picker__title {
+  font-weight: 700 !important;
+  color: #333 !important;
+}
+
+.van-picker__confirm {
+  color: #1446A7 !important;
+}
+
+/* toast文本居中 */
+.van-toast__text {
+  text-align: center;
+}
+
+/* 暂无数据 */
+.nodataBox {
+  padding-top: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

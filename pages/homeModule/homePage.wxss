@@ -1,0 +1,264 @@
+.homePage {
+  min-height: 100vh;
+  background-color: #F0F5F9;
+}
+
+.bannerBox {
+  width: 100%;
+  height: 383rpx;
+  background-color: #1446A7;
+}
+
+
+.swiperDianBox {
+  width: 100%;
+  position: absolute;
+  top: 290rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiperDianN {
+  margin: 0 5rpx;
+  width: 20rpx;
+  height: 8rpx;
+  background: #B1B1B1;
+  border-radius: 4rpx;
+}
+
+.swiperDianA {
+  margin: 0 5rpx;
+  width: 20rpx;
+  height: 8rpx;
+  background: #FFC71D;
+  border-radius: 4rpx;
+}
+
+.subBox {
+  position: absolute;
+  top: 320rpx;
+  left: 20rpx;
+  /* margin: 20rpx 0 0 20rpx; */
+  height: 245rpx;
+  width: calc(100% - 40rpx);
+  border-radius: 24rpx;
+  background-color: #fff;
+}
+
+.dividerShu {
+  width: 2rpx;
+  height: 165rpx;
+  background-color: #e9e9e9;
+}
+
+.subItem {
+  width: 40%;
+}
+
+.sbuText {
+  margin-top: 20rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  font-weight: Bold;
+  font-family: PingFang-SC-Bold;
+  color: #373737;
+}
+
+.noticeBox {
+  margin-top: 540rpx;
+}
+
+.gonggaoTitleBox {
+  padding: 0 0 40rpx 38rpx;
+  display: flex;
+  align-items: center;
+}
+
+.gonggaoShu {
+  width: 10rpx;
+  height: 40rpx;
+  background: #1446A7;
+  border-radius: 5rpx;
+}
+
+.gonggaoTitle {
+  margin-left: 18rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  font-size: 40rpx;
+  color: #1446A7;
+  line-height: 40rpx;
+}
+
+.noticeItemBox {
+  margin: 0 20rpx;
+  padding: 40rpx 31rpx;
+  border-radius: 24rpx;
+  background-color: #fff;
+}
+
+.tabsMore {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tabsBox {
+  display: flex;
+}
+
+.moreText {
+  padding: 8rpx;
+  color: #646566;
+  font-size: 24rpx;
+}
+
+.tabsActive {
+  margin-right: 25rpx;
+  width: 236rpx;
+  height: 70rpx;
+  border-radius: 13rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 31rpx;
+  color: #FFFFFF;
+  line-height: 31rpx;
+  background: linear-gradient(90deg, rgba(42, 122, 249, 0.85), rgba(20, 70, 167, 0.85));
+}
+
+.tabsItem {
+  margin-right: 25rpx;
+  width: 236rpx;
+  height: 70rpx;
+  border-radius: 13rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 31rpx;
+  color: #293247;
+  line-height: 31rpx;
+  background: #EDF5FF;
+}
+
+.noticeItem {
+  padding: 20rpx 0;
+  display: flex;
+  border-bottom: 2rpx solid #EAEAEA;
+}
+
+.noticeItemInfo {
+  margin-left: 10rpx;
+  width: 100%;
+}
+
+.noticeItemTitle {
+  margin-top: 20rpx;
+  font-weight: 500;
+  font-size: 32rpx;
+  line-height: 44rpx;
+  font-family: PingFang SC;
+  color: #293247;
+}
+
+.noticeItemDate {
+  margin-top: 20rpx;
+  font-weight: 500;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  color: #4C5363;
+}
+
+
+
+.cardBox {
+  margin-top: 60rpx;
+  padding: 0 22rpx;
+}
+
+.cjcxBox {
+  padding: 60rpx 0 38rpx;
+  width: 318rpx;
+  height: 374rpx;
+  background: linear-gradient(149deg, #469DFF, #8DBDF2);
+  border-radius: 28rpx;
+}
+
+.cjcxImg {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.cjcxText {
+  height: 36rpx;
+  font-family: Source Han Sans SC;
+  font-weight: 500;
+  font-size: 37rpx;
+  color: #FFFFFF;
+  line-height: 31rpx;
+}
+
+.cjcxQuery {
+  height: 30rpx;
+  font-family: Source Han Sans SC;
+  font-weight: 300;
+  font-size: 31rpx;
+  color: #FFFFFF;
+  line-height: 31rpx;
+  opacity: 0.5;
+}
+
+.rightBox {
+  margin-left: 30rpx;
+  height: 374rpx;
+}
+
+.cjfxBox {
+  padding: 46rpx 34rpx 0 28rpx;
+  width: 346rpx;
+  height: 174rpx;
+  background: linear-gradient(164deg, #31B389, #6ED5B2);
+  border-radius: 28rpx;
+}
+
+.djdkBox {
+  padding: 46rpx 34rpx 0 28rpx;
+  width: 346rpx;
+  height: 174rpx;
+  background: linear-gradient(131deg, #FF974A, #FACD93);
+  border-radius: 28rpx;
+}
+
+.rightText {
+  height: 36rpx;
+  font-family: Source Han Sans SC;
+  font-weight: 500;
+  font-size: 37rpx;
+  color: #FFFFFF;
+  line-height: 31rpx;
+}
+
+.rightView1 {
+  margin-top: 20rpx;
+  height: 38rpx;
+  font-family: Source Han Sans SC;
+  font-weight: 300;
+  font-size: 23rpx;
+  line-height: 31rpx;
+  opacity: 0.53;
+  color: #FFFFFF;
+  border-radius: 18rpx;
+}
+
+.rightView2 {
+  margin-top: 20rpx;
+  width: 91rpx;
+  height: 38rpx;
+  font-family: Source Han Sans SC;
+  font-weight: 300;
+  font-size: 23rpx;
+  line-height: 31rpx;
+  opacity: 0.53;
+  color: #FFFFFF;
+  background: #E17D33;
+  border-radius: 18rpx;
+}

@@ -1,0 +1,152 @@
+.minePage {
+  min-height: 100vh;
+  background-color: #F0F5F9;
+}
+
+.bannerBox {
+  padding-top: 43rpx;
+  width: 100%;
+  height: 390rpx;
+  background-color: #1446A7;
+}
+
+.userBox {
+  position: relative;
+  margin-left: 41rpx;
+  display: flex;
+}
+
+.agreeBtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 60rpx);
+  height: 160rpx;
+  opacity: 0;
+}
+
+.avatarUrlBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 148rpx;
+  height: 148rpx;
+  opacity: 0;
+  /* border: 1rpx solid red; */
+}
+
+.userName {
+  margin: 29rpx 0 0 30rpx;
+  font-size: 41rpx;
+  font-weight: bold;
+  line-height: 41rpx;
+  font-family: PingFang SC;
+  color: #FFFFFF;
+}
+
+.userPhone {
+  margin: 23rpx 0 0 30rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  line-height: 30rpx;
+  font-family: PingFang SC;
+  color: #FFFFFF;
+}
+
+.subBox {
+  margin: 56rpx 26rpx 0 26rpx;
+  padding: 46rpx 32rpx 40rpx 32rpx;
+  border-radius: 24rpx;
+  background-color: #fff;
+}
+
+.wenxintishi {
+  margin: 0 12rpx 46rpx 12rpx;
+  font-size: 41rpx;
+  font-weight: bold;
+  line-height: 50rpx;
+  color: #373737;
+  font-family: PingFang SC;
+}
+
+.gang {
+  width: 100%;
+  height: 2rpx;
+  background-color: #E9E9E9;
+}
+
+.mineBanner {
+  margin: 20rpx auto 0;
+  height: 210rpx;
+}
+
+.shizhangBanner {
+  margin: 45rpx auto 0;
+  width: 508rpx;
+  height: 67rpx;
+}
+
+.recordItem {
+  width: 50%;
+  height: 210rpx;
+}
+
+.recordValue {
+  font-size: 73rpx;
+  font-weight: bold;
+  font-family: PingFang SC;
+  color: #064AB9;
+}
+
+.recordLabel {
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  font-family: PingFang SC;
+  color: #868686;
+}
+
+.commonTitle {
+  margin-left: 64rpx;
+  margin-bottom: 47rpx;
+  /* margin: 320rpx 0 47rpx 64rpx; */
+  font-size: 41rpx;
+  font-weight: bold;
+  line-height: 50rpx;
+  font-family: PingFang SC;
+  color: #373737;
+}
+
+.commonBox {
+  margin: 0 26rpx;
+  padding: 0 50rpx;
+  border-radius: 24rpx;
+  background-color: #fff;
+}
+
+.commonItem {
+  padding: 46rpx 0;
+}
+
+.commonItem2 {
+  padding: 40rpx 0;
+}
+
+.seekAdvice {
+  font-size: 30rpx;
+  font-weight: 500;
+  font-family: PingFang SC;
+  color: #373737;
+}
+
+.zxkfBtn {
+  margin: 0 !important;
+  width: 187rpx;
+  height: 74rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  font-family: PingFang SC;
+  border-radius: 14rpx;
+  color: #fff;
+  background: #326ED1;
+}

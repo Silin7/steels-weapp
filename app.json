@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/homeModule/homePage",
+    "pages/noticeModule/noticeList/noticeList",
+    "pages/noticeModule/noticeDetail/noticeDetail",
+    "pages/mineModule/minePage/minePage",
+    "pages/mineModule/empowerPage/empowerPage",
+    "pages/upgradeModule/homePage/homePage",
+    "pages/upgradeModule/chooseArea/chooseArea",
+    "pages/reportModule/reportAdd/reportAdd",
+    "pages/reportModule/reportList/reportList",
+    "pages/reportModule/reportDetail/reportDetail",
+    "pages/executeModule/executeAdd/executeAdd",
+    "pages/executeModule/executeUpdate/executeUpdate",
+    "pages/executeModule/executeList/executeList",
+    "pages/executeModule/executeDetail/executeDetail"
+  ],
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#4545FF",
+    "backgroundColor": "#FFFFFF",
+    "list": [{
+      "pagePath": "pages/homeModule/homePage",
+      "text": "首页",
+      "iconPath": "/images/systemModule/home_normal.png",
+      "selectedIconPath": "/images/systemModule/home_active.png"
+    }, {
+      "pagePath": "pages/noticeModule/noticeList/noticeList",
+      "text": "公告",
+      "iconPath": "/images/systemModule/notice_normal.png",
+      "selectedIconPath": "/images/systemModule/notice_active.png"
+    }, {
+      "pagePath": "pages/mineModule/minePage/minePage",
+      "text": "我的",
+      "iconPath": "/images/systemModule/mine_normal.png",
+      "selectedIconPath": "/images/systemModule/mine_active.png"
+    }]
+  },
+  "permission": {
+    "scope.userInfo": {
+      "desc": "你的个人信息将用于完善资料"
+    }
+  },
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

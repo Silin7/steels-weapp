@@ -1,0 +1,6 @@
+<van-popup show="{{pickerShow}}" position="bottom">
+  <view class="fieldView">
+    <van-field value="{{ companyName }}" placeholder="请输入检索关键词" border="{{ false }}" clearable="{{ true }}" input-align="center" bind:change="onChange" />
+  </view>
+  <van-picker show-toolbar title="选择企业" columns="{{companiesList}}" bind:cancel="onCancel" bind:confirm="onConfirm" item-height="50" />
+</van-popup>

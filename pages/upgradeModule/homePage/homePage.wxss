@@ -1,0 +1,123 @@
+.homePage {
+  min-height: 100vh;
+  background-color: #F0F5F9;
+  background-image: linear-gradient(90deg, #123EDF 0%, #4D80FD 100%);
+}
+
+.bannerBox {
+  width: 100%;
+  height: 383rpx;
+  background-color: #1446A7;
+}
+
+.swiperDianBox {
+  width: 100%;
+  position: absolute;
+  top: 320rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiperDianN {
+  margin: 0 5rpx;
+  width: 20rpx;
+  height: 8rpx;
+  background: #B1B1B1;
+  border-radius: 4rpx;
+}
+
+.swiperDianA {
+  margin: 0 5rpx;
+  width: 20rpx;
+  height: 8rpx;
+  background: #FFC71D;
+  border-radius: 4rpx;
+}
+
+.subBox {
+  position: absolute;
+  top: 360rpx;
+  left: 20rpx;
+  padding: 20rpx;
+  width: calc(100% - 40rpx);
+  border-radius: 24rpx;
+  background-color: #fff;
+}
+
+.subTitle {
+  width: 120rpx;
+  height: 120rpx;
+  font-size: 36rpx;
+  font-weight: 600;
+  line-height: 50rpx;
+  color: #fff;
+  background-color: #FFA421;
+  border-radius: 24rpx;
+}
+
+.noticeBox {
+  width: calc(100% - 154rpx);
+}
+
+.noticeItem {
+  color: #444;
+  line-height: 60rpx;
+}
+
+.countyDistrict {
+  margin-top: 160rpx;
+  padding: 20rpx;
+  margin-left: 20rpx;
+  width: calc(100% - 40rpx);
+  border-radius: 24rpx;
+  background-color: #fff;
+}
+
+.countyTitle {
+  margin: 20rpx 0;
+  text-align: center;
+  font-size: 42rpx;
+  font-weight: 600;
+  color: #123EDF;
+}
+
+.lingxing1 {
+  font-size: 42rpx;
+  color: #4D80FD;
+}
+
+.lingxing2 {
+  margin: 0 20rpx;
+  font-size: 42rpx;
+  color: #123EDF;
+}
+
+.countyItem {
+  flex-shrink: 0;
+  margin: 20rpx 10rpx;
+  width: calc(50% - 30rpx);
+  font-size: 36rpx;
+  font-weight: 600;
+  line-height: 100rpx;
+  text-align: center;
+  text-indent: 6rpx;
+  letter-spacing: 6rpx;
+  border-radius: 20rpx;
+  background-color: #EDF2FF;
+}
+
+.countyActive {
+  flex-shrink: 0;
+  margin: 20rpx 10rpx;
+  width: calc(50% - 30rpx);
+  font-size: 36rpx;
+  font-weight: 600;
+  line-height: 100rpx;
+  text-align: center;
+  text-indent: 6rpx;
+  letter-spacing: 6rpx;
+  border-radius: 20rpx;
+  color: #fff;
+  background-image: linear-gradient(90deg, #123EDF 0%, #4D80FD 100%);
+}

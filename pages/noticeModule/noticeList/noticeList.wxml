@@ -1,0 +1,20 @@
+<scroll-view scroll-y="{{ true }}" refresher-enabled="{{ true }}" refresher-triggered="{{ triggered }}" bindrefresherrefresh="permessagerePull" bindscrolltolower="onScrollBottom" style="height: 100vh;">
+  <van-tabs active="{{ noticetype }}" color="#1446A7" bind:change="tabChange">
+    <van-tab title="公告通知通报" name='1'></van-tab>
+    <van-tab title="涉企政策法规" name='2'></van-tab>
+  </van-tabs>
+  <view class="noticeListPage">
+    <view wx:for="{{ noticeData }}" wx:key="index" class="noticeItem" style="{{ noticeData.length === index + 1 ? 'border: 0;' : '' }}" bind:tap="goNoticeDetail" data-item="{{ item }}">
+      <!-- <image wx:if="{{ item.image }}" src="{{ item.image }}" mode="aspectFill" style="flex-shrink: 0; width: 219rpx; height: 180rpx;" /> -->
+      <!-- <image wx:if="{{ item.image }}" src="{{ baseURL + item.image }}" mode="aspectFill" style="flex-shrink: 0; width: 219rpx; height: 180rpx;" />
+      <image wx:else src="/images/systemModule/zwtp.png" mode="aspectFill" style="flex-shrink: 0; width: 219rpx; height: 180rpx;" /> -->
+      <view class="noticeItemInfo">
+        <view class="noticeItemTitle">{{ item.title }}</view>
+        <view class="noticeItemDate">{{ item.post_date }}</view>
+      </view>
+    </view>
+    <view wx:if="{{ noticeData.length === 0 }}" class="nodataBox">
+      <image src="/images/systemModule/zwsj.png" mode="aspectFill" />
+    </view>
+  </view>
+</scroll-view>
