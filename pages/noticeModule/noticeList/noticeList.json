@@ -1,7 +1,5 @@
 {
   "navigationBarTitleText": "公告通知通报",
-  "navigationBarTextStyle": "white",
-  "navigationBarBackgroundColor": "#1446A7",
   "usingComponents": {
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index"

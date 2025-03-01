@@ -1,7 +1,5 @@
 {
   "navigationBarTitleText": "执法记录",
-  "navigationBarTextStyle": "white",
-  "navigationBarBackgroundColor": "#1446A7",
   "usingComponents": {
     "component-choosePicker": "/pages/component/choosePicker/choosePicker"
   }

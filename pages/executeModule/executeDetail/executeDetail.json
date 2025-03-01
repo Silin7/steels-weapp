@@ -1,7 +1,5 @@
 {
   "navigationBarTitleText": "执法记录",
-  "navigationBarTextStyle": "white",
-  "navigationBarBackgroundColor": "#1446A7",
   "usingComponents": {
     "van-popup": "@vant/weapp/popup/index",
     "van-overlay": "@vant/weapp/overlay/index",

@@ -1,7 +1,5 @@
 {
   "navigationBarTitleText": "入企扫码执法",
-  "navigationBarTextStyle": "white",
-  "navigationBarBackgroundColor": "#1446A7",
   "usingComponents": {
     "van-switch": "@vant/weapp/switch/index",
     "van-overlay": "@vant/weapp/overlay/index",
