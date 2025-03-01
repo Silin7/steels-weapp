@@ -47,28 +47,109 @@
     </view>
   </view>
 
-  <!-- 常用功能 -->
-  <view wx:if="{{ has_registered }}" class="commonTitle" style="{{ (has_registered && profile.profile.role_id === 5) ? 'margin-top: 432rpx;' : 'margin-top: 320rpx;' }}">常用功能</view>
-  <view class="commonBox">
-    <!-- 我的投诉 -->
-    <view wx:if="{{ has_registered && profile.profile.role_id === 5 }}">
-      <view class="commonItem frbc" bind:tap="goReportList">
-        <view class="seekAdvice">我的投诉</view>
-        <image src="/images/mineModule/youjiantou.png" mode="aspectFill" style="width: 30rpx; height: 30rpx;" />
+ 
+  <view class="cardBox">
+    <!-- 待签合同 -->
+    <view class="cardItem frbc" bind:tap="goHetong">
+      <view class="frcc">
+        <image src="/images/mineModule/mine_dqht.png" mode="" style="width: 36rpx; height: 36rpx;" />
+        <view class="titleText">待签合同</view>
       </view>
-      <view class="gang"></view>
-    </view>
-    <!-- 我的执法记录 -->
-    <view wx:if="{{ has_registered && profile.profile.role_id === 4 }}">
-      <view class="commonItem frbc" bind:tap="goExecuteList">
-        <view class="seekAdvice">我的执法记录</view>
-        <image src="/images/mineModule/youjiantou.png" mode="aspectFill" style="width: 30rpx; height: 30rpx;" />
+      <view class="frcc">
+        <view class="placeholderText">查看</view>
+        <image src="/images/mineModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
       </view>
-      <view class="gang"></view>
     </view>
-    <!-- <view class="commonItem2 frbc">
-      <view class="seekAdvice">咨询客服</view>
-      <button open-type="contact" class="zxkfBtn">咨询客服</button>
+    <!-- 我的货单 -->
+    <view class="cardItem frbc" bind:tap="goHuodan">
+      <view class="frcc">
+        <image src="/images/mineModule/mine_wdhd.png" mode="" style="width: 36rpx; height: 36rpx;" />
+        <view class="titleText">我的货单</view>
+      </view>
+      <view class="frcc">
+        <view class="placeholderText">查看</view>
+        <image src="/images/mineModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      </view>
+    </view>
+    <!-- 货单运费 -->
+    <view class="cardItem frbc" bind:tap="goHuodanYf">
+      <view class="frcc">
+        <image src="/images/mineModule/mine_wdhd.png" mode="" style="width: 36rpx; height: 36rpx;" />
+        <view class="titleText">货单运费</view>
+      </view>
+      <view class="frcc">
+        <view class="placeholderText">查看</view>
+        <image src="/images/mineModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      </view>
+    </view>
+    <!-- 荣程货源 -->
+    <view class="cardItem frbc" bind:tap="goHouyuan">
+      <view class="frcc">
+        <image src="/images/mineModule/mine_rchy.png" mode="" style="width: 36rpx; height: 36rpx;" />
+        <view class="titleText">荣程货源</view>
+      </view>
+      <view class="frcc">
+        <view class="placeholderText">查看</view>
+        <image src="/images/mineModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      </view>
+    </view>
+    <!-- 用户须知 -->
+    <view class="cardItem frbc" bind:tap="goPagecontent">
+      <view class="frcc">
+        <image src="/images/mineModule/mine_yhxz.png" mode="" style="width: 36rpx; height: 36rpx;" />
+        <view class="titleText">用户须知</view>
+      </view>
+      <view class="frcc">
+        <view wx:if="{{ !isLogin }}" class="placeholderText">请登录</view>
+        <view wx:else class="placeholderText">详情</view>
+        <image src="/images/mineModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      </view>
+    </view>
+    <!-- 绑定车辆 -->
+    <view wx:if="{{ isLogin && profile.role === 1 }}" class="cardItem frbc" bind:tap="goCarList">
+      <view class="frcc">
+        <image src="/images/mineModule/mine_wdzl.png" mode="" style="width: 36rpx; height: 36rpx;" />
+        <view class="titleText">绑定车辆</view>
+      </view>
+      <view class="frcc">
+        <view class="placeholderText">详情</view>
+        <image src="/images/mineModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      </view>
+    </view>
+    <!-- 我的资料 -->
+    <!-- <view wx:if="{{ isLogin && profile.role === 1 }}" class="cardItem frbc">
+      <view class="frcc">
+        <image src="/images/mineModule/mine_wdzl.png" mode="" style="width: 36rpx; height: 36rpx;" />
+        <view class="titleText">我的资料</view>
+      </view>
+      <view class="frcc">
+        <view class="placeholderText">查看</view>
+        <image src="/images/mineModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      </view>
     </view> -->
+    <!-- 联系客服 -->
+    <view class="cardItem frbc">
+      <view class="frcc">
+        <image src="/images/mineModule/mine_lxkf.png" mode="" style="width: 36rpx; height: 36rpx;" />
+        <view class="titleText">联系客服</view>
+        <button wx:if="{{ isLogin }}" open-type="contact" class="zxkfBtn">咨询客服</button>
+      </view>
+      <view class="frcc">
+        <view wx:if="{{ !isLogin }}" class="placeholderText">请登录</view>
+        <view wx:else class="placeholderText">点击咨询</view>
+        <image src="/images/mineModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      </view>
+    </view>
+    <!-- 技术支持 -->
+    <view class="cardItem frbc" bind:tap="makePhoneCall">
+      <view class="frcc">
+        <image src="/images/mineModule/mine_jszc.png" mode="" style="width: 36rpx; height: 36rpx;" />
+        <view class="titleText">技术支持</view>
+      </view>
+      <view class="frcc">
+        <view class="placeholderText">咨询</view>
+        <image src="/images/mineModule/homeMore.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      </view>
+    </view>
   </view>
 </view>

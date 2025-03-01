@@ -3,7 +3,7 @@
 .noticeListPage {
   padding: 22rpx 20rpx;
   min-height: calc(100vh - 44px);
-  background-color: #F0F5F9;
+  background-color: rgba(232, 238, 255, 1);
 }
 
 .noticeItem {

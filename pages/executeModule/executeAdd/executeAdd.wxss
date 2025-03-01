@@ -1,7 +1,7 @@
 .executeAddPage {
   padding: 20rpx;
   min-height: 100vh;
-  background-color: #F0F5F9;
+  background-color: rgba(232, 238, 255, 1);
 }
 
 .enterpriseBox {
@@ -229,7 +229,7 @@
   width: 190rpx;
   height: 190rpx;
   border-radius: 20rpx;
-  border: 1rpx solid #F0F5F9;
+  border: 1rpx solid rgba(232, 238, 255, 1);
 }
 
 /* .uploadImgBox image {

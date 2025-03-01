@@ -1,6 +1,6 @@
 .minePage {
   min-height: 100vh;
-  background-color: #F0F5F9;
+  background-color: rgba(232, 238, 255, 1);
 }
 
 .bannerBox {
@@ -149,4 +149,86 @@
   border-radius: 14rpx;
   color: #fff;
   background: #326ED1;
+}
+
+.minePage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 10rpx;
+  background-color: #F4F8FB;
+}
+
+.bgBox {
+  width: 100%;
+  height: 540rpx;
+}
+
+.avatarBox {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 540rpx;
+}
+
+.avatarBgBox {
+  margin: 70rpx auto 30rpx;
+  width: 184rpx;
+  height: 184rpx;
+  border-radius: 180rpx;
+  border: 4rpx solid #6096fd;
+  background-color: #fff;
+}
+
+.nickName {
+  font-family: PingFang SC;
+  font-weight: bold;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  line-height: 34rpx;
+}
+
+.cardBox {
+  box-sizing: border-box;
+  position: absolute;
+  top: 400rpx;
+  left: 40rpx;
+  padding: 100rpx 40rpx;
+  width: calc(100% - 80rpx);
+  min-height: 860rpx;
+  background: #FFFFFF;
+  box-shadow: 3rpx 4rpx 19rpx 5rpx #cde6f3;
+  border-radius: 53rpx;
+}
+
+.cardItem {
+  height: 120rpx;
+}
+
+.titleText {
+  margin-left: 16rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 30rpx;
+  color: #545454;
+  line-height: 30rpx;
+}
+
+.placeholderText {
+  margin-right: 10rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 30rpx;
+  color: #545454;
+  line-height: 60rpx;
+  opacity: 0.5;
+}
+
+.zxkfBtn {
+  position: absolute;
+  right: 0;
+  z-index: 999;
+  opacity: 0;
 }

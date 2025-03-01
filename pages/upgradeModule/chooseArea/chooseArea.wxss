@@ -1,7 +1,7 @@
 .homePage {
   padding: 20rpx 30rpx;
   min-height: 100vh;
-  background-color: #F0F5F9;
+  background-color: rgba(232, 238, 255, 1);
 }
 
 .countyItem {

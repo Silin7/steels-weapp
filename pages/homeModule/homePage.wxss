@@ -1,19 +1,62 @@
 .homePage {
   min-height: 100vh;
-  background-color: #F0F5F9;
+  background-color: rgba(232, 238, 255, 1);
 }
 
-.bannerBox {
+.bannerContent {
+  position: relative;
   width: 100%;
-  height: 383rpx;
-  background-color: #1446A7;
+  height: 460rpx;
 }
 
+.bannerTextBox {
+  position: absolute;
+  width: 100%;
+  height: 460rpx;
+  top: 0;
+  left: 0;
+}
+
+.bannerTextBoxSub1 {
+  margin-top: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bannerTextBoxSub1Text {
+  margin-left: 10rpx;
+  font-size: 40rpx;
+  font-weight: 700;
+  letter-spacing: 0px;
+  background: linear-gradient(180deg, rgba(207, 241, 255, 1) 0%, rgba(98, 255, 255, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bannerTextBoxSub2 {
+  margin-top: 10rpx;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  font-size: 64rpx;
+  line-height: 64rpx;
+  font-weight: 700;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #fff;
+  /* background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(24, 59, 88, 0.6) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+
+.bannerImage {
+  width: 100%;
+  height: 460rpx;
+}
 
 .swiperDianBox {
   width: 100%;
   position: absolute;
-  top: 290rpx;
+  top: 420rpx;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,17 +64,17 @@
 
 .swiperDianN {
   margin: 0 5rpx;
-  width: 20rpx;
-  height: 8rpx;
-  background: #B1B1B1;
+  width: 80rpx;
+  height: 4rpx;
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 4rpx;
 }
 
 .swiperDianA {
   margin: 0 5rpx;
-  width: 20rpx;
-  height: 8rpx;
-  background: #FFC71D;
+  width: 80rpx;
+  height: 4rpx;
+  background: rgba(255, 255, 255, 1);
   border-radius: 4rpx;
 }
 
@@ -66,13 +109,18 @@
 }
 
 .noticeBox {
-  margin-top: 540rpx;
+  margin-top: 20rpx;
+  padding-bottom: 40rpx;
+  background-color: #fff;
 }
 
 .gonggaoTitleBox {
-  padding: 0 0 40rpx 38rpx;
-  display: flex;
-  align-items: center;
+  padding: 60rpx 0 20rpx 40rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+  letter-spacing: 0px;
+  line-height: 36rpx;
+  color: rgba(0, 0, 0, 1);
 }
 
 .gonggaoShu {
@@ -141,60 +189,83 @@
 }
 
 .noticeItem {
-  padding: 20rpx 0;
+  margin: 40rpx;
+  padding-bottom: 40rpx;
   display: flex;
-  border-bottom: 2rpx solid #EAEAEA;
+  border-bottom: 1rpx dashed rgba(204, 204, 204, 1);
 }
 
 .noticeItemInfo {
-  margin-left: 10rpx;
-  width: 100%;
+  margin-left: 20rpx;
+  width: calc(100% - 300rpx);
 }
 
 .noticeItemTitle {
-  margin-top: 20rpx;
-  font-weight: 500;
+  margin-top: 10rpx;
   font-size: 32rpx;
-  line-height: 44rpx;
-  font-family: PingFang SC;
-  color: #293247;
+  font-weight: 600;
+  letter-spacing: 0px;
+  line-height: 32rpx;
+  color: rgba(36, 65, 191, 1);
 }
 
-.noticeItemDate {
+.noticeItemInfoText {
   margin-top: 20rpx;
-  font-weight: 500;
-  font-size: 28rpx;
-  font-family: PingFang SC;
-  color: #4C5363;
+  font-size: 26rpx;
+  line-height: 34rpx;
+  color: rgba(102, 102, 102, 1);
 }
 
+.noticeItemChakan {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  letter-spacing: 0px;
+  line-height: 24rpx;
+  color: rgba(255, 93, 50, 1);
+}
 
+.chakangengduo {
+  margin: 40rpx auto 0rpx;
+  display: block;
+  width: 180rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 58rpx;
+  font-size: 28rpx;
+  border-radius: 10rpx;
+  color: rgba(35, 65, 191, 1);
+  border: 1rpx solid rgba(35, 65, 191, 1);
+}
 
 .cardBox {
-  margin-top: 60rpx;
-  padding: 0 22rpx;
+  padding: 40rpx;
+  background-color: #fff;
 }
 
 .cjcxBox {
-  padding: 60rpx 0 38rpx;
-  width: 318rpx;
-  height: 374rpx;
-  background: linear-gradient(149deg, #469DFF, #8DBDF2);
-  border-radius: 28rpx;
+  padding: 60rpx 0 38rpx 38rpx;
+  width: calc(50% - 10rpx);
+  height: 390rpx;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: linear-gradient(180deg, rgba(76, 146, 254, 1) 0%, rgba(69, 185, 255, 1) 100%);
+  border-radius: 12rpx;
 }
 
 .cjcxImg {
-  width: 150rpx;
-  height: 150rpx;
+  width: 140rpx;
+  height: 140rpx;
 }
 
 .cjcxText {
-  height: 36rpx;
-  font-family: Source Han Sans SC;
-  font-weight: 500;
-  font-size: 37rpx;
-  color: #FFFFFF;
-  line-height: 31rpx;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: 24px;
+  vertical-align: top;
+  color: #fff;
 }
 
 .cjcxQuery {
@@ -208,33 +279,35 @@
 }
 
 .rightBox {
-  margin-left: 30rpx;
-  height: 374rpx;
+  width: calc(50% - 10rpx);
+  height: 390rpx;
 }
 
 .cjfxBox {
-  padding: 46rpx 34rpx 0 28rpx;
-  width: 346rpx;
-  height: 174rpx;
-  background: linear-gradient(164deg, #31B389, #6ED5B2);
-  border-radius: 28rpx;
+  padding-inline: 32rpx;
+  width: 100%;
+  height: 185rpx;
+  background: linear-gradient(148.21deg, rgba(29, 209, 188, 1) 0%, rgba(33, 174, 235, 1) 100%);
+  border-radius: 12rpx;
 }
 
 .djdkBox {
-  padding: 46rpx 34rpx 0 28rpx;
-  width: 346rpx;
-  height: 174rpx;
-  background: linear-gradient(131deg, #FF974A, #FACD93);
-  border-radius: 28rpx;
+  padding-inline: 32rpx;
+  width: 100%;
+  height: 185rpx;
+  background: linear-gradient(140.6deg, rgba(255, 195, 0, 1) 0%, rgba(255, 91, 26, 0.81) 100%);
+  border-radius: 12rpx;
 }
 
 .rightText {
-  height: 36rpx;
-  font-family: Source Han Sans SC;
-  font-weight: 500;
-  font-size: 37rpx;
+  /** 文本1 */
+  font-size: 40rpx;
+  font-weight: 600;
+  letter-spacing: 0px;
+  line-height: 40rpx;
+  text-align: left;
+  vertical-align: top;
   color: #FFFFFF;
-  line-height: 31rpx;
 }
 
 .rightView1 {

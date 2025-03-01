@@ -6,7 +6,7 @@ import esRequest from '../../utils/esRequest';
 Page({
   data: {
     baseURL,
-    swiperList: ['/uploads/202404/1714306620.png', '/uploads/202404/1714306931.png'],
+    swiperList: ['/images/homeModule/banner.png', '/images/homeModule/banner.png', '/images/homeModule/banner.png', '/images/homeModule/banner.png'],
     swiperCurrent: 0,
     noticetype: '1',
     noticeData: []
@@ -85,7 +85,7 @@ Page({
   },
 
   // 信息公示 切换Tab
-  tabChange: function (e)  {
+  tabChange: function (e) {
     this.setData({
       noticetype: e.currentTarget.dataset.code
     })

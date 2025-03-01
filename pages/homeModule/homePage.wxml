@@ -1,10 +1,23 @@
 <view class="homePage">
   <!-- banner -->
   <view class="bannerBox">
-    <swiper indicator-dots="{{ false }}" autoplay="{{ true }}" interval="5000" circular="{{ true }}" bindchange="swiperChange" style="height: 382rpx;">
+    <swiper indicator-dots="{{ false }}" autoplay="{{ true }}" interval="5000" circular="{{ true }}" bindchange="swiperChange" style="height: 460rpx;">
       <block wx:for="{{ swiperList }}" wx:key="index">
         <swiper-item>
-          <image src="{{ baseURL + item }}" mode="" class="bannerImage" style="width: 100%; height: 382rpx;" />
+          <view class="bannerContent">
+            <view class="bannerTextBox">
+              <view class="bannerTextBoxSub1">
+                <image src="/images/homeModule/guoweigangtie.png" mode="" style="width: 80rpx; height: 80rpx;" />
+                <view class="bannerTextBoxSub1Text">国为钢铁</view>
+              </view>
+              <view style="margin-top: 40rpx;">
+                <view class="bannerTextBoxSub2">诚信为本 铸就品牌</view>
+                <view class="bannerTextBoxSub2">优质服务 赢得市场</view>
+              </view>
+            </view>
+            <!-- <image src="{{ baseURL + item }}" mode="" class="bannerImage" style="width: 100%; height: 382rpx;" /> -->
+            <image src="{{ item }}" mode="" class="bannerImage" />
+          </view>
         </swiper-item>
       </block>
     </swiper>
@@ -15,56 +28,53 @@
         <view wx:else class="swiperDianN"></view>
       </view>
     </view>
+  </view>
+
   <!-- 卡片 -->
-  <view class="cardBox frcc">
-    <view class="cjcxBox fcbc" bind:tap="goMkPage">
-      <image src="/images/homeModule/cjcx.png" mode="" class="cjcxImg" />
-      <view class="cjcxText">成绩查询</view>
-      <view class="cjcxQuery">查询 ></view>
+  <view class="cardBox frbc">
+    <view class="cjcxBox" bind:tap="">
+      <image src="/images/homeModule/xiadan_icon.png" mode="" class="cjcxImg" />
+      <view class="frcc">
+        <view class="cjcxText">下单</view>
+        <image src="/images/homeModule/youjiantoubaise.png" mode="" style="margin-left: 16rpx; width: 40rpx; height: 40rpx;" />
+      </view>
     </view>
     <view class="rightBox fcbc">
-      <view class="cjfxBox frbs" bind:tap="goMsgPage">
-        <view>
-          <view class="rightText">联系学生</view>
-          <view class="rightView1 frcc">送物品、临时约见</view>
+      <view class="cjfxBox frbc" bind:tap="">
+        <view class="frcc" style="margin-top: 80rpx;">
+          <view class="rightText">库存</view>
+          <image src="/images/homeModule/youjiantoubaise.png" mode="" style="margin-left: 12rpx; width: 30rpx; height: 30rpx;" />
         </view>
-        <image src="/images/homeModule/lxxs.png" mode="" style="width: 87rpx; height: 87rpx;" />
+        <image src="/images/homeModule/kucun_icon.png" mode="" style="width: 80rpx; height: 80rpx;" />
       </view>
-      <view class="djdkBox frbs" bind:tap="goCheckPage">
-        <view>
-          <view class="rightText">到家打卡</view>
-          <view class="rightView2 frcc">查看</view>
+      <view class="djdkBox frbc" bind:tap="">
+        <view class="frcc" style="margin-top: 80rpx;">
+          <view class="rightText">应收</view>
+          <image src="/images/homeModule/youjiantoubaise.png" mode="" style="margin-left: 12rpx; width: 30rpx; height: 30rpx;" />
         </view>
-        <image src="/images/homeModule/djdk.png" mode="" style="width: 87rpx; height: 87rpx;" />
+        <image src="/images/homeModule/xiadan_icon.png" mode="" style="width: 80rpx; height: 80rpx;" />
       </view>
     </view>
   </view>
-  </view>
+
   <!-- 公告通知通报 -->
   <view class="noticeBox">
-    <view class="gonggaoTitleBox">
-      <view class="gonggaoShu"></view>
-      <view class="gonggaoTitle">信息公示</view>
+    <view class="gonggaoTitleBox">通知公告</view>
+    <view wx:for="{{ noticeData }}" wx:key="index" class="noticeItem" style="{{ noticeData.length === index + 1 ? 'border: 0;' : '' }}" bind:tap="goNoticeDetail" data-item="{{ item }}">
+      <image src="/images/homeModule/notice1.png" mode="aspectFill" style="width: 280rpx; height: 180rpx; border-radius: 10rpx;" />
+      <view class="noticeItemInfo">
+        <!-- <view class="noticeItemTitle to1">{{ item.title }}</view>
+        <view class="noticeItemInfoText to2">{{ item.post_date }}用户分享内容到社交媒体或好友，不应该是一种粗暴的...</view> -->
+        <view class="noticeItemTitle to1">钢管钢材标题测试</view>
+        <view class="noticeItemInfoText to2">用户分享内容到社交媒体或好友，不应该是一种粗暴的...</view>
+        <view class="noticeItemChakan">查看 →</view>
+      </view>
     </view>
-    <view class="noticeItemBox">
-      <view class="tabsMore">
-        <view class="tabsBox">
-          <view class="{{ noticetype === '1' ? 'tabsActive frcc' : 'tabsItem frcc' }}" bind:tap="tabChange" data-code="1">公告通知通报</view>
-          <view class="{{ noticetype === '2' ? 'tabsActive frcc' : 'tabsItem frcc' }}" bind:tap="tabChange" data-code="2">涉企政策法规</view>
-        </view>
-        <view class="moreText" bind:tap="goNoticeList">更多></view>
-      </view>
-      <view wx:for="{{ noticeData }}" wx:key="index" class="noticeItem" style="{{ noticeData.length === index + 1 ? 'border: 0;' : '' }}" bind:tap="goNoticeDetail" data-item="{{ item }}">
-        <!-- <image wx:if="{{ item.image }}" src="{{ baseURL + item.image }}" mode="aspectFill" style="width: 219rpx; height: 180rpx;" />
-        <image wx:else src="/images/systemModule/zwtp.png" mode="aspectFill" style="width: 219rpx; height: 180rpx;" /> -->
-        <view class="noticeItemInfo">
-          <view class="noticeItemTitle">{{ item.title }}</view>
-          <view class="noticeItemDate">{{ item.post_date }}</view>
-        </view>
-      </view>
-      <view wx:if="{{ noticeData && noticeData.length === 0 }}">
-        <image src="/images/systemModule/zwsj.png" mode="aspectFill" />
-      </view>
+    <view wx:if="{{ noticeData && noticeData.length === 0 }}">
+      <image src="/images/systemModule/zwsj.png" mode="aspectFill" />
+    </view>
+    <view wx:else class="chakangengduo">
+      查看更多
     </view>
   </view>
 </view>
