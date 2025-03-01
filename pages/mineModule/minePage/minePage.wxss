@@ -1,19 +1,21 @@
 .minePage {
-  min-height: 100vh;
-  background-color: rgba(232, 238, 255, 1);
-}
-
-.bannerBox {
-  padding-top: 43rpx;
-  width: 100%;
-  height: 390rpx;
-  background-color: #1446A7;
+  background: linear-gradient(180deg, rgba(201, 216, 255, 1) 0%, rgba(232, 238, 255, 0) 100%);
 }
 
 .userBox {
+  padding-top: 80rpx;
   position: relative;
-  margin-left: 41rpx;
+  padding-left: 30rpx;
   display: flex;
+}
+
+.avatarImgae {
+  width: 132rpx;
+  height: 132rpx;
+  opacity: 1;
+  border: 4rpx solid rgba(255, 255, 255, 1);
+  box-shadow: 0px 2px 4px rgba(45, 86, 235, 0.19);
+  border-radius: 50%;
 }
 
 .agreeBtn {
@@ -27,30 +29,29 @@
 
 .avatarUrlBox {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 148rpx;
-  height: 148rpx;
+  top: 80rpx;
+  left: 40rpx;
+  width: 140rpx;
+  height: 140rpx;
   opacity: 0;
-  /* border: 1rpx solid red; */
 }
 
 .userName {
   margin: 29rpx 0 0 30rpx;
-  font-size: 41rpx;
-  font-weight: bold;
-  line-height: 41rpx;
-  font-family: PingFang SC;
-  color: #FFFFFF;
+  font-size: 32rpx;
+  line-height: 32rpx;
+  font-weight: 700;
+  letter-spacing: 0px;
+  color: rgba(47, 70, 173, 1);
 }
 
 .userPhone {
-  margin: 23rpx 0 0 30rpx;
-  font-size: 30rpx;
+  margin: 20rpx 0 0 30rpx;
+  font-size: 28rpx;
   font-weight: 500;
-  line-height: 30rpx;
+  line-height: 28rpx;
   font-family: PingFang SC;
-  color: #FFFFFF;
+  color: rgba(102, 102, 102, 1);
 }
 
 .subBox {
@@ -151,14 +152,6 @@
   background: #326ED1;
 }
 
-.minePage {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  padding-bottom: 10rpx;
-  background-color: #F4F8FB;
-}
-
 .bgBox {
   width: 100%;
   height: 540rpx;
@@ -191,16 +184,8 @@
 }
 
 .cardBox {
-  box-sizing: border-box;
-  position: absolute;
-  top: 400rpx;
-  left: 40rpx;
-  padding: 100rpx 40rpx;
-  width: calc(100% - 80rpx);
-  min-height: 860rpx;
+  padding: 60rpx 30rpx;
   background: #FFFFFF;
-  box-shadow: 3rpx 4rpx 19rpx 5rpx #cde6f3;
-  border-radius: 53rpx;
 }
 
 .cardItem {
@@ -208,27 +193,60 @@
 }
 
 .titleText {
-  margin-left: 16rpx;
+  margin-left: 20rpx;
   font-family: PingFang SC;
   font-weight: 500;
-  font-size: 30rpx;
-  color: #545454;
-  line-height: 30rpx;
+  font-size: 32rpx;
+  line-height: 32rpx;
+  color: rgba(51, 51, 51, 1);
 }
 
 .placeholderText {
   margin-right: 10rpx;
   font-family: PingFang SC;
   font-weight: 500;
-  font-size: 30rpx;
+  font-size: 28rpx;
   color: #545454;
   line-height: 60rpx;
-  opacity: 0.5;
+  color: rgba(153, 153, 153, 1);
 }
 
 .zxkfBtn {
+  width: 100%;
   position: absolute;
   right: 0;
   z-index: 999;
   opacity: 0;
+}
+
+.wdxsdBox {
+  margin: 40rpx 30rpx 20rpx;
+  padding: 30rpx 30rpx 20rpx 30rpx;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 4rpx 10rpx 20rpx rgba(230, 235, 250, 1);
+}
+
+.wdxsdTitle {
+  margin-bottom: 40rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+  line-height: 32rpx;
+  color: rgba(0, 0, 0, 1);
+}
+
+.wdxsdItem {
+  padding: 20rpx 40rpx;
+}
+
+.wdxsdImage {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.wdxsdItemText {
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  color: rgba(51, 51, 51, 1);
 }
