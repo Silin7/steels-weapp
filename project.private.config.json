@@ -6,31 +6,5 @@
     "urlCheck": false
   },
   "libVersion": "3.3.4",
-  "condition": {
-    "miniprogram": {
-      "list": [
-        {
-          "name": "pages/noticeModule/noticeDetail/noticeDetail",
-          "pathName": "pages/noticeModule/noticeDetail/noticeDetail",
-          "query": "id=18",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pages/noticeModule/noticeList/noticeList",
-          "pathName": "pages/noticeModule/noticeList/noticeList",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "pages/mineModule/minePage/minePage",
-          "pathName": "pages/mineModule/minePage/minePage",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        }
-      ]
-    }
-  }
+  "condition": {}
 }
