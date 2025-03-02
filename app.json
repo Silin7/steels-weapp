@@ -7,8 +7,6 @@
     "pages/salesModule/slipList/slipList",
     "pages/salesModule/slipDetail/slipDetail",
     "pages/mineModule/minePage/minePage",
-    "pages/upgradeModule/homePage/homePage",
-    "pages/upgradeModule/chooseArea/chooseArea",
     "pages/reportModule/reportAdd/reportAdd",
     "pages/reportModule/reportList/reportList",
     "pages/reportModule/reportDetail/reportDetail",
