@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "销售单",
+  "usingComponents": {
+    "component-choosePicker": "/pages/component/choosePicker/choosePicker"
+  }
+}

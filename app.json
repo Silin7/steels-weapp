@@ -1,12 +1,13 @@
 {
   "pages": [
-    "pages/mineModule/userInfo/userInfo",
     "pages/homeModule/homePage",
     "pages/noticeModule/noticeList/noticeList",
     "pages/noticeModule/noticeDetail/noticeDetail",
+    "pages/salesModule/slipAdd/slipAdd",
     "pages/salesModule/slipList/slipList",
     "pages/salesModule/slipDetail/slipDetail",
     "pages/mineModule/minePage/minePage",
+    "pages/mineModule/userInfo/userInfo",
     "pages/reportModule/reportAdd/reportAdd",
     "pages/reportModule/reportList/reportList",
     "pages/reportModule/reportDetail/reportDetail",
