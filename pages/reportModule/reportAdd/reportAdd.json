@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "企业投诉举报",
-  "usingComponents": {
-    "van-switch": "@vant/weapp/switch/index",
-    "component-choosePicker": "/pages/component/choosePicker/choosePicker",
-    "component-fuzzyPicker": "/pages/component/fuzzyPicker/fuzzyPicker"
-  }
-}

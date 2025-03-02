@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "入企扫码执法",
-  "usingComponents": {
-    "van-switch": "@vant/weapp/switch/index",
-    "van-overlay": "@vant/weapp/overlay/index",
-    "component-multiPicker": "/pages/component/multiPicker/multiPicker"
-  }
-}

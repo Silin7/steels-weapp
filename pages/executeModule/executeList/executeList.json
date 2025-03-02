@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "执法记录",
-  "usingComponents": {
-    "component-choosePicker": "/pages/component/choosePicker/choosePicker"
-  }
-}

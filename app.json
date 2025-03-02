@@ -7,14 +7,7 @@
     "pages/salesModule/slipList/slipList",
     "pages/salesModule/slipDetail/slipDetail",
     "pages/mineModule/minePage/minePage",
-    "pages/mineModule/userInfo/userInfo",
-    "pages/reportModule/reportAdd/reportAdd",
-    "pages/reportModule/reportList/reportList",
-    "pages/reportModule/reportDetail/reportDetail",
-    "pages/executeModule/executeAdd/executeAdd",
-    "pages/executeModule/executeUpdate/executeUpdate",
-    "pages/executeModule/executeList/executeList",
-    "pages/executeModule/executeDetail/executeDetail"
+    "pages/mineModule/userInfo/userInfo"
   ],
   "tabBar": {
     "color": "#333333",
