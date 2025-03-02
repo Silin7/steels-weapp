@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/salesModule/slipList/slipList",
     "pages/homeModule/homePage",
     "pages/noticeModule/noticeList/noticeList",
     "pages/noticeModule/noticeDetail/noticeDetail",
