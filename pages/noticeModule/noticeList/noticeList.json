@@ -1,7 +1,5 @@
 {
-  "navigationBarTitleText": "公告通知通报",
+  "navigationBarTitleText": "公告列表",
   "usingComponents": {
-    "van-tab": "@vant/weapp/tab/index",
-    "van-tabs": "@vant/weapp/tabs/index"
   }
 }
