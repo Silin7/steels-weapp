@@ -1,13 +1,13 @@
 {
   "pages": [
     "pages/homeModule/homePage",
+    "pages/mineModule/minePage/minePage",
+    "pages/mineModule/userInfo/userInfo",
     "pages/noticeModule/noticeList/noticeList",
     "pages/noticeModule/noticeDetail/noticeDetail",
     "pages/salesModule/slipAdd/slipAdd",
     "pages/salesModule/slipList/slipList",
-    "pages/salesModule/slipDetail/slipDetail",
-    "pages/mineModule/minePage/minePage",
-    "pages/mineModule/userInfo/userInfo"
+    "pages/salesModule/slipDetail/slipDetail"
   ],
   "tabBar": {
     "color": "#333333",
