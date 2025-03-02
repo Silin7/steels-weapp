@@ -10,6 +10,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/noticeModule/noticeDetail/noticeDetail",
+          "pathName": "pages/noticeModule/noticeDetail/noticeDetail",
+          "query": "id=18",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/noticeModule/noticeList/noticeList",
           "pathName": "pages/noticeModule/noticeList/noticeList",
           "query": "",
