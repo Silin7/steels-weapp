@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/salesModule/slipDetail/slipDetail",
-    "pages/salesModule/slipList/slipList",
+    "pages/mineModule/userInfo/userInfo",
     "pages/homeModule/homePage",
     "pages/noticeModule/noticeList/noticeList",
     "pages/noticeModule/noticeDetail/noticeDetail",
+    "pages/salesModule/slipList/slipList",
+    "pages/salesModule/slipDetail/slipDetail",
     "pages/mineModule/minePage/minePage",
-    "pages/mineModule/empowerPage/empowerPage",
     "pages/upgradeModule/homePage/homePage",
     "pages/upgradeModule/chooseArea/chooseArea",
     "pages/reportModule/reportAdd/reportAdd",

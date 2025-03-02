@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "钢管钢材",
-  "usingComponents": {
-    "component-choosePicker": "/pages/component/choosePicker/choosePicker"
-  }
-}
