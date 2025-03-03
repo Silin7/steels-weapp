@@ -1,0 +1,24 @@
+.tableHeader {
+	height: 100rpx;
+	font-size: 32rpx;
+	line-height: 32rpx;
+	color: #fff;
+	background: #1065C7;
+}
+
+.headerItem {
+	width: 20%;
+	text-align: center;
+}
+
+.tableBody {
+	height: 100rpx;
+	font-size: 32rpx;
+	line-height: 32rpx;
+	color: #333;
+}
+
+.bodyItem {
+	width: 20%;
+	text-align: center;
+}
