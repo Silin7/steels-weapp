@@ -4,7 +4,8 @@
     "pages/mineModule/minePage/minePage",
     "pages/mineModule/userInfo/userInfo",
     "pages/noticeModule/noticeList/noticeList",
-    "pages/noticeModule/noticeDetail/noticeDetail",
+		"pages/noticeModule/noticeDetail/noticeDetail",
+    "pages/receivableModule/myReceivable/myReceivable",
     "pages/salesModule/slipAdd/slipAdd",
     "pages/salesModule/slipList/slipList",
     "pages/salesModule/slipDetail/slipDetail"
