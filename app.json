@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/inventoryModule/inventorySearch/inventorySearch",
     "pages/homeModule/homePage",
     "pages/mineModule/minePage/minePage",
     "pages/mineModule/userInfo/userInfo",

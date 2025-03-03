@@ -1,0 +1,32 @@
+<view class="inventorySearchPage">
+	<view class="gengxinshijian">更新时间：2025.2.27 1:30 </view>
+	<view class="cardBox">
+		<view class="searchItem frbc">
+			<view class="itemTitle">仓库：</view>
+			<view class="frcc">
+				<input value="{{ searchForm.cangku }}" class="searchInput" placeholder-class="placeholderClass" placeholder="请选择仓库" disabled bind:tap="" />
+				<image src="/images/salesModule/xiajiantou.png" mode="aspectFill" style="width: 30rpx; height: 30rpx;" />
+			</view>
+		</view>
+		<view class="searchItem frbc">
+			<view class="itemTitle">存货：</view>
+			<input value="{{ searchForm.cunhuo }}" class="searchInput" placeholder-class="placeholderClass" placeholder="请录入" disabled bind:input="cunhuoInput" />
+		</view>
+		<view class="searchItem frbc">
+			<view class="itemTitle">外径：</view>
+			<input value="{{ searchForm.waijing }}" class="searchInput" placeholder-class="placeholderClass" placeholder="请录入" disabled bind:input="waijingInput" />
+		</view>
+		<view class="searchItem frbc">
+			<view class="itemTitle">壁厚：</view>
+			<input value="{{ searchForm.bihou }}" class="searchInput" placeholder-class="placeholderClass" placeholder="请录入" disabled bind:input="bihouInput" />
+		</view>
+		<view class="searchItem frbc" style="border: 0;">
+			<view class="itemTitle">长度：</view>
+			<input value="{{ searchForm.changdu }}" class="searchInput" placeholder-class="placeholderClass" placeholder="请录入" disabled bind:input="changduInput" />
+		</view>
+	</view>
+	<view class="btnBox frcc">
+		<image src="/images/inventoryModule/fangdajing.png" mode="" style="width: 36rpx; height: 36rpx;"/>
+		<view class="btnText">查一查</view>
+	</view>
+</view>
