@@ -77,9 +77,9 @@ Page({
 	},
 
 	// 页面跳转 - 公告详情
-	goNoticeDetail: function (e) {
+	goSlipDetail: function () {
 		wx.navigateTo({
-			url: '/pages/slipModule/slipDetail/slipDetail?id=' + e.currentTarget.dataset.item.id,
+			url: '/pages/salesModule/slipDetail/slipDetail'
 		})
 	},
 

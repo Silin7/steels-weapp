@@ -25,7 +25,7 @@
 			<input value="{{ searchForm.changdu }}" class="searchInput" placeholder-class="placeholderClass" placeholder="请录入" disabled bind:input="changduInput" />
 		</view>
 	</view>
-	<view class="btnBox frcc">
+	<view class="btnBox frcc" bind:tap="goInventoryResult">
 		<image src="/images/inventoryModule/fangdajing.png" mode="" style="width: 36rpx; height: 36rpx;"/>
 		<view class="btnText">查一查</view>
 	</view>

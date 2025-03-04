@@ -38,6 +38,13 @@ Page({
     this.setData({
       'slipAddForm.changdu': e.detail.value
     })
-  },
+	},
+	
+	// 页面跳转
+	goInventoryResult: function () {
+		wx.navigateTo({
+			url: '/pages/inventoryModule/inventoryResult/inventoryResult',
+		})
+	}
 
 })
