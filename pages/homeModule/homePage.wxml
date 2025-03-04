@@ -32,7 +32,7 @@
 
   <!-- 卡片 -->
   <view class="cardBox frbc">
-    <view class="cjcxBox" bind:tap="">
+    <view class="cjcxBox" bind:tap="goSlipList">
       <image src="/images/homeModule/xiadan_icon.png" mode="" class="cjcxImg" />
       <view class="frcc">
         <view class="cjcxText">下单</view>
@@ -40,14 +40,14 @@
       </view>
     </view>
     <view class="rightBox fcbc">
-      <view class="cjfxBox frbc" bind:tap="">
+      <view class="cjfxBox frbc" bind:tap="goInventorySearch">
         <view class="frcc" style="margin-top: 80rpx;">
           <view class="rightText">库存</view>
           <image src="/images/homeModule/youjiantoubaise.png" mode="" style="margin-left: 12rpx; width: 30rpx; height: 30rpx;" />
         </view>
         <image src="/images/homeModule/kucun_icon.png" mode="" style="width: 80rpx; height: 80rpx;" />
       </view>
-      <view class="djdkBox frbc" bind:tap="">
+      <view class="djdkBox frbc" bind:tap="goMyReceivable">
         <view class="frcc" style="margin-top: 80rpx;">
           <view class="rightText">应收</view>
           <image src="/images/homeModule/youjiantoubaise.png" mode="" style="margin-left: 12rpx; width: 30rpx; height: 30rpx;" />
@@ -73,7 +73,7 @@
     <view wx:if="{{ noticeData && noticeData.length === 0 }}">
       <image src="/images/systemModule/zwsj.png" mode="aspectFill" />
     </view>
-    <view wx:else class="chakangengduo">
+    <view wx:else class="chakangengduo" bind:tap="goNoticeList">
       查看更多
     </view>
   </view>
