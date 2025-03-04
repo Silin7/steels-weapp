@@ -1,78 +1,76 @@
 <view class="minePage">
-  <view class="userBox">
-    <view>
-      <button class="avatarUrlBox" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar"></button>
-      <!-- <image src="{{ profile.profile.avatar || '/images/mineModule/avatar.png' }}" mode="aspectFill" class="avatarImgae" /> -->
-      <image src="/images/mineModule/avatar.png" mode="aspectFill" class="avatarImgae" />
-    </view>
-    <view class="userInfo" bind:tap="goEmpowerPage">
-      <!-- <view class="userName">授权登录</view> -->
-      <!-- <view class="userName">{{ profile.role_name }}</view>
+	<view class="userBox">
+		<view>
+			<!-- <image src="{{ profile.profile.avatar || '/images/mineModule/avatar.png' }}" mode="aspectFill" class="avatarImgae" /> -->
+			<image src="/images/mineModule/avatar.png" mode="aspectFill" class="avatarImgae" />
+		</view>
+		<view class="userInfo" bind:tap="goUserInfo">
+			<!-- <view class="userName">授权登录</view> -->
+			<!-- <view class="userName">{{ profile.role_name }}</view>
         <view class="userPhone">{{ profile.profile.name }}</view> -->
-      <view class="userName">姓名标题</view>
-      <view class="userPhone">{{ 18654210578 }}</view>
-    </view>
-  </view>
+			<view class="userName">姓名标题</view>
+			<view class="userPhone">18654210578</view>
+		</view>
+	</view>
 
-  <view class="wdxsdBox">
-    <view class="wdxsdTitle">我的销售单</view>
-    <view class="frbc">
-      <view class="wdxsdItem fccc">
-        <image src="/images/mineModule/daishenhe.png" mode="" class="wdxsdImage" />
-        <view class="wdxsdItemText">待审核</view>
-      </view>
-      <view class="wdxsdItem fccc">
-        <image src="/images/mineModule/daifahuo.png" mode="" class="wdxsdImage" />
-        <view class="wdxsdItemText">待发货</view>
-      </view>
-      <view class="wdxsdItem fccc">
-        <image src="/images/mineModule/yifahuo.png" mode="" class="wdxsdImage" />
-        <view class="wdxsdItemText">已发货</view>
-      </view>
-    </view>
-  </view>
+	<view class="wdxsdBox">
+		<view class="wdxsdTitle">我的销售单</view>
+		<view class="frbc">
+			<view class="wdxsdItem fccc" bind:tap="goSlipList" data-type="2">
+				<image src="/images/mineModule/daishenhe.png" mode="" class="wdxsdImage" />
+				<view class="wdxsdItemText">待审核</view>
+			</view>
+			<view class="wdxsdItem fccc" bind:tap="goSlipList" data-type="3">
+				<image src="/images/mineModule/daifahuo.png" mode="" class="wdxsdImage" />
+				<view class="wdxsdItemText">待发货</view>
+			</view>
+			<view class="wdxsdItem fccc" bind:tap="goSlipList" data-type="4">
+				<image src="/images/mineModule/yifahuo.png" mode="" class="wdxsdImage" />
+				<view class="wdxsdItemText">已发货</view>
+			</view>
+		</view>
+	</view>
 
 
-  <view class="cardBox">
-    <!-- 我的应收   联系技术  -->
-    <view class="cardItem frbc" bind:tap="">
-      <view class="frcc">
-        <image src="/images/mineModule/wdys.png" mode="" style="width: 32rpx; height: 32rpx;" />
-        <view class="titleText">我的应收</view>
-      </view>
-      <view class="frcc">
-        <image src="/images/mineModule/youjiantou.png" mode="" style="width: 30rpx; height: 30rpx;" />
-      </view>
-    </view>
-    <view class="cardItem frbc" bind:tap="">
-      <view class="frcc">
-        <image src="/images/mineModule/yhzl.png" mode="" style="width: 32rpx; height: 32rpx;" />
-        <view class="titleText">用户资料</view>
-      </view>
-      <view class="frcc">
-        <image src="/images/mineModule/youjiantou.png" mode="" style="width: 30rpx; height: 30rpx;" />
-      </view>
-    </view>
-    <view class="cardItem frbc" bind:tap="">
-      <view class="frcc">
-        <image src="/images/mineModule/sysm.png" mode="" style="width: 32rpx; height: 32rpx;" />
-        <view class="titleText">使用说明</view>
-      </view>
-      <view class="frcc">
-        <view class="placeholderText">点击查看</view>
-        <image src="/images/mineModule/youjiantou.png" mode="" style="width: 30rpx; height: 30rpx;" />
-      </view>
-    </view>
-    <view class="cardItem frbc" bind:tap="">
-      <view class="frcc">
-        <image src="/images/mineModule/lxjs.png" mode="" style="width: 32rpx; height: 32rpx;" />
-        <view class="titleText">联系技术</view>
-      </view>
-      <view class="frcc">
-        <view class="placeholderText">在线咨询</view>
-        <image src="/images/mineModule/youjiantou.png" mode="" style="width: 30rpx; height: 30rpx;" />
-      </view>
-      <button open-type="contact" class="zxkfBtn">咨询客服</button>
-    </view>
-  </view>
+	<view class="cardBox">
+		<view class="cardItem frbc" bind:tap="goMyReceivable">
+			<view class="frcc">
+				<image src="/images/mineModule/wdys.png" mode="" style="width: 32rpx; height: 32rpx;" />
+				<view class="titleText">我的应收</view>
+			</view>
+			<view class="frcc">
+				<image src="/images/mineModule/youjiantou.png" mode="" style="width: 30rpx; height: 30rpx;" />
+			</view>
+		</view>
+		<view class="cardItem frbc" bind:tap="goUserInfo">
+			<view class="frcc">
+				<image src="/images/mineModule/yhzl.png" mode="" style="width: 32rpx; height: 32rpx;" />
+				<view class="titleText">用户资料</view>
+			</view>
+			<view class="frcc">
+				<image src="/images/mineModule/youjiantou.png" mode="" style="width: 30rpx; height: 30rpx;" />
+			</view>
+		</view>
+		<view class="cardItem frbc" bind:tap="">
+			<view class="frcc">
+				<image src="/images/mineModule/sysm.png" mode="" style="width: 32rpx; height: 32rpx;" />
+				<view class="titleText">使用说明</view>
+			</view>
+			<view class="frcc">
+				<view class="placeholderText">点击查看</view>
+				<image src="/images/mineModule/youjiantou.png" mode="" style="width: 30rpx; height: 30rpx;" />
+			</view>
+		</view>
+		<view class="cardItem frbc">
+			<view class="frcc">
+				<image src="/images/mineModule/lxjs.png" mode="" style="width: 32rpx; height: 32rpx;" />
+				<view class="titleText">联系技术</view>
+			</view>
+			<view class="frcc">
+				<view class="placeholderText">在线咨询</view>
+				<image src="/images/mineModule/youjiantou.png" mode="" style="width: 30rpx; height: 30rpx;" />
+			</view>
+			<button open-type="contact" class="zxkfBtn">咨询客服</button>
+		</view>
+	</view>
 </view>

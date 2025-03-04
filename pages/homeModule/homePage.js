@@ -29,7 +29,7 @@ Page({
 	// 页面跳转 - 下单
 	goSlipList: function () {
 		wx.navigateTo({
-			url: '/pages/salesModule/slipList/slipList',
+			url: '/pages/salesModule/slipAdd/slipAdd',
 		})
 		// if (wx.getStorageSync('has_registered')) {
 		//   // let role = wx.getStorageSync('profile').profile.role_id
@@ -61,7 +61,6 @@ Page({
 			url: '/pages/receivableModule/myReceivable/myReceivable',
 		})
 	},
-
 
 	// 信息公示 - 列表
 	getSystemPosts: function () {
