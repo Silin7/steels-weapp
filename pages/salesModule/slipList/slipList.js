@@ -50,12 +50,11 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    esRequest('systemPosts', {
-      type: this.data.sliptype,
+    esRequest('articlelist', {
       page: this.data.currentPage,
     }).then(res => {
       if (res && res.data.status) {
-        this.data.slipData = this.data.slipData.concat(res.data.data.items)
+        this.data.slipData = this.data.slipData.concat(res.data.data.data)
         this.setData({
           total: res.data.data.total,
           slipData: this.data.slipData

@@ -3,10 +3,8 @@
     <view wx:for="{{ noticeData }}" wx:key="index" class="noticeItem" style="{{ noticeData.length === index + 1 ? 'border: 0;' : '' }}" bind:tap="goNoticeDetail" data-item="{{ item }}">
       <image src="/images/homeModule/notice1.png" mode="aspectFill" style="width: 280rpx; height: 180rpx; border-radius: 10rpx;" />
       <view class="noticeItemInfo">
-        <!-- <view class="noticeItemTitle to1">{{ item.title }}</view>
-        <view class="noticeItemInfoText to2">{{ item.post_date }}用户分享内容到社交媒体或好友，不应该是一种粗暴的...</view> -->
-        <view class="noticeItemTitle to1">钢管钢材标题测试</view>
-        <view class="noticeItemInfoText to2">用户分享内容到社交媒体或好友，不应该是一种粗暴的...</view>
+        <view class="noticeItemTitle to1">{{ item.title }}</view>
+        <view class="noticeItemInfoText to2">{{ item.updated_at }}</view>
         <view class="noticeItemChakan">查看 →</view>
       </view>
     </view>

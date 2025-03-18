@@ -1,5 +1,5 @@
 const baseConfig = {
-  baseURL: 'https://api.gxrqzfsm.com'
+  baseURL: 'https://gwapi.duoqixin.com'
 }
 
 module.exports = baseConfig

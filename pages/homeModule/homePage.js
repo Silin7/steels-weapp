@@ -96,12 +96,10 @@ Page({
   getSystemPosts: function () {
     let _this = this
     this.data.noticeData = []
-    esRequest('systemPosts', {
-      type: this.data.noticetype,
-      page: 1
+    esRequest('articlelist', {
     }).then(async res => {
       if (res && res.data.status) {
-        await res.data.data.items.forEach((item, index) => {
+        await res.data.data.data.forEach((item, index) => {
           if (index < 2) {
             _this.data.noticeData.push(item)
           }

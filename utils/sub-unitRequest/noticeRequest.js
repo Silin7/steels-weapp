@@ -1,9 +1,14 @@
 let noticeRequest = {
-  systemPosts: {
+  articlelist: {
     apiMethod: 'GET',
-    apiName: '/weapp/system/posts',
-    name: '获取通知公告'
+    apiName: '/articlelist',
+    name: '文章列表'
   },
+  articledetail: {
+    apiMethod: 'GET',
+    apiName: '/article',
+    name: '文章详情'
+  }
 }
 
 module.exports = noticeRequest

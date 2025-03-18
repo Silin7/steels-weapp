@@ -1,7 +1,7 @@
 let systemRequest = {
   authLogin: {
-    apiMethod: 'POST',
-    apiName: '/weapp/auth/login',
+    apiMethod: 'GET',
+    apiName: '/login',
     name: '登录授权'
   },
   authRegister: {

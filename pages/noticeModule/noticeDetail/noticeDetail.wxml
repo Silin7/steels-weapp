@@ -3,9 +3,9 @@
     {{noticeForm.title}}
   </view>
   <view class="noticeDate">
-    {{noticeForm.date}}
+    {{noticeForm.updated_at}}
   </view>
   <view class="richTextBox">
-   <rich-text nodes="{{noticeForm.content}}" />
+   <rich-text nodes="{{noticeForm.contents}}" />
   </view>
 </view>
