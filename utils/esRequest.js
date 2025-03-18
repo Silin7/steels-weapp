@@ -1,12 +1,10 @@
 import baseURL from "./baseURL"
-import executeRequest from "./sub-unitRequest/executeRequest"
+import homeModule from "./sub-unitRequest/homeModule"
 import noticeRequest from "./sub-unitRequest/noticeRequest"
-import reportRequest from "./sub-unitRequest/reportRequest"
 import systemRequest from "./sub-unitRequest/systemRequest"
-import upgradeModule from "./sub-unitRequest/upgradeModule"
 
 export default (localObjects, parametersData, parameters) => {
-  let globalObjects = Object.assign({}, executeRequest, noticeRequest, reportRequest, systemRequest, upgradeModule)
+  let globalObjects = Object.assign({}, homeModule, noticeRequest, systemRequest)
   let apiMethod = globalObjects[localObjects].apiMethod
   if (parameters) {
     var requestURL = baseURL.baseURL + globalObjects[localObjects].apiName + '/' + parameters

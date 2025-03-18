@@ -1,6 +1,6 @@
 let systemRequest = {
   authLogin: {
-    apiMethod: 'GET',
+    apiMethod: 'POST',
     apiName: '/login',
     name: '登录授权'
   },

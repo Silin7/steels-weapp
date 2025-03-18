@@ -1,4 +1,8 @@
-import esRequest from './utils/esRequest';
+
+import {
+  baseURL
+} from './utils/baseURL'
+// import esRequest from './utils/esRequest';
 
 App({
   onLaunch: function () {
@@ -6,20 +10,34 @@ App({
     wx.login({
       success: (res) => {
         if (res.code) {
-          esRequest('authLogin', {
-            code: res.code,
-          }).then(res => {
-            // if (res.data && res.data.status) {
-            //   wx.setStorageSync('has_registered', res.data.data.has_registered)
-            //   if (!res.data.data.has_registered) {
-            //     wx.setStorageSync('openid', res.data.data.open_id)
-            //   } else {
-            //     wx.setStorageSync('token', res.data.data.token)
-            //     wx.setStorageSync('openid', res.data.data.profile.open_id)
-            //   }
-            // } else {
-            //   console.warn('fail' + JSON.stringify(err))
-            // }
+          wx.request({
+            method: 'POST',
+            url: baseURL + '/login',
+            data: {
+              'code': res.code
+            },
+            success: function (res2) {
+              const response = res2.data
+              console.log('response ---->', response);
+              // if (response.status) {
+              //   wx.setStorageSync('registered', response.data.registered)
+              //   wx.setStorageSync('token', response.data.token)
+              //   if (response.data.profile) {
+              //     wx.setStorageSync('profile', response.data.profile)
+              //     wx.setStorageSync('open_id', response.data.profile.open_id)
+              //   }
+              // } else {
+              //   if (response.data && response.data.token) {
+              //     wx.setStorageSync('registered', response.data.registered)
+              //     wx.setStorageSync('open_id', response.data.open_id)
+              //     wx.setStorageSync('session_key', response.data.session_key)
+              //     wx.setStorageSync('token', response.data.token)
+              //   }
+              // }
+            },
+            fail: function (err) {
+              console.log('err', err);
+            }
           })
         }
       }

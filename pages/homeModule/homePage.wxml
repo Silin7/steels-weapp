@@ -11,12 +11,13 @@
                 <view class="bannerTextBoxSub1Text">国为钢铁</view>
               </view>
               <view style="margin-top: 40rpx;">
-                <view class="bannerTextBoxSub2">诚信为本 铸就品牌</view>
-                <view class="bannerTextBoxSub2">优质服务 赢得市场</view>
-              </view>
+                <view class="bannerTextBoxSub2">{{ item.name }}</view>
+                <view class="bannerTextBoxSub2">{{ item.introduce }}</view>
+                <!-- <view class="bannerTextBoxSub2">诚信为本 铸就品牌</view>
+                <view class="bannerTextBoxSub2">优质服务 赢得市场</view> -->
+              </view> 
             </view>
-            <!-- <image src="{{ baseURL + item }}" mode="" class="bannerImage" style="width: 100%; height: 382rpx;" /> -->
-            <image src="{{ item }}" mode="" class="bannerImage" />
+            <image src="{{ item.theimg }}" mode="" class="bannerImage" />
           </view>
         </swiper-item>
       </block>
