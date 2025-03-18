@@ -10,23 +10,11 @@ Page({
 		reachTimer: null,
 		total: 0,
 		currentPage: 1,
-		noticeData: [{
-			title: '钢管钢材标题测试',
-			content: '用户分享内容到社交媒体或好友，不应该是一种粗暴的...'
-		}, {
-			title: '钢管钢材标题测试',
-			content: '用户分享内容到社交媒体或好友，不应该是一种粗暴的...'
-		}, {
-			title: '钢管钢材标题测试',
-			content: '用户分享内容到社交媒体或好友，不应该是一种粗暴的...'
-		}, {
-			title: '钢管钢材标题测试',
-			content: '用户分享内容到社交媒体或好友，不应该是一种粗暴的...'
-		}]
+		noticeData: []
 	},
 
 	onLoad: function () {
-		// this.initFunction()
+		this.initFunction()
 	},
 
 	// 初始化函数
