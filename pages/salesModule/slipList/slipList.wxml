@@ -6,7 +6,7 @@
 </van-tabs>
 <scroll-view scroll-y="{{ true }}" refresher-enabled="{{ true }}" refresher-triggered="{{ triggered }}" bindrefresherrefresh="permessagerePull" bindscrolltolower="onScrollBottom" style="height: calc(100vh - 88rpx);">
   <view class="slipListPage">
-    <view wx:for="{{ 2 }}" wx:key="index" class="slipItem" bind:tap="">
+    <view wx:for="{{ 2 }}" wx:key="index" class="slipItem" bind:tap="goSlipDetail">
       <view class="frbc" style="padding-bottom: 20rpx;">
         <view class="dingdanhao">订单号：GW202503011103</view>
         <view class="dingdanzhuangtai">待发货</view>

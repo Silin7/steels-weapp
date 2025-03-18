@@ -1,66 +1,72 @@
-// pages/mineModule/userInfo/userInfo.js
+import {
+	baseURL
+} from '../../../utils/baseURL';
+
 Page({
+	data: {
+		userInfo: {
+			nickname: '白晓生',
+			avatar: '/images/mineModule/avatar.png',
+			username: '秦墨',
+			phone: '18888888888',
+			registertime: '',
+		}
+	},
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+	onShow() {
+		this.getCurrentDateTime()
+	},
 
-  },
+	// 用户名
+	nicknameInput: function (e) {
+		this.setData({
+			'userInfo.nickname': e.detail.value
+		})
+	},
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
+	// 头像
+	onChooseAvatar: function (e) {
+		let _this = this
+		wx.uploadFile({
+			url: `${baseURL}/weapp/session/avatar`,
+			filePath: e.detail.avatarUrl,
+			name: 'file',
+			header: {
+				'Authorization': `Bearer ${wx.getStorageSync('token')}`
+			},
+			success() {
+				setTimeout(() => {
+					_this.getUser()
+				}, 200)
+			}
+		})
+	},
 
-  },
+	// 姓名
+	usernameInput: function (e) {
+		this.setData({
+			'userInfo.username': e.detail.value
+		})
+	},
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
+	// 手机号
+	phoneInput: function (e) {
+		this.setData({
+			'userInfo.phone': e.detail.value
+		})
+	},
 
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
+	// 当前日期
+	getCurrentDateTime: function () {
+		const now = new Date();
+		const year = now.getFullYear();
+		const month = String(now.getMonth() + 1).padStart(2, '0');
+		const day = String(now.getDate()).padStart(2, '0');
+		const hours = String(now.getHours()).padStart(2, '0');
+		const minutes = String(now.getMinutes()).padStart(2, '0');
+		const seconds = String(now.getSeconds()).padStart(2, '0');
+		this.setData({
+			'userInfo.registertime': `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
+		})
+	},
 })

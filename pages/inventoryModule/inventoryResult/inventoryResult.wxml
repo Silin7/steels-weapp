@@ -1,0 +1,16 @@
+<view style="padding: 20rpx;">
+	<view class="tableHeader frbc">
+		<view class="headerItem">仓库</view>
+		<view class="headerItem">存货</view>
+		<view class="headerItem">规格型号</view>
+		<view class="headerItem">主数量</view>
+		<view class="headerItem">辅数量</view>
+	</view>
+	<view class="tableBody frbc" wx:for="{{ 8 }}">
+		<view class="bodyItem">莘县二库</view>
+		<view class="bodyItem">焊管Q235B</view>
+		<view class="bodyItem">108*3*9</view>
+		<view class="bodyItem">100.22 吨</view>
+		<view class="bodyItem">808 支</view>
+	</view>
+</view>

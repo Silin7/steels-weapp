@@ -1,0 +1,75 @@
+.myReceivablePage {
+	padding: 20rpx 20rpx;
+	min-height: calc(100vh - 44px);
+	background-color: rgba(232, 238, 255, 1);
+}
+
+.slipItem {
+	margin-bottom: 20rpx;
+	padding: 30rpx 20rpx;
+	opacity: 1;
+	border-radius: 10rpx;
+	background: #FFFFFF;
+	border-left: 6rpx solid #2D56EB;
+	box-shadow: 4rpx 8rpx 20rpx #E6EBFA;
+}
+
+.gongsimingcheng {
+	font-size: 32rpx;
+	font-weight: 700;
+	line-height: 46rpx;
+	color: #2D56EB;
+}
+
+.dingdanzhuangtai {
+	font-size: 28rpx;
+	font-weight: 600;
+	line-height: 40rpx;
+	color: #2A82E4;
+}
+
+.centerbox {
+	margin-bottom: 40rpx;
+	padding: 20rpx 30rpx;
+	border-radius: 6px;
+	background: #F7F7F7;
+}
+
+.centeritemz {
+	font-size: 28rpx;
+	line-height: 40rpx;
+	font-weight: 600;
+	text-align: center;
+	color: rgba(51, 51, 51, 1);
+}
+
+.centeritemy {
+	font-size: 36rpx;
+	line-height: 60rpx;
+	font-weight: 600;
+	text-align: center;
+	color: #FF8D1A;
+}
+
+.xiadanshijian {
+	font-size: 24rpx;
+	line-height: 40rpx;
+	color: #999999;
+}
+
+.dingdanhao {
+	font-size: 24rpx;
+	line-height: 36rpx;
+	color: rgba(0, 0, 0, 1);
+}
+
+.danleixing {
+	width: 86rpx;
+	height: 42rpx;
+	font-size: 24rpx;
+	line-height: 42rpx;
+	text-align: center;
+	border-radius: 4rpx;
+	color: #2D56EB;
+	background-color: #DBE3FF;
+}

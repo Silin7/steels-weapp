@@ -238,12 +238,12 @@
 }
 
 .cardBox {
-  padding: 40rpx;
+  padding: 20rpx;
   background-color: #fff;
 }
 
 .cjcxBox {
-  padding: 60rpx 0 38rpx 38rpx;
+  padding: 60rpx 0 40rpx 40rpx;
   width: calc(50% - 10rpx);
   height: 390rpx;
   display: flex;
@@ -263,7 +263,6 @@
   font-size: 24px;
   font-weight: 700;
   line-height: 36px;
-  text-align: 24px;
   vertical-align: top;
   color: #fff;
 }
@@ -312,7 +311,7 @@
 
 .rightView1 {
   margin-top: 20rpx;
-  height: 38rpx;
+  height: 40rpx;
   font-family: Source Han Sans SC;
   font-weight: 300;
   font-size: 23rpx;
@@ -325,7 +324,7 @@
 .rightView2 {
   margin-top: 20rpx;
   width: 91rpx;
-  height: 38rpx;
+  height: 40rpx;
   font-family: Source Han Sans SC;
   font-weight: 300;
   font-size: 23rpx;

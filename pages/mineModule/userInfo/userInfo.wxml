@@ -1,26 +1,26 @@
 <view class="userInfoPage">
-  <view class="itembox frsc">
-    <view class="labelbox">用户名：</view>
-    <view class="valuebox">于敏</view>
-  </view>
-  <view class="itembox frsc">
-    <view class="labelbox">头像：</view>
-    <view class="frcc">
-      <image src="/images/mineModule/avatar.png" mode="" style="width: 72rpx; height: 72rpx; border-radius: 50%;" />
-      <view class="xiugaitouxiang">修改头像</view>
-    </view>
-  </view>
-  <view class="itembox frsc">
-    <view class="labelbox">姓名：</view>
-    <view class="valuebox">于敏</view>
-  </view>
-  <view class="itembox frsc">
-    <view class="labelbox">手机号：</view>
-    <view class="valuebox">15285478954</view>
-  </view>
-  <view class="itembox frsc">
-    <view class="labelbox">注册时间：</view>
-    <view class="valuebox">2025-02-23 14:23:53</view>
-  </view>
-  <view class="baocunziliao">保存资料</view>
+	<view class="itembox frsc">
+		<view class="labelbox">用户名：</view>
+		<input value="{{ userInfo.nickname }}" class="searchInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="nicknameInput" />
+	</view>
+	<view class="itembox frsc">
+		<view class="labelbox">头像：</view>
+		<view class="frcc">
+			<image src="/images/mineModule/avatar.png" mode="" style="width: 72rpx; height: 72rpx; border-radius: 50%;" />
+      <button class="xiugaitouxiang" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">修改头像</button>
+		</view>
+	</view>
+	<view class="itembox frsc">
+		<view class="labelbox">姓名：</view>
+		<input value="{{ userInfo.username }}" class="searchInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="usernameInput" />
+	</view>
+	<view class="itembox frsc">
+		<view class="labelbox">手机号：</view>
+		<input value="{{ userInfo.phone }}" class="searchInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="phoneInput" />
+	</view>
+	<view class="itembox frsc">
+		<view class="labelbox">注册时间：</view>
+		<view class="valuebox">{{ userInfo.registertime }}</view>
+	</view>
+	<view class="baocunziliao">保存资料</view>
 </view>

@@ -1,0 +1,113 @@
+.inventorySearchPage {
+	min-height: 100vh;
+	background-color: rgba(232, 238, 255, 1);
+}
+
+.gengxinshijian {
+	padding: 40rpx 0 20rpx;
+	text-align: center;
+	font-weight: 700;
+	color: #1065C7;
+}
+
+.cardBox {
+	margin: 20rpx;
+	padding: 20rpx;
+	background-color: #fff;
+	border-radius: 20rpx;
+}
+
+.searchItem {
+	padding: 20rpx;
+	border-bottom: 1rpx solid #ECECEC;
+}
+
+.itemTitle {
+	font-size: 28rpx;
+	line-height: 48rpx;
+	color: rgba(51, 51, 51, 1);
+}
+
+.radiotext {
+	font-size: 28rpx;
+	line-height: 48rpx;
+	color: rgba(51, 51, 51, 1);
+}
+
+.searchInput {
+	padding-right: 10rpx;
+	text-align: right;
+	font-size: 30rpx;
+	line-height: 30rpx;
+	font-weight: 500;
+	color: #333;
+}
+
+.searchInput2 {
+	margin: 0 20rpx;
+	width: 80rpx;
+	text-align: right;
+	font-size: 30rpx;
+	line-height: 30rpx;
+	font-weight: 500;
+	color: #333;
+	border: 1rpx solid #E5E5E5;
+	border-radius: 8rpx;
+}
+
+.searchInput3 {
+	margin: 0 20rpx;
+	font-size: 30rpx;
+	line-height: 30rpx;
+	font-weight: 500;
+	color: #333;
+	border-radius: 8rpx;
+}
+
+.inputText {
+	font-size: 28rpx;
+	line-height: 48rpx;
+	color: rgba(51, 51, 51, 1);
+}
+
+.placeholderClass {
+	font-size: 28rpx;
+	line-height: 48rpx;
+	color: #cccccc;
+}
+
+.textareaBox {
+	margin: 20rpx 0;
+	font-weight: 500;
+	min-height: 144rpx;
+}
+
+.saveBtnBox {
+	/* margin-top: 280rpx; */
+	margin-top: 20rpx;
+	padding: 30rpx 40rpx;
+	background-color: #fff;
+}
+
+.saveBtn {
+	height: 100rpx;
+	border-radius: 12px;
+	background: #2A82E4;
+	font-size: 32rpx;
+	line-height: 32rpx;
+	color: rgba(255, 255, 255, 1);
+}
+
+.btnBox {
+	margin: 120rpx 20rpx 0;
+	height: 100rpx;
+	border-radius: 100rpx;
+	background: #1065C7;
+}
+
+.btnText {
+	margin-left: 40rpx;
+	font-size: 36rpx;
+	line-height: 36rpx;
+	color: rgba(255, 255, 255, 1);
+}
