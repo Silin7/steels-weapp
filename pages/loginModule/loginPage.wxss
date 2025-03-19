@@ -1,0 +1,103 @@
+.purchaseLogin {
+  position: relative;
+  min-height: 100vh;
+}
+
+.topBox {
+  padding: 70rpx 20rpx 100rpx 50rpx;
+  background-color: #2B73FF;
+}
+
+.hyzcText {
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 62rpx;
+  color: #FFFFFF;
+  line-height: 62rpx;
+}
+
+.tipsText {
+  margin-top: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  line-height: 36rpx;
+}
+
+.cardBox {
+  position: absolute;
+  top: 380rpx;
+  left: 0;
+  width: 100vw;
+  min-height: 1000rpx;
+  background: #FFFFFF;
+  border-radius: 60rpx 60rpx 0 0;
+  padding: 80rpx 75rpx;
+}
+
+.labelText {
+  margin-bottom: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 30rpx;
+  color: #545454;
+  line-height: 60rpx;
+}
+
+.inputClass {
+  margin-bottom: 20rpx;
+  height: 86rpx;
+  background: #F4F4F4;
+  border-radius: 12rpx;
+  padding-left: 45rpx;
+}
+
+.placeholderClass {
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 30rpx;
+  color: #545454;
+  line-height: 60rpx;
+  opacity: 0.2;
+}
+
+.getCodeClass {
+  position: absolute;
+  top: 28rpx;
+  right: 30rpx;
+  z-index: 9;
+  font-family: Adobe Heiti Std;
+  font-weight: normal;
+  font-size: 28rpx;
+  color: #757373;
+  line-height: 28rpx;
+}
+
+.cgsdText {
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 26rpx;
+  color: #1F57C5;
+  line-height: 30rpx;
+}
+
+.cgsiText {
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 26rpx;
+  color: #FF632D;
+  line-height: 30rpx;
+}
+
+.submitClass {
+  margin-top: 220rpx;
+  height: 90rpx;
+  background: #005DFF;
+  border-radius: 11rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  font-size: 30rpx;
+  color: #FFFFFF;
+  line-height: 30rpx;
+}

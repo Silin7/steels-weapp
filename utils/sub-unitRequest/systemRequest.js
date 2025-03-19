@@ -3,17 +3,17 @@ let systemRequest = {
     apiMethod: 'POST',
     apiName: '/login',
     name: '登录授权'
-  },
-  authRegister: {
-    apiMethod: 'POST',
-    apiName: '/weapp/auth/register',
-    name: '注册'
-  },
-  profile: {
+	},
+	getcompanyphonecode: {
     apiMethod: 'GET',
-    apiName: '/weapp/session/profile',
-    name: '获取已登录账号信息'
-  },
+    apiName: '/getcompanyphonecode',
+    name: '获取手机验证码'
+	},
+	clerkregister: {
+    apiMethod: 'POST',
+    apiName: '/clerkregister',
+    name: '业务人员注册'
+	},
   departments: {
     apiMethod: 'GET',
     apiName: '/weapp/system/departments',
