@@ -40,35 +40,6 @@
       <input value="{{ slipAddForm.wuliudianhua }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="wuliudianhuaInput" />
     </view>
     <view class="slipAddItem frbc">
-      <view class="itemTitle">产品名称：</view>
-      <input value="{{ slipAddForm.chanpinmingcheng }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="chanpinmingchengInput" />
-    </view>
-    <view class="slipAddItem frbc">
-      <view class="itemTitle">规格：</view>
-      <view class="frcc">
-        <input value="{{ slipAddForm.waijing }}" class="slipAddInput2" bind:input="waijingInput" />
-        <view class="inputText">外径</view>
-        <input value="{{ slipAddForm.bihou }}" class="slipAddInput2" bind:input="bihouInput" />
-        <view class="inputText">壁厚</view>
-        <input value="{{ slipAddForm.changdu }}" class="slipAddInput2" bind:input="changduInput" />
-        <view class="inputText">长度</view>
-      </view>
-    </view>
-    <view class="slipAddItem frbc">
-      <view class="itemTitle">数量：</view>
-      <view class="frcc">
-        <input value="{{ slipAddForm.shuliang }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="shuliangInput" />
-        <view class="inputText">支</view>
-      </view>
-    </view>
-    <view class="slipAddItem frbc">
-      <view class="itemTitle">支数：</view>
-      <view class="frcc">
-        <input value="{{ slipAddForm.zhishu }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="zhishuInput" />
-        <view class="inputText">吨</view>
-      </view>
-    </view>
-    <view class="slipAddItem frbc">
       <view class="itemTitle">仓库：</view>
       <view class="frcc">
         <input value="{{ slipAddForm.cangku }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请选择仓库" disabled bind:tap="" />
@@ -98,6 +69,42 @@
       </view>
     </view>
   </view>
+  <view class="slipAddBox" wx:for="{{ chanpinliebiao }}" wx:key="index">
+    <view wx:if="{{ chanpinliebiao.length > 1 }}" class="frbc">
+      <view class="biaotistyle">产品{{ index + 1 }}:</view>
+      <image src="/images/salesModule/shanchu.png" alt="" class="shanchustyle" bind:tap="chanpinDel" data-index="{{ index }}" />
+    </view>
+    <view class="slipAddItem frbc">
+      <view class="itemTitle">产品名称：</view>
+      <input value="{{ item.chanpinmingcheng }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="chanpinmingchengInput" data-index="{{ index }}" />
+    </view>
+    <view class="slipAddItem frbc">
+      <view class="itemTitle">规格：</view>
+      <view class="frcc">
+        <input value="{{ item.waijing }}" class="slipAddInput2" bind:input="waijingInput" data-index="{{ index }}" />
+        <view class="inputText">外径</view>
+        <input value="{{ item.bihou }}" class="slipAddInput2" bind:input="bihouInput" data-index="{{ index }}" />
+        <view class="inputText">壁厚</view>
+        <input value="{{ item.changdu }}" class="slipAddInput2" bind:input="changduInput" data-index="{{ index }}" />
+        <view class="inputText">长度</view>
+      </view>
+    </view>
+    <view class="slipAddItem frbc">
+      <view class="itemTitle">数量：</view>
+      <view class="frcc">
+        <input value="{{ item.shuliang }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="shuliangInput" data-index="{{ index }}" />
+        <view class="inputText">吨</view>
+      </view>
+    </view>
+    <view class="slipAddItem frbc" style="border: 0;">
+      <view class="itemTitle">支数：</view>
+      <view class="frcc">
+        <input value="{{ item.zhishu }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="zhishuInput" data-index="{{ index }}" />
+        <view class="inputText">支</view>
+      </view>
+    </view>
+  </view>
+  <image src="/images/salesModule/tianjiafang.png" alt="" class="tianjiafangstyle" bind:tap="chanpinAdd" />
   <view class="slipAddBox">
     <view class="slipAddItem frbc">
       <view class="itemTitle">付款类型：</view>
@@ -137,6 +144,6 @@
     </view>
   </view>
   <view class="saveBtnBox">
-    <view class="saveBtn frcc" bind:tap="">确定提交</view>
+    <view class="saveBtn frcc" bind:tap="quedingtijiao">确定提交</view>
   </view>
 </view>

@@ -8,16 +8,18 @@ Page({
       xiaoshougongsi: '',
       chepai: '',
       wuliudianhua: '',
+      cangku: '',
+      yunshufangshi: '',
+      yunfei: '',
+    },
+    chanpinliebiao: [{
       chanpinmingcheng: '',
       waijing: '',
       bihou: '',
       changdu: '',
       shuliang: '',
       zhishu: '',
-      cangku: '',
-      yunshufangshi: '',
-      yunfei: '',
-    }
+    }]
   },
 
   onLoad: function () {
@@ -56,45 +58,80 @@ Page({
     })
   },
 
+  // 新增产品
+  chanpinAdd: function() {
+    this.data.chanpinliebiao.push({
+      chanpinmingcheng: '',
+      waijing: '',
+      bihou: '',
+      changdu: '',
+      shuliang: '',
+      zhishu: '',
+    })
+    this.setData({
+      chanpinliebiao: this.data.chanpinliebiao
+    })
+  },
+
+  // 删除产品
+  chanpinDel: function (e) {
+    this.data.chanpinliebiao.splice(e.currentTarget.dataset.index, 1)
+    this.setData({
+      chanpinliebiao: this.data.chanpinliebiao
+    })
+  },
+
   // 产品名称
   chanpinmingchengInput: function (e) {
+    const index = e.currentTarget.dataset.index
+    this.data.chanpinliebiao[index].chanpinmingcheng = e.detail.value
     this.setData({
-      'slipAddForm.chanpinmingcheng': e.detail.value
+      chanpinliebiao: this.data.chanpinliebiao
     })
   },
 
   // 外径
   waijingInput: function (e) {
+    const index = e.currentTarget.dataset.index
+    this.data.chanpinliebiao[index].waijing = e.detail.value
     this.setData({
-      'slipAddForm.waijing': e.detail.value
+      chanpinliebiao: this.data.chanpinliebiao
     })
   },
 
   // 壁厚
   bihouInput: function (e) {
+    const index = e.currentTarget.dataset.index
+    this.data.chanpinliebiao[index].bihou = e.detail.value
     this.setData({
-      'slipAddForm.bihou': e.detail.value
+      chanpinliebiao: this.data.chanpinliebiao
     })
   },
 
   // 长度
   changduInput: function (e) {
+    const index = e.currentTarget.dataset.index
+    this.data.chanpinliebiao[index].changdu = e.detail.value
     this.setData({
-      'slipAddForm.changdu': e.detail.value
+      chanpinliebiao: this.data.chanpinliebiao
     })
   },
 
   // 数量
   shuliangInput: function (e) {
+    const index = e.currentTarget.dataset.index
+    this.data.chanpinliebiao[index].shuliang = e.detail.value
     this.setData({
-      'slipAddForm.shuliang': e.detail.value
+      chanpinliebiao: this.data.chanpinliebiao
     })
   },
 
   // 支数
   zhishuInput: function (e) {
+    const index = e.currentTarget.dataset.index
+    this.data.chanpinliebiao[index].zhishu = e.detail.value
     this.setData({
-      'slipAddForm.zhishu': e.detail.value
+      chanpinliebiao: this.data.chanpinliebiao
     })
   },
 
@@ -147,5 +184,9 @@ Page({
     })
   },
 
+  // 确定提交
+  quedingtijiao: function () {
+    console.log(this.data);
+  }
 
 })
