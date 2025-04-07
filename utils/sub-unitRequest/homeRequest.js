@@ -1,4 +1,4 @@
-let homeModule = {
+let homeRequest = {
   portal: {
     apiMethod: 'GET',
     apiName: '/portal',
@@ -6,4 +6,4 @@ let homeModule = {
   },
 }
 
-module.exports = homeModule
+module.exports = homeRequest

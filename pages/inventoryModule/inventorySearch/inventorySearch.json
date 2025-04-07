@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "今日库存",
-  "usingComponents": {}
+  "usingComponents": {
+    "component-choosePicker": "/pages/component/choosePicker/choosePicker"
+	}
 }

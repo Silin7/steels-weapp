@@ -6,11 +6,11 @@
 		<view class="headerItem">主数量</view>
 		<view class="headerItem">辅数量</view>
 	</view>
-	<view class="tableBody frbc" wx:for="{{ 8 }}">
-		<view class="bodyItem">莘县二库</view>
-		<view class="bodyItem">焊管Q235B</view>
-		<view class="bodyItem">108*3*9</view>
-		<view class="bodyItem">100.22 吨</view>
-		<view class="bodyItem">808 支</view>
+	<view class="tableBody frbc" wx:for="{{ inventoryList }}" wx:key="index">
+		<view class="bodyItem">{{ item.WarehouseName }}</view>
+		<view class="bodyItem">{{ item.InventoryName }}</view>
+		<view class="bodyItem">{{ item.Specification }}</view>
+		<view class="bodyItem">{{ item.AvailableQuantity }} {{ item.UnitName }}</view>
+		<view class="bodyItem"></view>
 	</view>
 </view>
