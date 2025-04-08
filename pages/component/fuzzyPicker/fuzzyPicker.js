@@ -29,10 +29,9 @@ Component({
 
 
   methods: {
-    // 企业列表
     getDataList: function () {
-      esRequest('companies', {
-        q: this.data.companyName
+      esRequest('customers', {
+        customername: this.data.companyName
       }).then(async res => {
         if (res && res.data.status) {
           await res.data.data.forEach((item) => {

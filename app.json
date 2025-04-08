@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/salesModule/slipAdd/slipAdd",
     "pages/homeModule/homePage",
     "pages/loginModule/loginPage",
     "pages/mineModule/minePage/minePage",
@@ -9,7 +10,6 @@
     "pages/receivableModule/myReceivable/myReceivable",
     "pages/inventoryModule/inventorySearch/inventorySearch",
     "pages/inventoryModule/inventoryResult/inventoryResult",
-    "pages/salesModule/slipAdd/slipAdd",
     "pages/salesModule/slipList/slipList",
     "pages/salesModule/slipDetail/slipDetail"
   ],

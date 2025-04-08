@@ -24,16 +24,11 @@ Page({
 
   onLoad: function () {
     // 获取部门列表
-    esRequest('departments').then(async (res) => {
-      if (res && res.data.status) {
-        await res.data.data.forEach((item) => {
-          item.value = item.id
-          item.text = item.name
-        })
-        this.setData({
-          departmentList: res.data.data
-        })
-      }
+    esRequest('customers', {
+			companycode: '04',
+			customername: '陕西'
+		}).then(async res => {
+      console.log(res);
     })
   },
 

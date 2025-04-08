@@ -14,16 +14,6 @@ let systemRequest = {
     apiName: '/clerkregister',
     name: '业务人员注册'
 	},
-  departments: {
-    apiMethod: 'GET',
-    apiName: '/weapp/system/departments',
-    name: '部门列表'
-  },
-  companies: {
-    apiMethod: 'GET',
-    apiName: '/weapp/system/companies',
-    name: '企业列表'
-  },
 }
 
 module.exports = systemRequest

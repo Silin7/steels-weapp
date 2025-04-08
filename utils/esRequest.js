@@ -2,10 +2,11 @@ import baseURL from "./baseURL"
 import homeRequest from "./sub-unitRequest/homeRequest"
 import inventoryRequest from "./sub-unitRequest/inventoryRequest"
 import noticeRequest from "./sub-unitRequest/noticeRequest"
+import salesRequest from "./sub-unitRequest/salesRequest"
 import systemRequest from "./sub-unitRequest/systemRequest"
 
 export default (localObjects, parametersData, parameters) => {
-  let globalObjects = Object.assign({}, homeRequest, inventoryRequest, noticeRequest, systemRequest)
+  let globalObjects = Object.assign({}, homeRequest, inventoryRequest, noticeRequest, salesRequest, systemRequest)
   let apiMethod = globalObjects[localObjects].apiMethod
   if (parameters) {
     var requestURL = baseURL.baseURL + globalObjects[localObjects].apiName + '/' + parameters
