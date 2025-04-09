@@ -1,149 +1,156 @@
 <!-- 选择公司 -->
-<component-choosePicker pickerShow="{{ departmentShow }}" pickerTitle="选择公司" dataList="{{ departmentList }}" bind:confirmItem="confirmDepartment" />
+<component-choosePicker pickerShow="{{ allcompanyShow }}" pickerTitle="选择公司" dataList="{{ allcompanyList }}" bind:confirmItem="confirmAllcompany" />
 <!-- 选择仓库 -->
-<component-choosePicker pickerShow="{{ departmentShow }}" pickerTitle="选择仓库" dataList="{{ departmentList }}" bind:confirmItem="confirmDepartment" />
+<component-choosePicker pickerShow="{{ cangkuShow }}" pickerTitle="选择仓库" dataList="{{ cangkuList }}" bind:confirmItem="confirmCangku" />
+<!-- 采购客户 -->
+<component-fuzzyPicker id="fuzzyPicker" pickerShow="{{ caigoukehuShow }}" defaultValue="{{ slipAddForm.caigoukehu_name }}" bind:confirmItem="caigoukehuConfirmFunction" />
+
 
 <view class="slipAddPage">
-  <view class="wxtsbox frbc">
-    <view class="wxtstext to1">温馨提示温馨提示温馨提示温馨提示</view>
-    <image src="/images/salesModule/closered.png" mode="" style="width: 40rpx; height: 40rpx;" />
-  </view>
-  <view class="slipAddBox">
-    <view class="slipAddItem frbc">
-      <view class="itemTitle">销货单类型：</view>
-      <view class="frcc">
-        <radio-group bindchange="xiaohuodanleixingChange">
-          <label class="radio">
-            <radio color="#2F54EB" value="r1" style="transform: scale(0.65);" />
-            <text class="radiotext" style="{{ slipAddForm.xiaohuodanleixing === 'r1' ? 'color: #2F54EB;' : '' }}">选中</text>
-          </label>
-          <label class="radio">
-            <radio color="#2F54EB" value="r2" style="margin-left: 40rpx; transform: scale(0.65);" />
-            <text class="radiotext" style="{{ slipAddForm.xiaohuodanleixing === 'r2' ? 'color: #2F54EB;' : '' }}">未选中</text>
-          </label>
-        </radio-group>
-      </view>
-    </view>
-    <view class="slipAddItem frbc">
-      <view class="itemTitle">销售公司：</view>
-      <view class="frcc">
-        <input value="{{ slipAddForm.xiaoshougongsi }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请选择公司" disabled bind:tap="" />
-        <image src="/images/salesModule/xiajiantou.png" mode="aspectFill" style="width: 30rpx; height: 30rpx;" />
-      </view>
-    </view>
-    <view class="slipAddItem frbc">
-      <view class="itemTitle">车牌：</view>
-      <input value="{{ slipAddForm.chepai }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="chepaiInput" />
-    </view>
-    <view class="slipAddItem frbc">
-      <view class="itemTitle">物流电话：</view>
-      <input value="{{ slipAddForm.wuliudianhua }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="wuliudianhuaInput" />
-    </view>
-    <view class="slipAddItem frbc">
-      <view class="itemTitle">仓库：</view>
-      <view class="frcc">
-        <input value="{{ slipAddForm.cangku }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请选择仓库" disabled bind:tap="" />
-        <image src="/images/salesModule/xiajiantou.png" mode="aspectFill" style="width: 30rpx; height: 30rpx;" />
-      </view>
-    </view>
-    <view class="slipAddItem frbc">
-      <view class="itemTitle">运输方式：</view>
-      <view class="frcc">
-        <radio-group bindchange="yunshufangshiChange">
-          <label class="radio">
-            <radio color="#2F54EB" value="r1" style="transform: scale(0.65);" />
-            <text class="radiotext" style="{{ slipAddForm.yunshufangshi === 'r1' ? 'color: #2F54EB;' : '' }}">需方自提</text>
-          </label>
-          <label class="radio">
-            <radio color="#2F54EB" value="r2" style="margin-left: 20rpx; transform: scale(0.65);" />
-            <text class="radiotext" style="{{ slipAddForm.yunshufangshi === 'r2' ? 'color: #2F54EB;' : '' }}">承担运费(货款含运费)</text>
-          </label>
-        </radio-group>
-      </view>
-    </view>
-    <view class="slipAddItem frbc" style="border: 0;">
-      <view class="itemTitle">运费：</view>
-      <view class="frcc">
-        <input value="{{ slipAddForm.yunshufangshiChange }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="yunshufangshiChangeInput" />
-        <view class="inputText">元/吨</view>
-      </view>
-    </view>
-  </view>
-  <view class="slipAddBox" wx:for="{{ chanpinliebiao }}" wx:key="index">
-    <view wx:if="{{ chanpinliebiao.length > 1 }}" class="frbc">
-      <view class="biaotistyle">产品{{ index + 1 }}:</view>
-      <image src="/images/salesModule/shanchu.png" alt="" class="shanchustyle" bind:tap="chanpinDel" data-index="{{ index }}" />
-    </view>
-    <view class="slipAddItem frbc">
-      <view class="itemTitle">产品名称：</view>
-      <input value="{{ item.chanpinmingcheng }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="chanpinmingchengInput" data-index="{{ index }}" />
-    </view>
-    <view class="slipAddItem frbc">
-      <view class="itemTitle">规格：</view>
-      <view class="frcc">
-        <input value="{{ item.waijing }}" class="slipAddInput2" bind:input="waijingInput" data-index="{{ index }}" />
-        <view class="inputText">外径</view>
-        <input value="{{ item.bihou }}" class="slipAddInput2" bind:input="bihouInput" data-index="{{ index }}" />
-        <view class="inputText">壁厚</view>
-        <input value="{{ item.changdu }}" class="slipAddInput2" bind:input="changduInput" data-index="{{ index }}" />
-        <view class="inputText">长度</view>
-      </view>
-    </view>
-    <view class="slipAddItem frbc">
-      <view class="itemTitle">数量：</view>
-      <view class="frcc">
-        <input value="{{ item.shuliang }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="shuliangInput" data-index="{{ index }}" />
-        <view class="inputText">吨</view>
-      </view>
-    </view>
-    <view class="slipAddItem frbc" style="border: 0;">
-      <view class="itemTitle">支数：</view>
-      <view class="frcc">
-        <input value="{{ item.zhishu }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="zhishuInput" data-index="{{ index }}" />
-        <view class="inputText">支</view>
-      </view>
-    </view>
-  </view>
-  <image src="/images/salesModule/tianjiafang.png" alt="" class="tianjiafangstyle" bind:tap="chanpinAdd" />
-  <view class="slipAddBox">
-    <view class="slipAddItem frbc">
-      <view class="itemTitle">付款类型：</view>
-      <view class="frcc">
-        <radio-group bindchange="fukuanleixingChange">
-          <label class="radio">
-            <radio color="#2F54EB" value="r1" style="transform: scale(0.65);" />
-            <text class="radiotext" style="{{ slipAddForm.fukuanleixing === 'r1' ? 'color: #2F54EB;' : '' }}">全款</text>
-          </label>
-          <label class="radio">
-            <radio color="#2F54EB" value="r2" style="margin-left: 20rpx; transform: scale(0.65);" />
-            <text class="radiotext" style="{{ slipAddForm.fukuanleixing === 'r2' ? 'color: #2F54EB;' : '' }}">定金</text>
-          </label>
-          <label class="radio">
-            <radio color="#2F54EB" value="r3" style="margin-left: 20rpx; transform: scale(0.65);" />
-            <text class="radiotext" style="{{ slipAddForm.fukuanleixing === 'r3' ? 'color: #2F54EB;' : '' }}">赊销</text>
-          </label>
-        </radio-group>
-      </view>
-    </view>
-    <view class="slipAddItem frbc">
-      <view class="itemTitle">价格：</view>
-      <view class="frcc">
-        <input value="{{ slipAddForm.jiage }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="jiageInput" />
-        <view class="inputText">元</view>
-      </view>
-    </view>
-    <view class="slipAddItem frbc">
-      <view class="itemTitle">采购客户：</view>
-      <input value="{{ slipAddForm.caigoukehu }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入（小数点后2位）" bind:input="caigoukehuInput" />
-    </view>
-    <view class="slipAddItem" style="border: 0;">
-      <view class="itemTitle">备注：</view>
-      <view class="textareaBox">
-        <textarea value="{{ executeAddForm.reason }}" class="slipAddInput3" placeholder-class="placeholderClass" placeholder="请输入备注信息" auto-height bind:input="beizhuInput" />
-      </view>
-    </view>
-  </view>
-  <view class="saveBtnBox">
-    <view class="saveBtn frcc" bind:tap="quedingtijiao">确定提交</view>
-  </view>
+	<view class="wxtsbox frbc">
+		<view class="wxtstext to1">温馨提示温馨提示温馨提示温馨提示</view>
+		<image src="/images/salesModule/closered.png" mode="" style="width: 40rpx; height: 40rpx;" />
+	</view>
+	<view class="slipAddBox">
+		<view class="slipAddItem frbc">
+			<view class="itemTitle">销货单类型：</view>
+			<view class="frcc">
+				<radio-group bindchange="xiaohuodanleixingChange">
+					<label class="radio">
+						<radio color="#2F54EB" value="r1" style="transform: scale(0.65);" />
+						<text class="radiotext" style="{{ slipAddForm.xiaohuodanleixing === 'r1' ? 'color: #2F54EB;' : '' }}">选中</text>
+					</label>
+					<label class="radio">
+						<radio color="#2F54EB" value="r2" style="margin-left: 40rpx; transform: scale(0.65);" />
+						<text class="radiotext" style="{{ slipAddForm.xiaohuodanleixing === 'r2' ? 'color: #2F54EB;' : '' }}">未选中</text>
+					</label>
+				</radio-group>
+			</view>
+		</view>
+		<view class="slipAddItem frbc">
+			<view class="itemTitle">销售公司：</view>
+			<view class="frcc">
+				<input value="{{ slipAddForm.xiaoshougongsi_name }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请选择公司" disabled bind:tap="allcompanyShowFunction" />
+				<image src="/images/salesModule/xiajiantou.png" mode="aspectFill" style="width: 30rpx; height: 30rpx;" />
+			</view>
+		</view>
+		<view class="slipAddItem frbc">
+			<view class="itemTitle">车牌：</view>
+			<input value="{{ slipAddForm.chepai }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="chepaiInput" />
+		</view>
+		<view class="slipAddItem frbc">
+			<view class="itemTitle">物流电话：</view>
+			<input value="{{ slipAddForm.wuliudianhua }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="wuliudianhuaInput" />
+		</view>
+		<view class="slipAddItem frbc">
+			<view class="itemTitle">仓库：</view>
+			<view class="frcc">
+				<input value="{{ slipAddForm.warehouse_name }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请选择仓库" disabled bind:tap="cangkuShowFunction" />
+				<image src="/images/salesModule/xiajiantou.png" mode="aspectFill" style="width: 30rpx; height: 30rpx;" />
+			</view>
+		</view>
+		<view class="slipAddItem frbc">
+			<view class="itemTitle">运输方式：</view>
+			<view class="frcc">
+				<radio-group bindchange="yunshufangshiChange">
+					<label class="radio">
+						<radio color="#2F54EB" value="r1" style="transform: scale(0.65);" />
+						<text class="radiotext" style="{{ slipAddForm.yunshufangshi === 'r1' ? 'color: #2F54EB;' : '' }}">需方自提</text>
+					</label>
+					<label class="radio">
+						<radio color="#2F54EB" value="r2" style="margin-left: 20rpx; transform: scale(0.65);" />
+						<text class="radiotext" style="{{ slipAddForm.yunshufangshi === 'r2' ? 'color: #2F54EB;' : '' }}">承担运费(货款含运费)</text>
+					</label>
+				</radio-group>
+			</view>
+		</view>
+		<view class="slipAddItem frbc" style="border: 0;">
+			<view class="itemTitle">运费：</view>
+			<view class="frcc">
+				<input value="{{ slipAddForm.yunfei }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="yunshufangshiChangeInput" />
+				<view class="inputText">元/吨</view>
+			</view>
+		</view>
+	</view>
+	<view class="slipAddBox" wx:for="{{ chanpinliebiao }}" wx:key="index">
+		<view wx:if="{{ chanpinliebiao.length > 1 }}" class="frbc">
+			<view class="biaotistyle">产品{{ index + 1 }}:</view>
+			<image src="/images/salesModule/shanchu.png" alt="" class="shanchustyle" bind:tap="chanpinDel" data-index="{{ index }}" />
+		</view>
+		<view class="slipAddItem frbc">
+			<view class="itemTitle">产品名称：</view>
+			<input value="{{ item.chanpinmingcheng }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="chanpinmingchengInput" data-index="{{ index }}" />
+		</view>
+		<view class="slipAddItem frbc">
+			<view class="itemTitle">规格：</view>
+			<view class="frcc">
+				<input value="{{ item.waijing }}" class="slipAddInput2" bind:input="waijingInput" data-index="{{ index }}" />
+				<view class="inputText">外径</view>
+				<input value="{{ item.bihou }}" class="slipAddInput2" bind:input="bihouInput" data-index="{{ index }}" />
+				<view class="inputText">壁厚</view>
+				<input value="{{ item.changdu }}" class="slipAddInput2" bind:input="changduInput" data-index="{{ index }}" />
+				<view class="inputText">长度</view>
+			</view>
+		</view>
+		<view class="slipAddItem frbc">
+			<view class="itemTitle">数量：</view>
+			<view class="frcc">
+				<input value="{{ item.shuliang }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="shuliangInput" data-index="{{ index }}" />
+				<view class="inputText">吨</view>
+			</view>
+		</view>
+		<view class="slipAddItem frbc" style="border: 0;">
+			<view class="itemTitle">支数：</view>
+			<view class="frcc">
+				<input value="{{ item.zhishu }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="zhishuInput" data-index="{{ index }}" />
+				<view class="inputText">支</view>
+			</view>
+		</view>
+	</view>
+	<image src="/images/salesModule/tianjiafang.png" alt="" class="tianjiafangstyle" bind:tap="chanpinAdd" />
+	<view class="slipAddBox">
+		<view class="slipAddItem frbc">
+			<view class="itemTitle">付款类型：</view>
+			<view class="frcc">
+				<radio-group bindchange="fukuanleixingChange">
+					<label class="radio">
+						<radio color="#2F54EB" value="r1" style="transform: scale(0.65);" />
+						<text class="radiotext" style="{{ slipAddForm.fukuanleixing === 'r1' ? 'color: #2F54EB;' : '' }}">全款</text>
+					</label>
+					<label class="radio">
+						<radio color="#2F54EB" value="r2" style="margin-left: 20rpx; transform: scale(0.65);" />
+						<text class="radiotext" style="{{ slipAddForm.fukuanleixing === 'r2' ? 'color: #2F54EB;' : '' }}">定金</text>
+					</label>
+					<label class="radio">
+						<radio color="#2F54EB" value="r3" style="margin-left: 20rpx; transform: scale(0.65);" />
+						<text class="radiotext" style="{{ slipAddForm.fukuanleixing === 'r3' ? 'color: #2F54EB;' : '' }}">赊销</text>
+					</label>
+				</radio-group>
+			</view>
+		</view>
+		<view class="slipAddItem frbc">
+			<view class="itemTitle">价格：</view>
+			<view class="frcc">
+				<input value="{{ slipAddForm.jiage }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="jiageInput" />
+				<view class="inputText">元</view>
+			</view>
+		</view>
+		<view class="slipAddItem frbc">
+			<view class="itemTitle">采购客户：</view>
+			<view class="frcc">
+				<!-- bind:input="caigoukehuInput" -->
+				<input value="{{ slipAddForm.caigoukehu_name }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请选择采购客户" disabled bind:tap="caigoukehuShowFunction" />
+				<image src="/images/salesModule/xiajiantou.png" mode="aspectFill" style="width: 30rpx; height: 30rpx;" />
+			</view>
+		</view>
+		<view class="slipAddItem" style="border: 0;">
+			<view class="itemTitle">备注：</view>
+			<view class="textareaBox">
+				<textarea value="{{ slipAddForm.reason }}" class="slipAddInput3" placeholder-class="placeholderClass" placeholder="请输入备注信息" auto-height bind:input="beizhuInput" />
+			</view>
+		</view>
+	</view>
+	<view class="saveBtnBox">
+		<view class="saveBtn frcc" bind:tap="quedingtijiao">确定提交</view>
+	</view>
 </view>

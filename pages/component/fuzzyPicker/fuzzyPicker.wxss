@@ -1,4 +1,17 @@
 .fieldView {
-  padding: 20rpx 0;
+	padding: 20rpx 10rpx;
+	display: flex;
   /* border-bottom: 1rpx solid #f0f0f4; */
+}
+
+.queryBtn {
+	border-radius: 10rpx;
+	flex-shrink: 0;
+	margin: 14rpx 0 0 10rpx;
+	width: 120rpx;
+	height: 60rpx;
+	color: #fff;
+	text-align: center;
+	line-height: 60rpx;
+	background-color: #2A82E4;
 }
