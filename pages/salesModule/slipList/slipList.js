@@ -18,7 +18,7 @@ Page({
 		this.setData({
 			sliptype: options.type
 		})
-		// this.initFunction()
+		this.initFunction()
 	},
 
 	onShow: function () {
@@ -53,7 +53,7 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    esRequest('articlelist', {
+    esRequest('myvouchers', {
       page: this.data.currentPage,
     }).then(res => {
       if (res && res.data.status) {
