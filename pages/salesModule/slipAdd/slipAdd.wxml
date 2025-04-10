@@ -106,6 +106,13 @@
 				<view class="inputText">支</view>
 			</view>
 		</view>
+		<view class="slipAddItem frbc" style="border: 0;">
+			<view class="itemTitle">税前价格：</view>
+			<view class="frcc">
+				<input value="{{ item.OrigTaxPrice }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="OrigTaxPriceInput" data-index="{{ index }}" />
+				<view class="inputText">元</view>
+			</view>
+		</view>
 	</view>
 	<image src="/images/salesModule/tianjiafang.png" alt="" class="tianjiafangstyle" bind:tap="chanpinAdd" />
 	<view class="slipAddBox">

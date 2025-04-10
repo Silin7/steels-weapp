@@ -30,6 +30,7 @@ Page({
 			changdu: '',
 			shuliang: '',
 			zhishu: '',
+			OrigTaxPrice: '',
 		}]
 	},
 
@@ -111,6 +112,7 @@ Page({
 			changdu: '',
 			shuliang: '',
 			zhishu: '',
+			OrigTaxPrice: '',
 		})
 		this.setData({
 			chanpinliebiao: this.data.chanpinliebiao
@@ -174,6 +176,15 @@ Page({
 	zhishuInput: function (e) {
 		const index = e.currentTarget.dataset.index
 		this.data.chanpinliebiao[index].zhishu = e.detail.value
+		this.setData({
+			chanpinliebiao: this.data.chanpinliebiao
+		})
+	},
+
+	// 税前价格
+	OrigTaxPriceInput: function (e) {
+		const index = e.currentTarget.dataset.index
+		this.data.chanpinliebiao[index].OrigTaxPrice = e.detail.value
 		this.setData({
 			chanpinliebiao: this.data.chanpinliebiao
 		})
