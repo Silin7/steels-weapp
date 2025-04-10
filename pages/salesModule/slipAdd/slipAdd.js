@@ -6,6 +6,7 @@ Page({
 		allcompanyList: [],
 		cangkuShow: false,
 		cangkuList: [],
+		inventoryShow: false,
 		caigoukehuShow: false,
 		slipAddForm: {
 			xiaohuodanleixing: '',
@@ -267,6 +268,22 @@ Page({
 	// 		'slipAddForm.caigoukehu': e.detail.value
 	// 	})
 	// },
+
+	// 产品库存 - 弹出
+	inventoryShowFunction: function (e) {
+		this.setData({
+			inventoryShow: true
+		})
+	},
+
+	// 产品库存 - 弹框确认
+	inventoryConfirmFunction: function (e) {
+		console.log('弹框确认', e.detail.value);
+		this.setData({
+			'slipAddForm.inventory_code': e.detail.value.value,
+			'slipAddForm.inventory_name': e.detail.value.text
+		})
+	},
 
 	// 采购客户 - 弹出
 	caigoukehuShowFunction: function (e) {

@@ -2,6 +2,8 @@
 <component-choosePicker pickerShow="{{ allcompanyShow }}" pickerTitle="选择公司" dataList="{{ allcompanyList }}" bind:confirmItem="confirmAllcompany" />
 <!-- 选择仓库 -->
 <component-choosePicker pickerShow="{{ cangkuShow }}" pickerTitle="选择仓库" dataList="{{ cangkuList }}" bind:confirmItem="confirmCangku" />
+<!-- 产品库存 -->
+<component-kucunPicker id="kucunPicker" pickerShow="{{ inventoryShow }}" defaultValue="{{ slipAddForm.inventory_name }}" bind:confirmItem="inventoryConfirmFunction" />
 <!-- 采购客户 -->
 <component-fuzzyPicker id="fuzzyPicker" pickerShow="{{ caigoukehuShow }}" defaultValue="{{ slipAddForm.caigoukehu_name }}" bind:confirmItem="caigoukehuConfirmFunction" />
 
@@ -79,7 +81,7 @@
 		</view>
 		<view class="slipAddItem frbc">
 			<view class="itemTitle">产品名称：</view>
-			<input value="{{ item.chanpinmingcheng }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="chanpinmingchengInput" data-index="{{ index }}" />
+			<input value="{{ item.chanpinmingcheng }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" disabled bind:tap="inventoryShowFunction" data-index="{{ index }}" />
 		</view>
 		<view class="slipAddItem frbc">
 			<view class="itemTitle">规格：</view>

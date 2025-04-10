@@ -2,6 +2,7 @@
   "navigationBarTitleText": "销售单",
   "usingComponents": {
     "component-choosePicker": "/pages/component/choosePicker/choosePicker",
+    "component-kucunPicker": "/pages/component/kucunPicker/kucunPicker",
     "component-fuzzyPicker": "/pages/component/fuzzyPicker/fuzzyPicker"
   }
 }
