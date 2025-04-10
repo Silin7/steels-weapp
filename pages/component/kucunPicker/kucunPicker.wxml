@@ -1,0 +1,12 @@
+<van-popup show="{{pickerShow}}" position="bottom">
+	<view class="fieldView">
+		<van-field value="{{ inventory_name }}" placeholder="请输入存货名" border="{{ true }}" clearable="{{ true }}" input-align="center" bind:change="nameChange" style="width: calc(100vw - 150rpx); border: 1rpx solid #f1f1f1;" />
+		<view class="queryBtn" bind:tap="queryBtn">查询</view>
+	</view>
+	<view class="fieldView">
+		<van-field value="{{ companycode }}" placeholder="请输入长度" border="{{ true }}" clearable="{{ true }}" input-align="center" bind:change="lengthChange" style="border: 1rpx solid #f1f1f1;" />
+		<van-field value="{{ outer_diameter }}" placeholder="请输入外径" border="{{ true }}" clearable="{{ true }}" input-align="center" bind:change="diameterChange" style="margin-left: 10rpx; border: 1rpx solid #f1f1f1;" />
+		<van-field value="{{ wall_thickness }}" placeholder="请输入壁厚" border="{{ true }}" clearable="{{ true }}" input-align="center" bind:change="thicknessChange" style="margin-left: 10rpx; border: 1rpx solid #f1f1f1;" />
+	</view>
+	<van-picker show-toolbar title="选择产品" columns="{{inventoryList}}" bind:cancel="onCancel" bind:confirm="onConfirm" item-height="50" />
+</van-popup>

@@ -4,5 +4,5 @@
 		<van-field value="{{ customername }}" placeholder="请输入公司名称" border="{{ true }}" clearable="{{ true }}" input-align="center" bind:change="nameChange" style="margin-left: 10rpx; border: 1rpx solid #f1f1f1;" />
 		<view class="queryBtn" bind:tap="queryBtn">查询</view>
 	</view>
-	<van-picker show-toolbar title="选择企业" columns="{{customerList}}" bind:cancel="onCancel" bind:confirm="onConfirm" item-height="50" />
+	<van-picker show-toolbar title="采购客户" columns="{{customerList}}" bind:cancel="onCancel" bind:confirm="onConfirm" item-height="50" />
 </van-popup>
