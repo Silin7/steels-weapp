@@ -18,7 +18,12 @@ let salesRequest = {
     apiMethod: 'POST',
     apiName: '/getSaleOrderByVoucherCode/1',
     name: '获取T+上的销售订单详细'
-  },
+	},
+  postSaleOrderDetails: {
+    apiMethod: 'POST',
+    apiName: '/postSaleOrderDetails',
+    name: '提交销售订单'
+	},
 }
 
 module.exports = salesRequest

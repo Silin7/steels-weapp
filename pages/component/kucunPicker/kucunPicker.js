@@ -39,7 +39,7 @@ Component({
 				outer_diameter: this.data.outer_diameter,
 				wall_thickness: this.data.wall_thickness,
 			}).then(async res => {
-				if (res && res.data.code === 200) {
+				if (res && res.data.status) {
 					await res.data.data.data.forEach((item) => {
 						item.value = item.InventoryCode
 						item.text = item.InventoryName + ' ' + item.Specification

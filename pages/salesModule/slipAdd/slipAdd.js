@@ -9,29 +9,42 @@ Page({
 		inventoryShow: false,
 		caigoukehuShow: false,
 		slipAddForm: {
-			xiaohuodanleixing: '',
-			xiaoshougongsi_code: '',
-			xiaoshougongsi_name: '',
-			chepai: '',
-			wuliudianhua: '',
-			warehouse_code: '',
-			warehouse_name: '',
-			yunshufangshi: '',
-			yunfei: '',
-			fukuanleixing: '',
-			jiage: '',
-			caigoukehu_code: '',
-			caigoukehu_name: '',
-			reason: '',
+			order_type: '0',
+			supplier_id: '1',
+			supplier_name: '山东信誉添城物资有限公司',
+			TransVehicleInfo: '鲁A12345',
+			TransDriverPhone: '18812345678',
+			warehouse_id: '04',
+			warehouse_name: '聊城库',
+			Trans_type: '0',
+			Trans_fee: '998',
+			pay_type: '0',
+			jiage: '999',
+			caigoukehu_code: '0010163',
+			caigoukehu_name: '陕西五岳工贸有限公司',
+			reason: '123123123123212',
 		},
-		chanpinliebiao: [{
-			chanpinmingcheng: '',
-			waijing: '',
-			bihou: '',
-			changdu: '',
-			shuliang: '',
-			zhishu: '',
-			OrigTaxPrice: '',
+		productIndex: 0,
+		products: [{
+			inventory_max: '1.9480',
+			inventory_code: '0303001',
+			inventory_name: '祛筋焊管Q195A',
+			outer_diameter: '1',
+			wall_thickness: '2',
+			length: '3',
+			Quantity: '4',
+			Quantity2: '5',
+			OrigTaxPrice: '6',
+		}, {
+			inventory_max: '6.4340',
+			inventory_code: '02011563',
+			inventory_name: '焊管Q235B',
+			outer_diameter: '11',
+			wall_thickness: '22',
+			length: '33',
+			Quantity: '44',
+			Quantity2: '55',
+			OrigTaxPrice: '66',
 		}]
 	},
 
@@ -50,7 +63,7 @@ Page({
 	// 销货单类型
 	xiaohuodanleixingChange: function (e) {
 		this.setData({
-			'slipAddForm.xiaohuodanleixing': e.detail.value
+			'slipAddForm.order_type': e.detail.value
 		})
 	},
 
@@ -85,109 +98,120 @@ Page({
 	// 销售公司 - 选中
 	confirmAllcompany: function (e) {
 		this.setData({
-			'slipAddForm.xiaoshougongsi_code': e.detail.value.code,
-			'slipAddForm.xiaoshougongsi_name': e.detail.value.name,
+			'slipAddForm.supplier_id': e.detail.value.id,
+			'slipAddForm.supplier_name': e.detail.value.name,
 		})
 	},
 
 	// 车牌
 	chepaiInput: function (e) {
 		this.setData({
-			'slipAddForm.chepai': e.detail.value
+			'slipAddForm.TransVehicleInfo': e.detail.value
 		})
 	},
 
 	// 物流电话
 	wuliudianhuaInput: function (e) {
 		this.setData({
-			'slipAddForm.wuliudianhua': e.detail.value
+			'slipAddForm.TransDriverPhone': e.detail.value
 		})
 	},
 
 	// 新增产品
 	chanpinAdd: function () {
-		this.data.chanpinliebiao.push({
-			chanpinmingcheng: '',
-			waijing: '',
-			bihou: '',
-			changdu: '',
-			shuliang: '',
-			zhishu: '',
+		this.data.products.push({
+			inventory_max: '',
+			inventory_code: '',
+			inventory_name: '',
+			outer_diameter: '',
+			wall_thickness: '',
+			length: '',
+			Quantity: '',
+			Quantity2: '',
 			OrigTaxPrice: '',
 		})
 		this.setData({
-			chanpinliebiao: this.data.chanpinliebiao
+			products: this.data.products
 		})
 	},
 
 	// 删除产品
 	chanpinDel: function (e) {
-		this.data.chanpinliebiao.splice(e.currentTarget.dataset.index, 1)
+		this.data.products.splice(e.currentTarget.dataset.index, 1)
 		this.setData({
-			chanpinliebiao: this.data.chanpinliebiao
+			products: this.data.products
 		})
 	},
 
-	// 产品名称
-	chanpinmingchengInput: function (e) {
-		const index = e.currentTarget.dataset.index
-		this.data.chanpinliebiao[index].chanpinmingcheng = e.detail.value
+	// 产品名称 - 弹出
+	inventoryShowFunction: function (e) {
 		this.setData({
-			chanpinliebiao: this.data.chanpinliebiao
+			productIndex: e.currentTarget.dataset.index,
+			inventoryShow: true
+		})
+	},
+
+	// 产品名称 - 弹框确认
+	inventoryConfirmFunction: function (e) {
+		this.data.products[this.data.productIndex].inventory_max = e.detail.value.AvailableQuantity
+		this.data.products[this.data.productIndex].inventory_code = e.detail.value.InventoryCode
+		this.data.products[this.data.productIndex].inventory_name = e.detail.value.InventoryName
+		this.setData({
+			products: this.data.products
 		})
 	},
 
 	// 外径
 	waijingInput: function (e) {
 		const index = e.currentTarget.dataset.index
-		this.data.chanpinliebiao[index].waijing = e.detail.value
+		this.data.products[index].outer_diameter = e.detail.value
 		this.setData({
-			chanpinliebiao: this.data.chanpinliebiao
+			products: this.data.products
 		})
 	},
 
 	// 壁厚
 	bihouInput: function (e) {
 		const index = e.currentTarget.dataset.index
-		this.data.chanpinliebiao[index].bihou = e.detail.value
+		this.data.products[index].wall_thickness = e.detail.value
 		this.setData({
-			chanpinliebiao: this.data.chanpinliebiao
+			products: this.data.products
 		})
 	},
 
 	// 长度
 	changduInput: function (e) {
 		const index = e.currentTarget.dataset.index
-		this.data.chanpinliebiao[index].changdu = e.detail.value
+		this.data.products[index].length = e.detail.value
 		this.setData({
-			chanpinliebiao: this.data.chanpinliebiao
+			products: this.data.products
 		})
 	},
 
 	// 数量
 	shuliangInput: function (e) {
 		const index = e.currentTarget.dataset.index
-		this.data.chanpinliebiao[index].shuliang = e.detail.value
+		this.data.products[index].Quantity = e.detail.value
 		this.setData({
-			chanpinliebiao: this.data.chanpinliebiao
+			products: this.data.products
 		})
 	},
 
 	// 支数
 	zhishuInput: function (e) {
 		const index = e.currentTarget.dataset.index
-		this.data.chanpinliebiao[index].zhishu = e.detail.value
+		this.data.products[index].Quantity2 = e.detail.value
 		this.setData({
-			chanpinliebiao: this.data.chanpinliebiao
+			products: this.data.products
 		})
 	},
 
 	// 税前价格
 	OrigTaxPriceInput: function (e) {
 		const index = e.currentTarget.dataset.index
-		this.data.chanpinliebiao[index].OrigTaxPrice = e.detail.value
+		this.data.products[index].OrigTaxPrice = e.detail.value
 		this.setData({
-			chanpinliebiao: this.data.chanpinliebiao
+			products: this.data.products
 		})
 	},
 
@@ -229,7 +253,7 @@ Page({
 	// 选择仓库 - 选中
 	confirmCangku: function (e) {
 		this.setData({
-			'slipAddForm.warehouse_code': e.detail.value.code,
+			'slipAddForm.warehouse_id': e.detail.value.code,
 			'slipAddForm.warehouse_name': e.detail.value.name,
 		})
 	},
@@ -237,21 +261,21 @@ Page({
 	// 运输方式
 	yunshufangshiChange: function (e) {
 		this.setData({
-			'slipAddForm.yunshufangshi': e.detail.value
+			'slipAddForm.Trans_type': e.detail.value
 		})
 	},
 
 	// 运费
 	yunfeiInput: function (e) {
 		this.setData({
-			'slipAddForm.yunfei': e.detail.value
+			'slipAddForm.Trans_fee': e.detail.value
 		})
 	},
 
 	// 付款类型
 	fukuanleixingChange: function (e) {
 		this.setData({
-			'slipAddForm.fukuanleixing': e.detail.value
+			'slipAddForm.pay_type': e.detail.value
 		})
 	},
 
@@ -268,22 +292,6 @@ Page({
 	// 		'slipAddForm.caigoukehu': e.detail.value
 	// 	})
 	// },
-
-	// 产品库存 - 弹出
-	inventoryShowFunction: function (e) {
-		this.setData({
-			inventoryShow: true
-		})
-	},
-
-	// 产品库存 - 弹框确认
-	inventoryConfirmFunction: function (e) {
-		console.log('弹框确认', e.detail.value);
-		this.setData({
-			'slipAddForm.inventory_code': e.detail.value.value,
-			'slipAddForm.inventory_name': e.detail.value.text
-		})
-	},
 
 	// 采购客户 - 弹出
 	caigoukehuShowFunction: function (e) {
@@ -304,13 +312,49 @@ Page({
 	// 备注
 	beizhuInput: function (e) {
 		this.setData({
-			'slipAddForm.beizhu': e.detail.value
+			'slipAddForm.reason': e.detail.value
 		})
 	},
 
 	// 确定提交
 	quedingtijiao: function () {
-		console.log(this.data);
-	}
+		let _this = this
+		// if (!this.data.classForm.cityId) {
+		// 	wx.showToast({
+		// 		title: '请选择学校所在地',
+		// 		icon: 'none'
+		// 	});
+		// 	return
+		// }
+		wx.showModal({
+			title: '提交',
+			content: '确定要提交保存数据吗？',
+			success(res) {
+				if (res.confirm) {
+					_this.submitRequest()
+				}
+			}
+		})
+	},
 
+	// 确定要提交保存数据吗？
+	submitRequest: function () {
+		wx.showLoading({
+			title: '加载中',
+		})
+		this.data.slipAddForm.products = this.data.products
+		esRequest('postSaleOrderDetails', this.data.slipAddForm).then(res => {
+			console.log(res);
+			// wx.showToast({
+			// 	title: '操作成功',
+			// 	icon: 'none'
+			// })
+			// wx.hideLoading()
+			// setTimeout(() => {
+			// 	wx.navigateBack({
+			// 		delta: 1
+			// 	})
+			// }, 500)
+		})
+	},
 })
