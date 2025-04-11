@@ -20,11 +20,11 @@
 				<radio-group bindchange="xiaohuodanleixingChange">
 					<label class="radio">
 						<radio color="#2F54EB" value="0" style="transform: scale(0.65);" />
-						<text class="radiotext" style="{{ slipAddForm.order_type === '0' ? 'color: #2F54EB;' : '' }}">选中</text>
+						<text class="radiotext" style="{{ slipAddForm.order_type === '0' ? 'color: #2F54EB;' : '' }}">销售单</text>
 					</label>
 					<label class="radio">
 						<radio color="#2F54EB" value="1" style="margin-left: 40rpx; transform: scale(0.65);" />
-						<text class="radiotext" style="{{ slipAddForm.order_type === '1' ? 'color: #2F54EB;' : '' }}">未选中</text>
+						<text class="radiotext" style="{{ slipAddForm.order_type === '1' ? 'color: #2F54EB;' : '' }}">调拨单</text>
 					</label>
 				</radio-group>
 			</view>
@@ -65,7 +65,7 @@
 					</label>
 					<label class="radio">
 						<radio color="#2F54EB" value="1" style="margin-left: 20rpx; transform: scale(0.65);" />
-						<text class="radiotext" style="{{ slipAddForm.Trans_type === '1' ? 'color: #2F54EB;' : '' }}">承担运费(货款含运费)</text>
+						<text class="radiotext" style="{{ slipAddForm.Trans_type === '1' ? 'color: #2F54EB;' : '' }}">承担运费（货款含运费）</text>
 					</label>
 				</radio-group>
 			</view>
