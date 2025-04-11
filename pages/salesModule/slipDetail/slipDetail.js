@@ -3,18 +3,22 @@ import esRequest from '../../../utils/esRequest';
 Page({
 
   data: {
-    voucherCode: '',
+		dataForm: {}
+    // voucherCode: '',
   },
 
-  onLoad: function (options) {
-    this.setData({
-      voucherCode: options.voucherCode || 'SO-2025-03-0008'
-    })
-    esRequest('getSaleOrderByVoucherCode', {
-      voucherCode:this.data.voucherCode
-    }).then(res => {
-      console.log(res);
-    })
+  onLoad: function () {
+		this.setData({
+			dataForm: wx.getStorageSync('slipDetail')
+		})
+    // this.setData({
+    //   voucherCode: options.voucherCode || 'SO-2025-03-0008'
+    // })
+    // esRequest('getSaleOrderByVoucherCode', {
+    //   voucherCode:this.data.voucherCode
+    // }).then(res => {
+    //   console.log(res);
+    // })
   },
 
 })

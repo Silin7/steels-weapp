@@ -55,9 +55,13 @@ Page({
     })
     esRequest('myvouchers', {
       page: this.data.currentPage,
-    }).then(res => {
+    }).then(async res => {
       if (res && res.data.status) {
-        this.data.slipData = this.data.slipData.concat(res.data.data.data)
+				await res.data.data.data.forEach(item => {
+					item.OrderDetails = JSON.parse(item.OrderDetails)
+				})
+				this.data.slipData = this.data.slipData.concat(res.data.data.data)
+				console.log('this.data.slipData', this.data.slipData);
         this.setData({
           total: res.data.data.total,
           slipData: this.data.slipData
@@ -76,7 +80,8 @@ Page({
   },
 
 	// 页面跳转 - 公告详情
-	goSlipDetail: function () {
+	goSlipDetail: function (e) {
+		wx.setStorageSync('slipDetail', e.currentTarget.dataset.item)
 		wx.navigateTo({
 			url: '/pages/salesModule/slipDetail/slipDetail'
 		})

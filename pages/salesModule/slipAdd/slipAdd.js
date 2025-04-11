@@ -347,13 +347,76 @@ Page({
 	// 确定提交
 	quedingtijiao: function () {
 		let _this = this
-		// if (!this.data.classForm.cityId) {
-		// 	wx.showToast({
-		// 		title: '请选择学校所在地',
-		// 		icon: 'none'
-		// 	});
-		// 	return
-		// }
+		if (!this.data.slipAddForm.order_type) {
+			wx.showToast({
+				title: '请选择销货单类型',
+				icon: 'none'
+			});
+			return
+		}
+		if (!this.data.slipAddForm.supplier_id) {
+			wx.showToast({
+				title: '请选择销售公司',
+				icon: 'none'
+			});
+			return
+		}
+		if (!this.data.slipAddForm.TransVehicleInfo) {
+			wx.showToast({
+				title: '请输入车牌',
+				icon: 'none'
+			});
+			return
+		}
+		if (!this.data.slipAddForm.TransDriverPhone) {
+			wx.showToast({
+				title: '请输入物流电话',
+				icon: 'none'
+			});
+			return
+		}
+		if (!this.data.slipAddForm.warehouse_id) {
+			wx.showToast({
+				title: '请选择仓库',
+				icon: 'none'
+			});
+			return
+		}
+		if (!this.data.slipAddForm.Trans_type) {
+			wx.showToast({
+				title: '请选择运输方式',
+				icon: 'none'
+			});
+			return
+		}
+		if (!this.data.slipAddForm.Trans_fee) {
+			wx.showToast({
+				title: '请输入运费',
+				icon: 'none'
+			});
+			return
+		}
+		if (!this.data.slipAddForm.pay_type) {
+			wx.showToast({
+				title: '请选择付款类型',
+				icon: 'none'
+			});
+			return
+		}
+		if (!this.data.slipAddForm.Customer_code) {
+			wx.showToast({
+				title: '请选择采购客户',
+				icon: 'none'
+			});
+			return
+		}
+		if (!this.data.slipAddForm.reason) {
+			wx.showToast({
+				title: '请输入备注',
+				icon: 'none'
+			});
+			return
+		}
 		wx.showModal({
 			title: '提交',
 			content: '确定要提交保存数据吗？',
