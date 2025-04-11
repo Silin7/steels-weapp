@@ -1,3 +1,4 @@
+import baseURL from "../../../utils/baseURL"
 import esRequest from '../../../utils/esRequest';
 
 Page({
@@ -9,43 +10,69 @@ Page({
 		inventoryShow: false,
 		caigoukehuShow: false,
 		slipAddForm: {
-			order_type: '0',
-			supplier_id: '1',
-			supplier_name: '山东信誉添城物资有限公司',
-			TransVehicleInfo: '鲁A12345',
-			TransDriverPhone: '18812345678',
-			warehouse_id: '04',
-			warehouse_name: '聊城库',
-			Trans_type: '0',
-			Trans_fee: '998',
-			pay_type: '0',
-			jiage: '999',
-			caigoukehu_code: '0010163',
-			caigoukehu_name: '陕西五岳工贸有限公司',
-			reason: '123123123123212',
+			order_type: '',
+			supplier_id: '',
+			supplier_name: '',
+			TransVehicleInfo: '',
+			TransDriverPhone: '',
+			TransDriverName: '',
+			warehouse_id: '',
+			warehouse_name: '',
+			Trans_type: '',
+			Trans_fee: '',
+			pay_type: '',
+			Customer_code: '',
+			Customer_name: '',
+			reason: '',
+			// order_type: '0',
+			// supplier_id: '1',
+			// supplier_name: '山东信誉添城物资有限公司',
+			// TransVehicleInfo: '鲁A12345',
+			// TransDriverPhone: '18812345678',
+			// TransDriverName: '司机姓名',
+			// warehouse_id: '04',
+			// warehouse_name: '聊城库',
+			// Trans_type: '0',
+			// Trans_fee: '998',
+			// pay_type: '0',
+			// Customer_code: '0010163',
+			// Customer_name: '陕西五岳工贸有限公司',
+			// reason: '123123123123212',
 		},
 		productIndex: 0,
 		products: [{
-			inventory_max: '1.9480',
-			inventory_code: '0303001',
-			inventory_name: '祛筋焊管Q195A',
-			outer_diameter: '1',
-			wall_thickness: '2',
-			length: '3',
-			Quantity: '4',
-			Quantity2: '5',
-			OrigTaxPrice: '6',
-		}, {
-			inventory_max: '6.4340',
-			inventory_code: '02011563',
-			inventory_name: '焊管Q235B',
-			outer_diameter: '11',
-			wall_thickness: '22',
-			length: '33',
-			Quantity: '44',
-			Quantity2: '55',
-			OrigTaxPrice: '66',
+			inventory_max: '',
+			inventory_code: '',
+			inventory_name: '',
+			outer_diameter: '',
+			wall_thickness: '',
+			length: '',
+			Quantity: '',
+			Quantity2: '',
+			OrigTaxPrice: '',
 		}]
+		// {
+		// 	inventory_max: '1.9480',
+		// 	inventory_code: '0303001',
+		// 	inventory_name: '祛筋焊管Q195A',
+		// 	outer_diameter: '1',
+		// 	wall_thickness: '2',
+		// 	length: '3',
+		// 	Quantity: '1',
+		// 	Quantity2: '5',
+		// 	OrigTaxPrice: '6',
+		// }, {
+		// 	inventory_max: '6.4340',
+		// 	inventory_code: '02011563',
+		// 	inventory_name: '焊管Q235B',
+		// 	outer_diameter: '11',
+		// 	wall_thickness: '22',
+		// 	length: '33',
+		// 	Quantity: '1',
+		// 	Quantity2: '55',
+		// 	OrigTaxPrice: '66',
+		// }
+
 	},
 
 	onLoad: function () {
@@ -114,6 +141,13 @@ Page({
 	wuliudianhuaInput: function (e) {
 		this.setData({
 			'slipAddForm.TransDriverPhone': e.detail.value
+		})
+	},
+
+	// 司机名称
+	sijimingchengInput: function (e) {
+		this.setData({
+			'slipAddForm.TransDriverName': e.detail.value
 		})
 	},
 
@@ -191,7 +225,15 @@ Page({
 	// 数量
 	shuliangInput: function (e) {
 		const index = e.currentTarget.dataset.index
-		this.data.products[index].Quantity = e.detail.value
+		if (Number(e.detail.value) > Number(this.data.products[index].inventory_max)) {
+			this.data.products[index].Quantity = ''
+			wx.showToast({
+				title: '您输入的数量大于库存数量，请重新输入',
+				icon: 'none'
+			});
+		} else {
+			this.data.products[index].Quantity = e.detail.value
+		}
 		this.setData({
 			products: this.data.products
 		})
@@ -279,20 +321,6 @@ Page({
 		})
 	},
 
-	// 价格
-	jiageInput: function (e) {
-		this.setData({
-			'slipAddForm.jiage': e.detail.value
-		})
-	},
-
-	// // 采购客户
-	// caigoukehuInput: function (e) {
-	// 	this.setData({
-	// 		'slipAddForm.caigoukehu': e.detail.value
-	// 	})
-	// },
-
 	// 采购客户 - 弹出
 	caigoukehuShowFunction: function (e) {
 		this.setData({
@@ -304,8 +332,8 @@ Page({
 	caigoukehuConfirmFunction: function (e) {
 		console.log('弹框确认', e.detail.value);
 		this.setData({
-			'slipAddForm.caigoukehu_code': e.detail.value.value,
-			'slipAddForm.caigoukehu_name': e.detail.value.text
+			'slipAddForm.Customer_code': e.detail.value.value,
+			'slipAddForm.Customer_name': e.detail.value.text
 		})
 	},
 
@@ -343,18 +371,33 @@ Page({
 			title: '加载中',
 		})
 		this.data.slipAddForm.products = this.data.products
-		esRequest('postSaleOrderDetails', this.data.slipAddForm).then(res => {
-			console.log(res);
-			// wx.showToast({
-			// 	title: '操作成功',
-			// 	icon: 'none'
-			// })
-			// wx.hideLoading()
-			// setTimeout(() => {
-			// 	wx.navigateBack({
-			// 		delta: 1
-			// 	})
-			// }, 500)
-		})
+		wx.request({
+			url: baseURL.baseURL + '/postSaleOrderDetails',
+			method: 'POST',
+			data: JSON.stringify(this.data.slipAddForm),
+			header: {
+				Authorization: `Bearer ${wx.getStorageSync('token')}`,
+				'Content-Type': 'application/json'
+			},
+			success: function (res) {
+				console.log(res.data);
+			},
+			fail: function (err) {
+				console.error('请求失败：', err);
+			}
+		});
+		// esRequest('postSaleOrderDetails', JSON.stringify(this.data.slipAddForm)).then(res => {
+		// 	console.log(res);
+		// 	// wx.showToast({
+		// 	// 	title: '操作成功',
+		// 	// 	icon: 'none'
+		// 	// })
+		// 	// wx.hideLoading()
+		// 	// setTimeout(() => {
+		// 	// 	wx.navigateBack({
+		// 	// 		delta: 1
+		// 	// 	})
+		// 	// }, 500)
+		// })
 	},
 })

@@ -5,7 +5,7 @@
 <!-- 产品库存 -->
 <component-kucunPicker id="kucunPicker" pickerShow="{{ inventoryShow }}" defaultValue="{{ slipAddForm.inventory_name }}" bind:confirmItem="inventoryConfirmFunction" />
 <!-- 采购客户 -->
-<component-fuzzyPicker id="fuzzyPicker" pickerShow="{{ caigoukehuShow }}" defaultValue="{{ slipAddForm.caigoukehu_name }}" bind:confirmItem="caigoukehuConfirmFunction" />
+<component-fuzzyPicker id="fuzzyPicker" pickerShow="{{ caigoukehuShow }}" defaultValue="{{ slipAddForm.Customer_name }}" bind:confirmItem="caigoukehuConfirmFunction" />
 
 
 <view class="slipAddPage">
@@ -42,7 +42,11 @@
 		</view>
 		<view class="slipAddItem frbc">
 			<view class="itemTitle">物流电话：</view>
-			<input value="{{ slipAddForm.TransDriverPhone }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="wuliudianhuaInput" />
+			<input type="number" value="{{ slipAddForm.TransDriverPhone }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="wuliudianhuaInput" />
+		</view>
+		<view class="slipAddItem frbc">
+			<view class="itemTitle">司机名称：</view>
+			<input value="{{ slipAddForm.TransDriverName }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="sijimingchengInput" />
 		</view>
 		<view class="slipAddItem frbc">
 			<view class="itemTitle">仓库：</view>
@@ -69,7 +73,7 @@
 		<view class="slipAddItem frbc" style="border: 0;">
 			<view class="itemTitle">运费：</view>
 			<view class="frcc">
-				<input value="{{ slipAddForm.Trans_fee }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="yunfeiInput" />
+				<input type="number" value="{{ slipAddForm.Trans_fee }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="yunfeiInput" />
 				<view class="inputText">元/吨</view>
 			</view>
 		</view>
@@ -97,21 +101,21 @@
 		<view class="slipAddItem frbc">
 			<view class="itemTitle">数量：</view>
 			<view class="frcc">
-				<input value="{{ item.Quantity }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="shuliangInput" data-index="{{ index }}" />
+				<input type="number" value="{{ item.Quantity }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="shuliangInput" data-index="{{ index }}" />
 				<view class="inputText">吨</view>
 			</view>
 		</view>
 		<view class="slipAddItem frbc" style="border: 0;">
 			<view class="itemTitle">支数：</view>
 			<view class="frcc">
-				<input value="{{ item.Quantity2 }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="zhishuInput" data-index="{{ index }}" />
+				<input type="number" value="{{ item.Quantity2 }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="zhishuInput" data-index="{{ index }}" />
 				<view class="inputText">支</view>
 			</view>
 		</view>
 		<view class="slipAddItem frbc" style="border: 0;">
 			<view class="itemTitle">税前价格：</view>
 			<view class="frcc">
-				<input value="{{ item.OrigTaxPrice }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="OrigTaxPriceInput" data-index="{{ index }}" />
+				<input type="number" value="{{ item.OrigTaxPrice }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="OrigTaxPriceInput" data-index="{{ index }}" />
 				<view class="inputText">元</view>
 			</view>
 		</view>
@@ -138,17 +142,10 @@
 			</view>
 		</view>
 		<view class="slipAddItem frbc">
-			<view class="itemTitle">价格：</view>
-			<view class="frcc">
-				<input value="{{ slipAddForm.jiage }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="jiageInput" />
-				<view class="inputText">元</view>
-			</view>
-		</view>
-		<view class="slipAddItem frbc">
 			<view class="itemTitle">采购客户：</view>
 			<view class="frcc">
 				<!-- bind:input="caigoukehuInput" -->
-				<input value="{{ slipAddForm.caigoukehu_name }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请选择采购客户" disabled bind:tap="caigoukehuShowFunction" />
+				<input value="{{ slipAddForm.Customer_name }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请选择采购客户" disabled bind:tap="caigoukehuShowFunction" />
 				<image src="/images/salesModule/xiajiantou.png" mode="aspectFill" style="width: 30rpx; height: 30rpx;" />
 			</view>
 		</view>
