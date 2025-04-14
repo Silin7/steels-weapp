@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/salesModule/slipAdd/slipAdd",
     "pages/homeModule/homePage",
     "pages/loginModule/loginPage",
     "pages/mineModule/minePage/minePage",
@@ -11,6 +10,7 @@
     "pages/inventoryModule/inventorySearch/inventorySearch",
     "pages/inventoryModule/inventoryResult/inventoryResult",
     "pages/salesModule/slipList/slipList",
+    "pages/salesModule/slipAdd/slipAdd",
     "pages/salesModule/slipDetail/slipDetail"
   ],
   "tabBar": {

@@ -345,7 +345,7 @@ Page({
 	},
 
 	// 确定提交
-	quedingtijiao: function () {
+	quedingtijiao: async function () {
 		let _this = this
 		if (!this.data.slipAddForm.order_type) {
 			wx.showToast({
@@ -417,6 +417,30 @@ Page({
 			});
 			return
 		}
+		var isNext = true
+		this.data.slipAddForm.products = this.data.products
+		if (this.data.slipAddForm.products.length === 0) {
+			wx.showToast({
+				title: '请添加产品',
+				icon: 'none'
+			});
+			return
+		} else {
+			await this.data.slipAddForm.products.forEach(item => {
+				for (let key in item) {
+					if (item[key] === '') {
+						isNext = false
+					}
+				}
+			})
+		}
+		if (!isNext) {
+			wx.showToast({
+				title: '请完善产品信息',
+				icon: 'none'
+			});
+			return
+		}
 		wx.showModal({
 			title: '提交',
 			content: '确定要提交保存数据吗？',
@@ -433,7 +457,6 @@ Page({
 		wx.showLoading({
 			title: '加载中',
 		})
-		this.data.slipAddForm.products = this.data.products
 		wx.request({
 			url: baseURL.baseURL + '/postSaleOrderDetails',
 			method: 'POST',
@@ -443,24 +466,19 @@ Page({
 				'Content-Type': 'application/json'
 			},
 			success: function (res) {
-				console.log(res.data);
+				wx.showToast({
+					title: '操作成功',
+					icon: 'none'
+				})
+				wx.hideLoading()
 			},
 			fail: function (err) {
-				console.error('请求失败：', err);
+				wx.showToast({
+					title: '保存失败' + JSON.stringify(err),
+					icon: 'none'
+				})
+				wx.hideLoading()
 			}
 		});
-		// esRequest('postSaleOrderDetails', JSON.stringify(this.data.slipAddForm)).then(res => {
-		// 	console.log(res);
-		// 	// wx.showToast({
-		// 	// 	title: '操作成功',
-		// 	// 	icon: 'none'
-		// 	// })
-		// 	// wx.hideLoading()
-		// 	// setTimeout(() => {
-		// 	// 	wx.navigateBack({
-		// 	// 		delta: 1
-		// 	// 	})
-		// 	// }, 500)
-		// })
 	},
 })

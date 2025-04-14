@@ -65,7 +65,7 @@
 					</label>
 					<label class="radio">
 						<radio color="#2F54EB" value="1" style="margin-left: 20rpx; transform: scale(0.65);" />
-						<text class="radiotext" style="{{ slipAddForm.Trans_type === '1' ? 'color: #2F54EB;' : '' }}">承担运费（货款含运费）</text>
+						<text class="radiotext" style="{{ slipAddForm.Trans_type === '1' ? 'color: #2F54EB;' : '' }}">承担运费(货款含运费)</text>
 					</label>
 				</radio-group>
 			</view>

@@ -8,7 +8,7 @@
   <view class="slipListPage">
     <view wx:for="{{ slipData }}" wx:key="index" class="slipItem" bind:tap="goSlipDetail" data-item="{{ item }}">
       <view class="frbc" style="padding-bottom: 20rpx;">
-        <view class="dingdanhao">订单号：{{ item.voucherCode }}</view>
+        <view class="dingdanhao">订单号：{{ item.ExternalCode }}</view>
 				<!-- 对是这个，订单状态现在没有你默认一个待发货就可以 -->
         <view class="dingdanzhuangtai">待发货</view>
       </view>
@@ -23,15 +23,15 @@
         </view>
         <view class="frsc">
           <view class="centeritemz">品名：</view>
-          <view class="centeritemy">{{ item.OrderDetails[0].name }}</view>
+          <view class="centeritemy">{{ item.product_name }}</view>
         </view>
         <view class="frsc">
           <view class="centeritemz">规格：</view>
-          <view class="centeritemy">{{ item.OrderDetails[0].Specification }}</view>
+          <view class="centeritemy">{{ item.product_specification }}</view>
         </view>
         <view class="frsc">
           <view class="centeritemz">数量：</view>
-          <view class="centeritemy">{{ item.OrderDetails[0].Quantity }}</view>
+          <view class="centeritemy">{{ item.product_composition_quantity }}</view>
         </view>
       </view>
       <view class="frbc">
