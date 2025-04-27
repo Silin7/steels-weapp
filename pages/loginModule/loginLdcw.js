@@ -163,10 +163,10 @@ Page({
 		}).then(res => {
 			if (res && res.data.status) {
 				wx.setStorageSync('registered', true)
-				wx.setStorageSync('token', res.data.token)
-				if (res.data.profile) {
-					wx.setStorageSync('profile', res.data.profile)
-					wx.setStorageSync('open_id', res.data.profile.open_id)
+				wx.setStorageSync('token', res.data.data.token)
+				if (res.data.data.profile) {
+					wx.setStorageSync('profile', res.data.data.profile)
+					wx.setStorageSync('open_id', res.data.data.profile.open_id)
 				}
 				wx.hideLoading()
 				wx.showToast({
