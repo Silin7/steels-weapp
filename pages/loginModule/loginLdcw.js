@@ -89,7 +89,6 @@ Page({
 		wx.showActionSheet({
 			itemList: ['财务', '管理员'],
 			success(res) {
-				console.log(res.tapIndex);
 				if (res.tapIndex === 0) {
 					_this.setData({
 						role_id: '2',
@@ -162,27 +161,29 @@ Page({
 			phone: this.data.userPhone,
 			role_id: this.data.role_id,
 		}).then(res => {
-			wx.setStorageSync('registered', true)
-			wx.setStorageSync('token', res.data.token)
-			if (res.data.profile) {
-				wx.setStorageSync('profile', res.data.profile)
-				wx.setStorageSync('open_id', res.data.profile.open_id)
-			}
-			wx.hideLoading()
-			wx.showToast({
-				title: '登录成功'
-			})
-			setTimeout(() => {
-				wx.switchTab({
-					url: '/pages/homeModule/homePage',
+			if (res && res.data.status) {
+				wx.setStorageSync('registered', true)
+				wx.setStorageSync('token', res.data.token)
+				if (res.data.profile) {
+					wx.setStorageSync('profile', res.data.profile)
+					wx.setStorageSync('open_id', res.data.profile.open_id)
+				}
+				wx.hideLoading()
+				wx.showToast({
+					title: '登录成功'
 				})
-			}, 200)
-		}).catch((err) => {
-			wx.hideLoading()
-			wx.showToast({
-				title: err.message,
-				icon: 'none'
-			})
+				setTimeout(() => {
+					wx.switchTab({
+						url: '/pages/homeModule/homePage',
+					})
+				}, 200)
+			} else {
+				wx.hideLoading()
+				wx.showToast({
+					title: res.data.message,
+					icon: 'none'
+				})
+			}
 		})
 	},
 })
