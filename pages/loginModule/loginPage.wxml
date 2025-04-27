@@ -22,7 +22,7 @@
     </view>
     <view wx:if="{{ codeFlag === false }}" class="mt20 frsc">
       <image src="/images/loginModule/cgsi.png" mode="" style="width: 30rpx; height: 30rpx;" />
-      <view class="cgsiText ml6">该手机号在我公司没有备份，请试试其他的</view>
+      <view class="cgsiText ml6">{{ codeMessage }}</view>
     </view>
     <view class="submitClass frcc" bind:tap="submitFunction">提交</view>
   </view>

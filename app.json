@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/homeModule/homePage",
+    "pages/loginModule/loginLdcw",
     "pages/loginModule/loginPage",
     "pages/mineModule/minePage/minePage",
     "pages/mineModule/userInfo/userInfo",

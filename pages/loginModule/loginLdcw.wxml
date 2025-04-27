@@ -1,0 +1,31 @@
+<view class="purchaseLogin">
+  <view class="topBox frbc">
+    <view>
+      <view class="hyzcText">欢迎注册</view>
+      <view class="tipsText">登录后更精彩</view>
+    </view>
+    <image src="https://huayueit-02.oss-cn-hangzhou.aliyuncs.com/rongcheng/logincgs.png" mode="" style="width: 380rpx; height: 275rpx;" />
+  </view>
+  <!-- 登录卡片 -->
+  <view class="cardBox">
+    <view class="labelText">手机号</view>
+    <input value="{{ userPhone }}" class="inputClass" placeholder-class="placeholderClass" placeholder="请输入" bind:input="userPhoneInput" />
+    <view class="labelText">手机号验证</view>
+    <view style="position: relative;">
+      <input value="{{ verificationCode2 }}" class="inputClass" placeholder-class="placeholderClass" placeholder="请输入" bind:input="verificationInput" />
+      <view wx:if="{{ countdown < 60 && countdown > 0 }}" class="getCodeClass">获取验证码 ({{ countdown }})</view>
+      <view wx:else class="getCodeClass" bind:tap="getcompanyphonecodeFunction">获取验证码</view>
+    </view>
+    <view class="labelText">角色</view>
+    <input value="{{ role_name }}" class="inputClass" placeholder-class="placeholderClass" placeholder="请选择" disabled bind:tap="roleTap" />
+    <view wx:if="{{ codeFlag === true }}" class="frsc" style="margin-top: 40rpx;">
+      <image src="/images/loginModule/cgsd.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      <view class="cgsdText ml6">{{ companyName }}</view>
+    </view>
+    <view wx:if="{{ codeFlag === false }}" class="mt20 frsc">
+      <image src="/images/loginModule/cgsi.png" mode="" style="width: 30rpx; height: 30rpx;" />
+      <view class="cgsiText ml6">{{ codeMessage }}</view>
+    </view>
+    <view class="submitClass frcc" bind:tap="submitFunction">提交</view>
+  </view>
+</view>

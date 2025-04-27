@@ -14,6 +14,11 @@ let systemRequest = {
     apiName: '/clerkregister',
     name: '业务人员注册'
 	},
+	directorregister: {
+    apiMethod: 'POST',
+    apiName: '/directorregister',
+    name: '财务and管理员人员注册'
+	},
 }
 
 module.exports = systemRequest
