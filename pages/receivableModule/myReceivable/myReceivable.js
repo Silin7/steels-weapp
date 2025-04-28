@@ -45,7 +45,7 @@ Page({
     this.getDataList()
   },
 
-  // 公告列表
+  // 应收列表
   getDataList: function () {
     wx.showLoading({
       title: '加载中',

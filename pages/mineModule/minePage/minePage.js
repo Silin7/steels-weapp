@@ -53,6 +53,13 @@ Page({
 			url: '/pages/receivableModule/myReceivable/myReceivable',
 		})
 	},
+
+	// 页面跳转 - 审核
+	goExamineList: function () {
+		wx.navigateTo({
+			url: '/pages/examineModule/examineList/examineList',
+		})
+	},
 	
 	// 页面跳转 - 用户资料
 	goUserInfo: function () {

@@ -1,0 +1,62 @@
+<view class="slipDetail">
+  <view class="frbc" style="padding-bottom: 40rpx;">
+    <view class="dingdanhao">订单号：{{ dataForm.ExternalCode }}</view>
+    <!-- <view class="dingdanzhuangtai">待发货</view> -->
+  </view>
+  <view>
+    <view class="frsc">
+      <view class="centeritemz">单据类型：</view>
+      <view class="centeritemy">{{ dataForm.ordertypename }}</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">车号：</view>
+      <view class="centeritemy">{{ dataForm.TransVehicleInfo }}</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">物流电话：</view>
+      <view class="frcc">
+        <view class="centeritemy">{{ dataForm.TransDriverPhone }}</view>
+        <image src="/images/salesModule/phone.png" mode="" style="margin-left: 10rpx; width: 32rpx; height: 32rpx;"/>
+      </view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">品名：</view>
+      <view class="centeritemy">{{ dataForm.product_name }}</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">规格：</view>
+      <view class="centeritemy">{{ dataForm.product_specification }}</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">数量：</view>
+      <view class="centeritemy">{{ dataForm.product_composition_quantity }}</view>
+    </view>
+  </view>
+  <view class="fengexian"></view>
+  <view>
+    <view class="frsc">
+      <view class="centeritemz">付款方式：</view>
+      <view class="centeritemy">全款</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">下单时间：</view>
+      <view class="centeritemy">2025-03-01 13:01</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">发货时间：</view>
+      <view class="centeritemy">2025-03-01 18:21</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">业务经理：</view>
+      <view class="centeritemy">张XX</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">仓库：</view>
+      <view class="centeritemy">莘县二库</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">客户名称：</view>
+      <view class="centeritemy">XXXXX公司</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,48 @@
+<van-tabs active="{{ sliptype }}" color="#2D56EB" bind:change="tabChange">
+  <van-tab title="全部" name='99'></van-tab>
+  <van-tab title="未上传" name='0'></van-tab>
+  <van-tab title="已上传" name='1'></van-tab>
+</van-tabs>
+<scroll-view scroll-y="{{ true }}" refresher-enabled="{{ true }}" refresher-triggered="{{ triggered }}" bindrefresherrefresh="permessagerePull" bindscrolltolower="onScrollBottom" style="height: calc(100vh - 88rpx);">
+  <view class="slipListPage">
+    <view wx:for="{{ slipData }}" wx:key="index" class="slipItem" bind:tap="goSlipDetail" data-item="{{ item }}">
+      <view class="frbc" style="padding-bottom: 20rpx;">
+        <view class="dingdanhao">订单号：{{ item.ExternalCode }}</view>
+				<!-- 对是这个，订单状态现在没有你默认一个待发货就可以 -->
+        <!-- <view class="dingdanzhuangtai">待发货</view> -->
+      </view>
+      <view class="centerbox">
+        <view class="frsc">
+          <view class="centeritemz">车号：</view>
+          <view class="centeritemy">{{ item.TransVehicleInfo }}</view>
+        </view>
+        <view class="frsc">
+          <view class="centeritemz">物流电话：</view>
+          <view class="centeritemy">{{ item.TransDriverPhone }}</view>
+        </view>
+        <view class="frsc">
+          <view class="centeritemz">品名：</view>
+          <view class="centeritemy">{{ item.product_name }}</view>
+        </view>
+        <view class="frsc">
+          <view class="centeritemz">规格：</view>
+          <view class="centeritemy">{{ item.product_specification }}</view>
+        </view>
+        <view class="frsc">
+          <view class="centeritemz">数量：</view>
+          <view class="centeritemy">{{ item.product_composition_quantity }}</view>
+        </view>
+      </view>
+      <view class="frbc">
+        <view>
+          <view class="xiadanshijian">下单时间：</view>
+          <view class="xiadanshijian">{{ item.created_at }}</view>
+        </view>
+        <view class="danleixing">审核</view>
+      </view>
+    </view>
+    <view wx:if="{{ slipData.length === 0 }}" class="nodataBox">
+      <image src="/images/systemModule/zwsj.png" mode="aspectFill" />
+    </view>
+  </view>
+</scroll-view>

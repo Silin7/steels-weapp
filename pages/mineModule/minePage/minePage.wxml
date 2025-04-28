@@ -16,15 +16,15 @@
 	<view class="wdxsdBox">
 		<view class="wdxsdTitle">我的销售单</view>
 		<view class="frbc">
-			<view class="wdxsdItem fccc" bind:tap="goSlipList" data-type="2">
+			<view class="wdxsdItem fccc" bind:tap="goSlipList" data-type="99">
 				<image src="/images/mineModule/daishenhe.png" mode="" class="wdxsdImage" />
+				<view class="wdxsdItemText">全部</view>
+			</view>
+			<view class="wdxsdItem fccc" bind:tap="goSlipList" data-type="0">
+				<image src="/images/mineModule/daifahuo.png" mode="" class="wdxsdImage" />
 				<view class="wdxsdItemText">待审核</view>
 			</view>
-			<view class="wdxsdItem fccc" bind:tap="goSlipList" data-type="3">
-				<image src="/images/mineModule/daifahuo.png" mode="" class="wdxsdImage" />
-				<view class="wdxsdItemText">待发货</view>
-			</view>
-			<view class="wdxsdItem fccc" bind:tap="goSlipList" data-type="4">
+			<view class="wdxsdItem fccc" bind:tap="goSlipList" data-type="1">
 				<image src="/images/mineModule/yifahuo.png" mode="" class="wdxsdImage" />
 				<view class="wdxsdItemText">已发货</view>
 			</view>
@@ -36,7 +36,16 @@
 		<view class="cardItem frbc" bind:tap="goMyReceivable">
 			<view class="frcc">
 				<image src="/images/mineModule/wdys.png" mode="" style="width: 32rpx; height: 32rpx;" />
-				<view class="titleText">我的应收</view>
+				<view class="titleText">应收订单</view>
+			</view>
+			<view class="frcc">
+				<image src="/images/mineModule/youjiantou.png" mode="" style="width: 30rpx; height: 30rpx;" />
+			</view>
+		</view>
+		<view class="cardItem frbc" bind:tap="goExamineList">
+			<view class="frcc">
+				<image src="/images/mineModule/wdys.png" mode="" style="width: 32rpx; height: 32rpx;" />
+				<view class="titleText">审核订单</view>
 			</view>
 			<view class="frcc">
 				<image src="/images/mineModule/youjiantou.png" mode="" style="width: 30rpx; height: 30rpx;" />

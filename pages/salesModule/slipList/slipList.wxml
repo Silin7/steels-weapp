@@ -1,8 +1,7 @@
 <van-tabs active="{{ sliptype }}" color="#2D56EB" bind:change="tabChange">
-  <van-tab title="全部" name='1'></van-tab>
-  <van-tab title="待审核" name='2'></van-tab>
-  <van-tab title="待发货" name='3'></van-tab>
-  <van-tab title="已发货" name='4'></van-tab>
+  <van-tab title="全部" name='99'></van-tab>
+  <van-tab title="待审核" name='0'></van-tab>
+  <van-tab title="已发货" name='1'></van-tab>
 </van-tabs>
 <scroll-view scroll-y="{{ true }}" refresher-enabled="{{ true }}" refresher-triggered="{{ triggered }}" bindrefresherrefresh="permessagerePull" bindscrolltolower="onScrollBottom" style="height: calc(100vh - 88rpx);">
   <view class="slipListPage">

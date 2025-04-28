@@ -7,7 +7,7 @@ Page({
 	data: {
 		baseURL,
 		triggered: true,
-		sliptype: 1,
+		sliptype: 99,
 		reachTimer: null,
 		total: 0,
 		currentPage: 1,
@@ -48,13 +48,14 @@ Page({
 		this.getDataList()
 	},
 
-  // 公告列表
+  // 销售单列表
   getDataList: function () {
     wx.showLoading({
       title: '加载中',
     })
     esRequest('myvouchers', {
-      page: this.data.currentPage,
+			page: this.data.currentPage,
+			status: this.data.sliptype,
     }).then(async res => {
       if (res && res.data.status) {
 				await res.data.data.data.forEach(item => {
