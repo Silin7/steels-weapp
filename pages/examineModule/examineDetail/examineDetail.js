@@ -19,7 +19,18 @@ Page({
 				this.setData({
 					dataForm: res.data.data.data
 				})
+				console.log(this.data.dataForm);
 			}
+		})
+	},
+	
+
+	// 税前价格
+	OrigTaxPriceInput: function (e) {
+		const index = e.currentTarget.dataset.index
+		this.data.dataForm.OrderDetails[index].OrigTaxPrice = e.detail.value
+		this.setData({
+			dataForm: this.data.dataForm
 		})
 	},
 
