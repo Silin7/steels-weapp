@@ -81,7 +81,7 @@
 	<view></view>
 	
 	<view class="saveBtnBox frbc">
-		<view class="saveBtn frcc" bind:tap="">确定提交</view>
-		<view class="saveBtn2 frcc" bind:tap="">改价提交</view>
+		<view class="saveBtn frcc" bind:tap="csvUploaddataFunction">确定提交</view>
+		<view class="saveBtn2 frcc" bind:tap="csvSaveNewPricesFunction">改价提交</view>
 	</view>
 </view>

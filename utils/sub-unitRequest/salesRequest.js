@@ -3,7 +3,7 @@ let salesRequest = {
     apiMethod: 'POST',
     apiName: '/customers',
     name: '获取采购客户资料'
-	},
+  },
   allcompany: {
     apiMethod: 'GET',
     apiName: '/allcompany',
@@ -18,12 +18,22 @@ let salesRequest = {
     apiMethod: 'POST',
     apiName: '/getSaleOrderByVoucherCode/1',
     name: '获取T+上的销售订单详细'
-	},
+  },
   postSaleOrderDetails: {
     apiMethod: 'POST',
     apiName: '/postSaleOrderDetails',
     name: '提交销售订单'
-	},
+  },
+  csvUploaddata: {
+    apiMethod: 'POST',
+    apiName: '/checkSaveVoucher/uploaddata',
+    name: '上传销售订单'
+  },
+  csvSaveNewPrices: {
+    apiMethod: 'POST',
+    apiName: '/checkSaveVoucher/saveNewPrices',
+    name: '改价同时上传销售订单'
+  },
 }
 
 module.exports = salesRequest

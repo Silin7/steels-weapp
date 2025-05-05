@@ -15,6 +15,9 @@ export default (localObjects, parametersData, parameters) => {
     var requestURL = baseURL.baseURL + globalObjects[localObjects].apiName
   }
   return new Promise((resolve, reject) => {
+    wx.showLoading({
+      title: '加载中',
+    })
     wx.request({
       method: apiMethod,
       url: requestURL,
@@ -28,6 +31,9 @@ export default (localObjects, parametersData, parameters) => {
       fail(err) {
         console.warn('fail' + JSON.stringify(err))
         reject(err)
+      },
+      complete() {
+        wx.hideLoading()
       }
     })
   })
