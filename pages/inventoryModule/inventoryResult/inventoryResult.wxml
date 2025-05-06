@@ -1,4 +1,4 @@
-<view style="padding: 20rpx;">
+<view style="padding: 0 20rpx;">
 	<view class="tableHeader frbc">
 		<view class="headerItem">仓库</view>
 		<view class="headerItem">存货</view>

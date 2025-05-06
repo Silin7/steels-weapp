@@ -5,7 +5,7 @@
       <block wx:for="{{ swiperList }}" wx:key="index">
         <swiper-item>
           <view class="bannerContent">
-            <view class="bannerTextBox">
+            <!-- <view class="bannerTextBox">
               <view class="bannerTextBoxSub1">
                 <image src="/images/homeModule/guoweigangtie.png" mode="" style="width: 80rpx; height: 80rpx;" />
                 <view class="bannerTextBoxSub1Text">国为钢铁</view>
@@ -13,10 +13,8 @@
               <view style="margin-top: 40rpx;">
                 <view class="bannerTextBoxSub2">{{ item.name }}</view>
                 <view class="bannerTextBoxSub2">{{ item.introduce }}</view>
-                <!-- <view class="bannerTextBoxSub2">诚信为本 铸就品牌</view>
-                <view class="bannerTextBoxSub2">优质服务 赢得市场</view> -->
               </view> 
-            </view>
+            </view> -->
             <image src="{{ item.theimg }}" mode="" class="bannerImage" />
           </view>
         </swiper-item>

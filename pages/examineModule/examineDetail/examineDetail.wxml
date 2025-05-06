@@ -4,21 +4,29 @@
     <!-- <view class="dingdanzhuangtai">待发货</view> -->
   </view>
   <view>
-    <view class="frsc">
+    <!-- <view class="frsc">
       <view class="centeritemz">ID：</view>
       <view class="centeritemy">{{ dataForm.id }}</view>
-    </view>
+    </view> -->
     <view class="frsc">
       <view class="centeritemz">业务经理：</view>
-      <view class="centeritemy">{{ dataForm.clerk }}</view>
+      <view class="centeritemy">{{ dataForm.clerk.name }}</view>
     </view>
     <view class="frsc">
       <view class="centeritemz">销售公司：</view>
-      <view class="centeritemy">{{ dataForm.supplier }}</view>
+      <view class="centeritemy">{{ dataForm.supplier_name }}</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">供货方式：</view>
+      <view class="centeritemy">{{ dataForm.supply_name }}</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">预付定金：</view>
+      <view class="centeritemy">{{ dataForm.deposit }}</view>
     </view>
     <view class="frsc">
       <view class="centeritemz">仓库：</view>
-      <view class="centeritemy">{{ dataForm.warehouse }}</view>
+      <view class="centeritemy">{{ dataForm.warehouse_name }}</view>
     </view>
     <view class="frsc">
       <view class="centeritemz">订单类型：</view>
