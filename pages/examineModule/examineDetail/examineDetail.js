@@ -50,11 +50,11 @@ Page({
         wx.showToast({
           title: '操作成功',
         })
-        // setTimeout(() => {
-        //   wx.navigateBack({
-        //     delta: 1
-        //   })
-        // }, 1000)
+        setTimeout(() => {
+          wx.navigateBack({
+            delta: 1
+          })
+        }, 1000)
       } else {
         wx.showToast({
           title: res.data.message,
@@ -63,6 +63,34 @@ Page({
         })
       }
     })
-  }
+	},
+	
+	csvSaveNewPricesFunction: function () {
+		const newPrices = []
+		for (let i = 0; i < this.data.dataForm.OrderDetails.length; i++) {
+			newPrices.push(Number(this.data.dataForm.OrderDetails[i].OrigTaxPrice))
+		}
+    esRequest('csvSaveNewPrices', {
+			orderId: this.data.voucherId,
+			newPrices,
+    }).then(res => {
+      if (res && res.data.status) {
+        wx.showToast({
+          title: '操作成功',
+        })
+        setTimeout(() => {
+          wx.navigateBack({
+            delta: 1
+          })
+        }, 1000)
+      } else {
+        wx.showToast({
+          title: res.data.message,
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    })
+	},
 
 })
