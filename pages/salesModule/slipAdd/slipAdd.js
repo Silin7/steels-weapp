@@ -5,6 +5,8 @@ Page({
 	data: {
 		allcompanyShow: false,
 		allcompanyList: [],
+		supplyShow: false,
+		supplyList: [],
 		cangkuShow: false,
 		cangkuList: [],
 		inventoryShow: false,
@@ -13,6 +15,9 @@ Page({
 			order_type: '',
 			supplier_id: '',
 			supplier_name: '',
+			supply_type: '',
+			supply_name: '',
+			deposit: '',
 			TransVehicleInfo: '',
 			TransDriverPhone: '',
 			TransDriverName: '',
@@ -128,6 +133,36 @@ Page({
 			'slipAddForm.supplier_id': e.detail.value.id,
 			'slipAddForm.supplier_name': e.detail.value.name,
 		})
+	},
+
+	// 供货方式 - 弹出
+	supplyShowFunction: function () {
+		this.setData({
+			supplyShow: true
+		})
+	},
+
+	// 供货方式 - 选中
+	confirmSupply: function (e) {
+		this.setData({
+			'slipAddForm.supply_type': e.detail.value.value,
+			'slipAddForm.supply_name': e.detail.value.text,
+		})
+	},
+
+	// 预付定金
+	depositInput: function (e) {
+		this.setData({
+			'slipAddForm.deposit': e.detail.value
+		})
+	},
+
+	depositTouchmove: function () {
+		if (this.data.slipAddForm.deposit) {
+			this.setData({
+				'slipAddForm.deposit': Number(this.data.slipAddForm.deposit).toFixed(2)
+			})
+		}
 	},
 
 	// 车牌
@@ -268,13 +303,22 @@ Page({
 	getdictionaryList: function () {
 		esRequest('getdictionary').then(async res => {
 			if (res && res.data.status) {
+				const supplyList = []
+				await res.data.data.supply_type.forEach((item, index) => {
+					supplyList.push({
+						"value": index,
+						"text": item
+					})
+				})
 				await res.data.data.cangku.forEach((item) => {
 					item.value = item.code
 					item.text = item.name
 				})
 				this.setData({
+					supplyList: supplyList,
 					cangkuList: res.data.data.cangku,
 				})
+				console.log(this.data.supplyList);
 			} else {
 				wx.showToast({
 					title: res.data.message,
@@ -468,7 +512,7 @@ Page({
 			success: function (res) {
 				wx.showToast({
 					title: '操作成功',
-					icon: 'none'
+					icon: 'sunccess'
 				})
 				wx.hideLoading()
 			},
@@ -478,7 +522,7 @@ Page({
 					icon: 'none'
 				})
 				wx.hideLoading()
-			}
+			},
 		});
 	},
 })

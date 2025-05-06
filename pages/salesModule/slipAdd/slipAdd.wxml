@@ -1,5 +1,7 @@
 <!-- 选择公司 -->
 <component-choosePicker pickerShow="{{ allcompanyShow }}" pickerTitle="选择公司" dataList="{{ allcompanyList }}" bind:confirmItem="confirmAllcompany" />
+<!-- 选择供货方式 -->
+<component-choosePicker pickerShow="{{ supplyShow }}" pickerTitle="选择供货方式" dataList="{{ supplyList }}" bind:confirmItem="confirmSupply" />
 <!-- 选择仓库 -->
 <component-choosePicker pickerShow="{{ cangkuShow }}" pickerTitle="选择仓库" dataList="{{ cangkuList }}" bind:confirmItem="confirmCangku" />
 <!-- 产品库存 -->
@@ -35,6 +37,17 @@
 				<input value="{{ slipAddForm.supplier_name }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请选择公司" disabled bind:tap="allcompanyShowFunction" />
 				<image src="/images/salesModule/xiajiantou.png" mode="aspectFill" style="width: 30rpx; height: 30rpx;" />
 			</view>
+		</view>
+		<view class="slipAddItem frbc">
+			<view class="itemTitle">供货方式：</view>
+			<view class="frcc">
+				<input value="{{ slipAddForm.supply_name }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请选择供货方式" disabled bind:tap="supplyShowFunction" />
+				<image src="/images/salesModule/xiajiantou.png" mode="aspectFill" style="width: 30rpx; height: 30rpx;" />
+			</view>
+		</view>
+		<view class="slipAddItem frbc">
+			<view class="itemTitle">预付定金：</view>
+			<input type="number" value="{{ slipAddForm.deposit }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="depositInput" bind:blur="depositTouchmove" />
 		</view>
 		<view class="slipAddItem frbc">
 			<view class="itemTitle">车牌：</view>
