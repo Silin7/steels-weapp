@@ -44,3 +44,19 @@ App({
     })
   }
 })
+
+! function () {
+  var PageTmp = Page;
+  Page = function (pageConfig) {
+    pageConfig = Object.assign({
+      onShareAppMessage: function () {
+        return {
+          title: '国为钢铁',
+          path: 'pages/homeModule/homePage',
+          imageUrl: '',
+        };
+      }
+    }, pageConfig);
+    PageTmp(pageConfig);
+  };
+}();
