@@ -9,11 +9,15 @@ Component({
 		defaultValue: {
 			type: String,
 			value: '',
+		},
+		companycode: {
+			type: String,
+			value: '',
 		}
 	},
 
 	data: {
-		companycode: '',
+		// companycode: '',
 		customername: '',
 		reachTimer: null,
 		customerList: [],
@@ -32,8 +36,6 @@ Component({
 	methods: {
 		getDataList: function () {
 			esRequest('customers', {
-				// companycode: '04',
-				// customername: '陕西'
 				companycode: this.data.companycode,
 				customername: this.data.customername,
 			}).then(async res => {
@@ -49,12 +51,12 @@ Component({
 			})
 		},
 
-		// 请输入公司编号
-		codeChange: function (e) {
-			this.setData({
-				companycode: e.detail
-			})
-		},
+		// // 请输入公司编号
+		// codeChange: function (e) {
+		// 	this.setData({
+		// 		companycode: e.detail
+		// 	})
+		// },
 
 		// 请输入公司名称
 		nameChange: function (e) {
@@ -66,10 +68,9 @@ Component({
 		// 查询列表
 		queryBtn() {
 			let _this = this
-			console.log('this.data.companycode', this.data.companycode);
 			if (!this.data.companycode) {
 				wx.showToast({
-					title: '请输入公司编号',
+					title: '请先选择销售公司',
 					icon: 'none',
 				})
 				return

@@ -14,6 +14,7 @@ Page({
 		slipAddForm: {
 			order_type: '',
 			supplier_id: '',
+			supplier_code: '',
 			supplier_name: '',
 			supply_type: '',
 			supply_name: '',
@@ -151,7 +152,8 @@ Page({
 	// 销售公司 - 选中
 	confirmAllcompany: function (e) {
 		this.setData({
-			'slipAddForm.supplier_id': e.detail.value.id,
+      'slipAddForm.supplier_id': e.detail.value.id,
+			'slipAddForm.supplier_code': e.detail.value.code,
 			'slipAddForm.supplier_name': e.detail.value.name,
 		})
 	},

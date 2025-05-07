@@ -69,7 +69,10 @@ Page({
 			})
 			// 清除定时器
 			if (this.data.countdown === 0) {
-				clearInterval(this.data.verificationTimer)
+        clearInterval(this.data.verificationTimer)
+        this.setData({
+          countdown: 60
+        })
 			}
 		}, 1000)
 	},
