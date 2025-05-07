@@ -16,7 +16,7 @@ Page({
 
 	onLoad: function (options) {
 		this.setData({
-			sliptype: options.type || 99
+			sliptype: options.type !== undefined || 99
 		})
 		this.initFunction()
 	},

@@ -1,26 +1,30 @@
 <view class="userInfoPage">
 	<view class="itembox frsc">
 		<view class="labelbox">用户名：</view>
-		<input value="{{ userInfo.nickname }}" class="searchInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="nicknameInput" />
+		<input value="{{ userInfo.name }}" class="searchInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="nicknameInput" />
 	</view>
 	<view class="itembox frsc">
 		<view class="labelbox">头像：</view>
 		<view class="frcc">
-			<image src="/images/mineModule/avatar.png" mode="" style="width: 72rpx; height: 72rpx; border-radius: 50%;" />
+			<image src="{{ userInfo.avatar || '/images/mineModule/avatar.png' }}" mode="" style="width: 72rpx; height: 72rpx; border-radius: 50%;" />
       <button class="xiugaitouxiang" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">修改头像</button>
 		</view>
 	</view>
-	<view class="itembox frsc">
+	<!-- <view class="itembox frsc">
 		<view class="labelbox">姓名：</view>
-		<input value="{{ userInfo.username }}" class="searchInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="usernameInput" />
+		<input value="{{ userInfo.name }}" class="searchInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="usernameInput" />
 	</view>
 	<view class="itembox frsc">
 		<view class="labelbox">手机号：</view>
 		<input value="{{ userInfo.phone }}" class="searchInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="phoneInput" />
+	</view> -->
+	<view class="itembox frsc">
+		<view class="labelbox">手机号：</view>
+		<view class="valuebox">{{ userInfo.phone }}</view>
 	</view>
 	<view class="itembox frsc">
 		<view class="labelbox">注册时间：</view>
-		<view class="valuebox">{{ userInfo.registertime }}</view>
+		<view class="valuebox">{{ userInfo.created_at }}</view>
 	</view>
-	<view class="baocunziliao">保存资料</view>
+	<view class="baocunziliao" bind:tap="baocunziliao">保存资料</view>
 </view>

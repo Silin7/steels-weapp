@@ -28,8 +28,8 @@
 				"selectedIconPath": "/images/systemModule/home_active.png"
 			},
 			{
-				"pagePath": "pages/noticeModule/noticeList/noticeList",
-				"text": "公告",
+				"pagePath": "pages/salesModule/slipList/slipList",
+				"text": "销售订单",
 				"iconPath": "/images/systemModule/notice_normal.png",
 				"selectedIconPath": "/images/systemModule/notice_active.png"
 			},

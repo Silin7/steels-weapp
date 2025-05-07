@@ -19,6 +19,25 @@ Page({
   },
 
   onShow: function () {
+		if (!wx.getStorageSync('registered')) {
+			wx.showModal({
+				title: '未注册',
+				content: '是否前往注册页面？',
+				complete: (res) => {
+					if (res.cancel) {
+						wx.navigateBack({
+							delta: 1
+						})
+					}
+					if (res.confirm) {
+						wx.redirectTo({
+							url: '/pages/loginModule/loginPage',
+						})
+					}
+				}
+			})
+			return
+		}
     if (wx.getStorageSync('slipLoad')) {
       this.setData({
         sliptype: wx.getStorageSync('slipLoad')

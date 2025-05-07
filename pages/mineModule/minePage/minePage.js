@@ -11,10 +11,12 @@ Page({
 
 	onShow: function () {
 		this.setData({
-			has_registered: wx.getStorageSync('has_registered') || false,
+			has_registered: wx.getStorageSync('registered') || false,
 		})
-		if (this.data.has_registered) {
-			// this.getUser()
+		if (this.data.has_registered && wx.getStorageSync('profile')) {
+			this.setData({
+				profile: wx.getStorageSync('profile') || {}
+			})
 		}
 	},
 
@@ -42,9 +44,12 @@ Page({
 
 	// 页面跳转 - 下单
 	goSlipList: function (e) {
-		wx.navigateTo({
-			url: `/pages/salesModule/slipList/slipList?type=${e.currentTarget.dataset.type}`,
-		})
+		wx.setStorageSync('slipType', e.currentTarget.dataset.type)
+		setTimeout(() => {
+			wx.switchTab({
+				url: '/pages/salesModule/slipList/slipList',
+			})
+		}, 500)
 	},
 
 	// 页面跳转 - 应收
@@ -60,9 +65,15 @@ Page({
 			url: '/pages/examineModule/examineList/examineList',
 		})
 	},
-	
+
 	// 页面跳转 - 用户资料
 	goUserInfo: function () {
+		if (!this.data.has_registered || !wx.getStorageSync('profile')) {
+			wx.navigateTo({
+				url: '/pages/loginModule/loginPage',
+			})
+			return
+		}
 		wx.navigateTo({
 			url: '/pages/mineModule/userInfo/userInfo',
 		})

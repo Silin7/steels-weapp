@@ -14,20 +14,37 @@ Page({
 		slipData: []
 	},
 
-	onLoad: function (options) {
-		this.setData({
-			sliptype: options.type
-		})
-		this.initFunction()
-	},
-
 	onShow: function () {
-		if (wx.getStorageSync('slipLoad')) {
-			this.setData({
-				sliptype: wx.getStorageSync('slipLoad')
+		if (!wx.getStorageSync('registered')) {
+			wx.showModal({
+				title: '未注册',
+				content: '是否前往注册页面？',
+				complete: (res) => {
+					if (res.cancel) {
+					}
+					if (res.confirm) {
+						wx.redirectTo({
+							url: '/pages/loginModule/loginPage',
+						})
+					}
+				}
 			})
-			wx.removeStorageSync('slipLoad')
+			return
 		}
+		if (!wx.getStorageSync('slipType')) {
+			console.log('zou if');
+			this.setData({
+				sliptype: 99
+			})
+		} else {
+			console.log('zou else');
+			this.setData({
+				sliptype: wx.getStorageSync('slipType')
+			})
+		}
+		console.log('this.setData.sliptype', this.setData.sliptype);
+	
+		this.initFunction()
 	},
 
 	// 切换tab
@@ -48,37 +65,36 @@ Page({
 		this.getDataList()
 	},
 
-  // 销售单列表
-  getDataList: function () {
-    wx.showLoading({
-      title: '加载中',
-    })
-    esRequest('myvouchers', {
+	// 销售单列表
+	getDataList: function () {
+		wx.showLoading({
+			title: '加载中',
+		})
+		esRequest('myvouchers', {
 			page: this.data.currentPage,
 			status: this.data.sliptype,
-    }).then(async res => {
-      if (res && res.data.status) {
+		}).then(async res => {
+			if (res && res.data.status) {
 				await res.data.data.data.forEach(item => {
 					item.OrderDetails = JSON.parse(item.OrderDetails)
 				})
 				this.data.slipData = this.data.slipData.concat(res.data.data.data)
-				console.log('this.data.slipData', this.data.slipData);
-        this.setData({
-          total: res.data.data.total,
-          slipData: this.data.slipData
-        })
-      } else {
-        wx.showToast({
-          title: res.data.message,
-          icon: 'none',
-          duration: 2000
-        })
-      }
-      setTimeout(() => {
-        wx.hideLoading();
-      }, 500)
-    })
-  },
+				this.setData({
+					total: res.data.data.total,
+					slipData: this.data.slipData
+				})
+			} else {
+				wx.showToast({
+					title: res.data.message,
+					icon: 'none',
+					duration: 2000
+				})
+			}
+			setTimeout(() => {
+				wx.hideLoading();
+			}, 500)
+		})
+	},
 
 	// 页面跳转 - 公告详情
 	goSlipDetail: function (e) {
@@ -112,5 +128,10 @@ Page({
 			}
 		}, 1000)
 	},
+
+
+	onHide: function () {
+		wx.removeStorageSync('slipType')
+	}
 
 })

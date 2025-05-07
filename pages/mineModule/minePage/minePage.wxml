@@ -1,15 +1,13 @@
 <view class="minePage">
 	<view class="userBox">
 		<view>
-			<!-- <image src="{{ profile.profile.avatar || '/images/mineModule/avatar.png' }}" mode="aspectFill" class="avatarImgae" /> -->
-			<image src="/images/mineModule/avatar.png" mode="aspectFill" class="avatarImgae" />
+			<image src="{{ profile.avatar || '/images/mineModule/avatar.png' }}" mode="aspectFill" class="avatarImgae" />
 		</view>
 		<view class="userInfo" bind:tap="goUserInfo">
-			<!-- <view class="userName">授权登录</view> -->
-			<!-- <view class="userName">{{ profile.role_name }}</view>
-        <view class="userPhone">{{ profile.profile.name }}</view> -->
-			<view class="userName">姓名标题</view>
-			<view class="userPhone">18654210578</view>
+			<view wx:if="{{ !has_registered }}" class="userName">授权登录</view>
+			<view wx:if="{{ !has_registered }}" class="userPhone">点击前往注册页面</view>
+			<view wx:if="{{ has_registered }}" class="userName">{{ profile.name || profile.role_name }}</view>
+			<view wx:if="{{ has_registered }}" class="userPhone">{{ profile.phone }}</view>
 		</view>
 	</view>
 
@@ -42,7 +40,7 @@
 				<image src="/images/mineModule/youjiantou.png" mode="" style="width: 30rpx; height: 30rpx;" />
 			</view>
 		</view>
-		<view class="cardItem frbc" bind:tap="goExamineList">
+		<view wx:if="{{ profile.role === 2 || profile.role === 3 }}" class="cardItem frbc" bind:tap="goExamineList">
 			<view class="frcc">
 				<image src="/images/mineModule/wdys.png" mode="" style="width: 32rpx; height: 32rpx;" />
 				<view class="titleText">审核订单</view>

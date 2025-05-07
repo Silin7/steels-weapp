@@ -92,6 +92,27 @@ Page({
 		this.getdictionaryList()
 	},
 
+	onShow: function () {
+		if (!wx.getStorageSync('registered')) {
+			wx.showModal({
+				title: '未注册',
+				content: '是否前往注册页面？',
+				complete: (res) => {
+					if (res.cancel) {
+						wx.navigateBack({
+							delta: 1
+						})
+					}
+					if (res.confirm) {
+						wx.redirectTo({
+							url: '/pages/loginModule/loginPage',
+						})
+					}
+				}
+			})
+		}
+	},
+
 	// 销货单类型
 	xiaohuodanleixingChange: function (e) {
 		this.setData({
