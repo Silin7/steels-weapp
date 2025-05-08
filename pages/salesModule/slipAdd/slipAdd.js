@@ -248,6 +248,9 @@ Page({
 		this.data.products[this.data.productIndex].inventory_max = e.detail.value.AvailableQuantity
 		this.data.products[this.data.productIndex].inventory_code = e.detail.value.InventoryCode
 		this.data.products[this.data.productIndex].inventory_name = e.detail.value.InventoryName
+		this.data.products[this.data.productIndex].outer_diameter = e.detail.value.outer_diameter
+		this.data.products[this.data.productIndex].wall_thickness = e.detail.value.wall_thickness
+		this.data.products[this.data.productIndex].length = e.detail.value.length
 		this.setData({
 			products: this.data.products
 		})
@@ -283,14 +286,14 @@ Page({
 	// 数量
 	shuliangInput: function (e) {
 		const index = e.currentTarget.dataset.index
-		if (Number(e.detail.value) > Number(this.data.products[index].inventory_max)) {
+		if (Number(this.data.products[index].inventory_max) > 0) {
+			this.data.products[index].Quantity = e.detail.value
+		} else {
 			this.data.products[index].Quantity = ''
 			wx.showToast({
-				title: '您输入的数量大于库存数量，请重新输入',
+				title: '暂无库存',
 				icon: 'none'
 			});
-		} else {
-			this.data.products[index].Quantity = e.detail.value
 		}
 		this.setData({
 			products: this.data.products

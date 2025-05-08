@@ -103,11 +103,14 @@
 		<view class="slipAddItem frbc">
 			<view class="itemTitle">规格：</view>
 			<view class="frcc">
-				<input value="{{ item.outer_diameter }}" class="slipAddInput2" bind:input="waijingInput" data-index="{{ index }}" />
+				<input value="{{ item.outer_diameter }}" class="slipAddInput2" disabled style="text-align: center;" />
+				<!-- bind:input="waijingInput" data-index="{{ index }}" -->
 				<view class="inputText">外径</view>
-				<input value="{{ item.wall_thickness }}" class="slipAddInput2" bind:input="bihouInput" data-index="{{ index }}" />
+				<!-- bind:input="bihouInput" data-index="{{ index }}" -->
+				<input value="{{ item.wall_thickness }}" class="slipAddInput2" disabled style="text-align: center;" />
 				<view class="inputText">壁厚</view>
-				<input value="{{ item.length }}" class="slipAddInput2" bind:input="changduInput" data-index="{{ index }}" />
+				<!-- bind:input="changduInput" data-index="{{ index }}" -->
+				<input value="{{ item.length }}" class="slipAddInput2" disabled style="text-align: center;" />
 				<view class="inputText">长度</view>
 			</view>
 		</view>
