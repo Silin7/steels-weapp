@@ -121,18 +121,33 @@
 				<view class="inputText">吨</view>
 			</view>
 		</view>
-		<view class="slipAddItem frbc" style="border: 0;">
+		<view class="slipAddItem frbc">
 			<view class="itemTitle">支数：</view>
 			<view class="frcc">
 				<input type="number" value="{{ item.Quantity2 }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="zhishuInput" data-index="{{ index }}" />
 				<view class="inputText">支</view>
 			</view>
 		</view>
-		<view class="slipAddItem frbc" style="border: 0;">
-			<view class="itemTitle">税前价格：</view>
+		<view class="slipAddItem frbc">
+			<view class="itemTitle">单价：</view>
 			<view class="frcc">
 				<input type="number" value="{{ item.OrigTaxPrice }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="OrigTaxPriceInput" data-index="{{ index }}" />
 				<view class="inputText">元</view>
+			</view>
+		</view>
+		<view class="slipAddItem frbc" style="border: 0;">
+			<view class="itemTitle">是否含税：</view>
+			<view class="frcc">
+				<radio-group bindchange="havetaxrateChange" data-index="{{ index }}">
+					<label class="radio">
+						<radio color="#2F54EB" value="0" style="transform: scale(0.65);" />
+						<text class="radiotext" style="{{ slipAddForm.havetaxrate === '0' ? 'color: #2F54EB;' : '' }}">不含税</text>
+					</label>
+					<label class="radio">
+						<radio color="#2F54EB" value="1" style="margin-left: 20rpx; transform: scale(0.65);" />
+						<text class="radiotext" style="{{ slipAddForm.havetaxrate === '1' ? 'color: #2F54EB;' : '' }}">含税</text>
+					</label>
+				</radio-group>
 			</view>
 		</view>
 	</view>

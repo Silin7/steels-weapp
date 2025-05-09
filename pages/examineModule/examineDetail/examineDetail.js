@@ -31,7 +31,7 @@ Page({
   },
 
 
-  // 税前价格
+  // 单价
   OrigTaxPriceInput: function (e) {
     const index = e.currentTarget.dataset.index
     this.data.dataForm.OrderDetails[index].OrigTaxPrice = e.detail.value

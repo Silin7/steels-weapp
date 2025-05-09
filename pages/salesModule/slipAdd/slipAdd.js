@@ -309,7 +309,7 @@ Page({
 		})
 	},
 
-	// 税前价格
+	// 单价
 	OrigTaxPriceInput: function (e) {
 		const index = e.currentTarget.dataset.index
 		this.data.products[index].OrigTaxPrice = e.detail.value
@@ -317,6 +317,15 @@ Page({
 			products: this.data.products
 		})
 	},
+
+  // 是否含税
+  havetaxrateChange: function (e) {
+		const index = e.currentTarget.dataset.index
+    this.data.products[index].havetaxrate = e.detail.value
+    this.setData({
+			products: this.data.products
+		})
+  },
 
 	// // 仓库
 	// cangkuInput: function (e) {
