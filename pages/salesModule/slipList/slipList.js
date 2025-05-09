@@ -100,7 +100,7 @@ Page({
 	goSlipDetail: function (e) {
 		wx.setStorageSync('slipDetail', e.currentTarget.dataset.item)
 		wx.navigateTo({
-			url: '/pages/salesModule/slipDetail/slipDetail'
+			url: `/pages/salesModule/slipDetail/slipDetail?id=${e.currentTarget.dataset.item.id}`
 		})
 	},
 

@@ -1,62 +1,89 @@
 <view class="slipDetail">
   <view class="frbc" style="padding-bottom: 40rpx;">
     <view class="dingdanhao">订单号：{{ dataForm.ExternalCode }}</view>
-    <view class="dingdanzhuangtai">待发货</view>
+    <!-- <view class="dingdanzhuangtai">待发货</view> -->
   </view>
   <view>
-    <view class="frsc">
-      <view class="centeritemz">单据类型：</view>
-      <view class="centeritemy">{{ dataForm.ordertypename }}</view>
-    </view>
-    <view class="frsc">
-      <view class="centeritemz">车号：</view>
-      <view class="centeritemy">{{ dataForm.TransVehicleInfo }}</view>
-    </view>
-    <view class="frsc">
-      <view class="centeritemz">物流电话：</view>
-      <view class="frcc">
-        <view class="centeritemy">{{ dataForm.TransDriverPhone }}</view>
-        <image src="/images/salesModule/phone.png" mode="" style="margin-left: 10rpx; width: 32rpx; height: 32rpx;"/>
-      </view>
-    </view>
-    <view class="frsc">
-      <view class="centeritemz">品名：</view>
-      <view class="centeritemy">{{ dataForm.product_name }}</view>
-    </view>
-    <view class="frsc">
-      <view class="centeritemz">规格：</view>
-      <view class="centeritemy">{{ dataForm.product_specification }}</view>
-    </view>
-    <view class="frsc">
-      <view class="centeritemz">数量：</view>
-      <view class="centeritemy">{{ dataForm.product_composition_quantity }}</view>
-    </view>
-  </view>
-  <view class="fengexian"></view>
-  <view>
-    <view class="frsc">
-      <view class="centeritemz">付款方式：</view>
-      <view class="centeritemy">全款</view>
-    </view>
-    <view class="frsc">
-      <view class="centeritemz">下单时间：</view>
-      <view class="centeritemy">2025-03-01 13:01</view>
-    </view>
-    <view class="frsc">
-      <view class="centeritemz">发货时间：</view>
-      <view class="centeritemy">2025-03-01 18:21</view>
-    </view>
+    <!-- <view class="frsc">
+      <view class="centeritemz">ID：</view>
+      <view class="centeritemy">{{ dataForm.id }}</view>
+    </view> -->
     <view class="frsc">
       <view class="centeritemz">业务经理：</view>
-      <view class="centeritemy">张XX</view>
+      <view class="centeritemy">{{ dataForm.clerk.name }}</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">销售公司：</view>
+      <view class="centeritemy">{{ dataForm.supplier_name }}</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">供货方式：</view>
+      <view class="centeritemy">{{ dataForm.supply_name }}</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">预付定金：</view>
+      <view class="centeritemy">{{ dataForm.deposit }}</view>
     </view>
     <view class="frsc">
       <view class="centeritemz">仓库：</view>
-      <view class="centeritemy">莘县二库</view>
+      <view class="centeritemy">{{ dataForm.warehouse_name }}</view>
     </view>
     <view class="frsc">
-      <view class="centeritemz">客户名称：</view>
-      <view class="centeritemy">XXXXX公司</view>
+      <view class="centeritemz">订单类型：</view>
+      <view wx:if="{{ dataForm.order_type === 0 }}" class="centeritemy">销售单</view>
+      <view wx:if="{{ dataForm.order_type === 1 }}" class="centeritemy">调拨单</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">运输类型：</view>
+      <view wx:if="{{ dataForm.Trans_type === 0 }}" class="centeritemy">需方自提</view>
+      <view wx:if="{{ dataForm.Trans_type === 1 }}" class="centeritemy">承担运费（货款含运费）</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">支付类型：</view>
+      <view wx:if="{{ dataForm.pay_type === 0 }}" class="centeritemy">全款</view>
+      <view wx:if="{{ dataForm.pay_type === 1 }}" class="centeritemy">定金</view>
+      <view wx:if="{{ dataForm.pay_type === 2 }}" class="centeritemy">赊销</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">运输车辆信息：</view>
+      <view class="centeritemy">{{ dataForm.TransVehicleInfo }}</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">运输费用：</view>
+      <view class="centeritemy">{{ dataForm.Trans_fee }}</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">客户编码：</view>
+      <view class="centeritemy">{{ dataForm.Customer_code }}</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz">运输司机电话：</view>
+      <view class="centeritemy">{{ dataForm.TransDriverPhone }}</view>
+        <image src="/images/salesModule/phone.png" mode="" style="margin-left: 10rpx; width: 32rpx; height: 32rpx;"/>
+    </view>
+  </view>
+  <view class="fengexian"></view>
+  <view class="card" wx:for="{{ dataForm.OrderDetails }}" wx:key="index">
+    <view class="frsc">
+      <view class="centeritemz2">商品编码：</view>
+      <view class="centeritemy">{{ item.code }}</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz2">商品规格：</view>
+      <view class="centeritemy">{{ item.Specification }}</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz2">单价：</view>
+      <view class="centeritemy">{{ item.OrigTaxPrice }}</view>
+			<!-- <input type="number" value="{{ item.OrigTaxPrice }}" class="inputStyle" placeholder-class="placeholderClass" placeholder="请录入" bind:input="OrigTaxPriceInput" data-index="{{ index }}" /> -->
+    </view>
+    <view class="frsc">
+      <view class="centeritemz2">数量(吨)：</view>
+      <view class="centeritemy">{{ item.Quantity }}</view>
+    </view>
+    <view class="frsc">
+      <view class="centeritemz2">数量(支)：</view>
+      <view class="centeritemy">{{ item.Quantity2 }}</view>
     </view>
   </view>
 </view>
