@@ -12,7 +12,8 @@ Page({
 		inventoryShow: false,
 		caigoukehuShow: false,
 		slipAddForm: {
-			order_type: '',
+      order_type: '',
+      syn_url: '',
 			supplier_id: '',
 			supplier_code: '',
 			supplier_name: '',
@@ -152,6 +153,7 @@ Page({
 	// 销售公司 - 选中
 	confirmAllcompany: function (e) {
 		this.setData({
+      'slipAddForm.syn_url': e.detail.value.syn_url,
       'slipAddForm.supplier_id': e.detail.value.id,
 			'slipAddForm.supplier_code': e.detail.value.code,
 			'slipAddForm.supplier_name': e.detail.value.name,

@@ -10,6 +10,10 @@ Component({
 			type: String,
 			value: '',
 		},
+		synUrl: {
+			type: String,
+			value: '',
+		},
 		companycode: {
 			type: String,
 			value: '',
@@ -35,10 +39,11 @@ Component({
 
 	methods: {
 		getDataList: function () {
+      console.log('this.data.synUrl', this.data.synUrl);
 			esRequest('customers', {
 				companycode: this.data.companycode,
 				customername: this.data.customername,
-			}).then(async res => {
+			}, null, this.data.synUrl).then(async res => {
 				if (res && res.data.code === 200) {
 					await res.data.data.customer.forEach((item) => {
 						item.value = item.Code
@@ -68,6 +73,13 @@ Component({
 		// 查询列表
 		queryBtn() {
 			let _this = this
+			if (!this.data.synUrl) {
+				wx.showToast({
+					title: '请先选择销售公司',
+					icon: 'none',
+				})
+				return
+			}
 			if (!this.data.companycode) {
 				wx.showToast({
 					title: '请先选择销售公司',
