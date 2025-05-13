@@ -19,7 +19,6 @@ Page({
         this.setData({
           dataForm: res.data.data.data
         })
-        console.log(this.data.dataForm);
       } else {
         wx.showToast({
           title: res.data.message,
@@ -43,7 +42,7 @@ Page({
   csvUploaddataFunction: function () {
     esRequest('csvUploaddata', {
       orderId: this.data.voucherId
-    }).then(res => {
+    }, null, this.data.dataForm.supplier.syn_url || null).then(res => {
       // status  ===  字符串false
       console.log(res.data.status);
       if (res && res.data.status) {
@@ -73,7 +72,7 @@ Page({
     esRequest('csvSaveNewPrices', {
 			orderId: this.data.voucherId,
 			newPrices,
-    }).then(res => {
+    }, null, this.data.dataForm.supplier.syn_url || null).then(res => {
       if (res && res.data.status) {
         wx.showToast({
           title: '操作成功',

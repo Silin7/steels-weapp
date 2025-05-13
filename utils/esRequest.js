@@ -6,13 +6,13 @@ import noticeRequest from "./sub-unitRequest/noticeRequest"
 import salesRequest from "./sub-unitRequest/salesRequest"
 import systemRequest from "./sub-unitRequest/systemRequest"
 
-export default (localObjects, parametersData, parameters) => {
+export default (localObjects, parametersData, parameters, synUrl) => {
   let globalObjects = Object.assign({}, examineRequest, homeRequest, inventoryRequest, noticeRequest, salesRequest, systemRequest)
   let apiMethod = globalObjects[localObjects].apiMethod
   if (parameters) {
-    var requestURL = baseURL.baseURL + globalObjects[localObjects].apiName + '/' + parameters
+    var requestURL = (synUrl ? synUrl : baseURL.baseURL) + globalObjects[localObjects].apiName + '/' + parameters
   } else {
-    var requestURL = baseURL.baseURL + globalObjects[localObjects].apiName
+    var requestURL = (synUrl ? synUrl : baseURL.baseURL) + globalObjects[localObjects].apiName
   }
   return new Promise((resolve, reject) => {
     wx.showLoading({

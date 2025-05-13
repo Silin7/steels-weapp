@@ -10,7 +10,8 @@ Page({
 		cangkuShow: false,
 		cangkuList: [],
 		inventoryShow: false,
-		caigoukehuShow: false,
+    caigoukehuShow: false,
+    voucher_description: '',
 		slipAddForm: {
       order_type: '',
       syn_url: '',
@@ -340,6 +341,9 @@ Page({
 	getdictionaryList: function () {
 		esRequest('getdictionary').then(async res => {
 			if (res && res.data.status) {
+        this.setData({
+          voucher_description: res.data.data.voucher_description
+        })
 				const supplyList = []
 				await res.data.data.supply_type.forEach((item, index) => {
 					supplyList.push({
@@ -551,7 +555,12 @@ Page({
 					title: '操作成功',
 					icon: 'sunccess'
 				})
-				wx.hideLoading()
+        wx.hideLoading()
+        setTimeout(() => {
+          wx.navigateBack({
+            delta: 1
+          })
+        }, 1000)
 			},
 			fail: function (err) {
 				wx.showToast({

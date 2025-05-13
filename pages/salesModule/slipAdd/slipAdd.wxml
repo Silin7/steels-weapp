@@ -11,8 +11,8 @@
 
 
 <view class="slipAddPage">
-  <view class="wxtsbox frbc">
-    <view class="wxtstext to1">温馨提示温馨提示温馨提示温馨提示</view>
+  <view wx:if="{{ voucher_description }}" class="wxtsbox frbc">
+    <view class="wxtstext to1">{{ voucher_description }}</view>
     <image src="/images/salesModule/closered.png" mode="" style="width: 40rpx; height: 40rpx;" />
   </view>
   <view class="slipAddBox">
