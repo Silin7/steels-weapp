@@ -75,7 +75,7 @@
     <view class="frsc">
       <view class="centeritemz2">单价：</view>
       <!-- <view class="centeritemy">{{ item.OrigTaxPrice }}</view> -->
-			<input type="number" value="{{ item.OrigTaxPrice }}" class="inputStyle" placeholder-class="placeholderClass" placeholder="请录入" bind:input="OrigTaxPriceInput" data-index="{{ index }}" />
+			<input type="digit" value="{{ item.OrigTaxPrice }}" class="inputStyle" placeholder-class="placeholderClass" placeholder="请录入" bind:input="OrigTaxPriceInput" data-index="{{ index }}" />
     </view>
     <view class="frsc">
       <view class="centeritemz2">数量(吨)：</view>

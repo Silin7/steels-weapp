@@ -47,7 +47,7 @@
     </view>
     <view class="slipAddItem frbc">
       <view class="itemTitle">预付定金：</view>
-      <input type="number" value="{{ slipAddForm.deposit }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="depositInput" bind:blur="depositTouchmove" />
+      <input type="digit" value="{{ slipAddForm.deposit }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="depositInput" bind:blur="depositTouchmove" />
     </view>
     <view class="slipAddItem frbc">
       <view class="itemTitle">车牌：</view>
@@ -55,7 +55,7 @@
     </view>
     <view class="slipAddItem frbc">
       <view class="itemTitle">物流电话：</view>
-      <input type="number" value="{{ slipAddForm.TransDriverPhone }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="wuliudianhuaInput" />
+      <input type="digit" value="{{ slipAddForm.TransDriverPhone }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="wuliudianhuaInput" />
     </view>
     <view class="slipAddItem frbc">
       <view class="itemTitle">司机名称：</view>
@@ -86,7 +86,7 @@
     <view class="slipAddItem frbc" style="border: 0;">
       <view class="itemTitle">运费：</view>
       <view class="frcc">
-        <input type="number" value="{{ slipAddForm.Trans_fee }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="yunfeiInput" />
+        <input type="digit" value="{{ slipAddForm.Trans_fee }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="yunfeiInput" />
         <view class="inputText">元/吨</view>
       </view>
     </view>
@@ -117,21 +117,21 @@
     <view class="slipAddItem frbc">
       <view class="itemTitle">数量：</view>
       <view class="frcc">
-        <input type="number" value="{{ item.Quantity }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="shuliangInput" data-index="{{ index }}" />
+        <input type="digit" value="{{ item.Quantity }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="shuliangInput" data-index="{{ index }}" />
         <view class="inputText">吨</view>
       </view>
     </view>
     <view class="slipAddItem frbc">
       <view class="itemTitle">支数：</view>
       <view class="frcc">
-        <input type="number" value="{{ item.Quantity2 }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="zhishuInput" data-index="{{ index }}" />
+        <input type="digit" value="{{ item.Quantity2 }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="zhishuInput" data-index="{{ index }}" />
         <view class="inputText">支</view>
       </view>
     </view>
     <view class="slipAddItem frbc">
       <view class="itemTitle">单价：</view>
       <view class="frcc">
-        <input type="number" value="{{ item.OrigTaxPrice }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="OrigTaxPriceInput" data-index="{{ index }}" />
+        <input type="digit" value="{{ item.OrigTaxPrice }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="OrigTaxPriceInput" data-index="{{ index }}" />
         <view class="inputText">元</view>
       </view>
     </view>
