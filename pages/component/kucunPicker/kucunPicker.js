@@ -6,6 +6,10 @@ Component({
 			type: Boolean,
 			value: false,
 		},
+		supplierId: {
+			type: String,
+			value: '',
+		},
 		defaultValue: {
 			type: String,
 			value: '',
@@ -34,6 +38,7 @@ Component({
 	methods: {
 		getDataList: function () {
 			esRequest('srchcurrentstock', {
+				supplier_id: this.data.supplierId,
 				inventory_name: this.data.inventory_name,
 				length: this.data.length,
 				outer_diameter: this.data.outer_diameter,
@@ -110,6 +115,13 @@ Component({
 			// 	})
 			// 	return
 			// }
+			if (!this.data.supplierId) {
+				wx.showToast({
+					title: '请先选择销售公司',
+					icon: 'none',
+				})
+				return
+			}
 			_this.getDataList()
 			// clearTimeout(this.data.reachTimer)
 			// this.data.reachTimer = setTimeout(function () {}, 1000)

@@ -5,7 +5,7 @@
 <!-- 选择仓库 -->
 <component-choosePicker pickerShow="{{ cangkuShow }}" pickerTitle="选择仓库" dataList="{{ cangkuList }}" bind:confirmItem="confirmCangku" />
 <!-- 产品库存 -->
-<component-kucunPicker id="kucunPicker" pickerShow="{{ inventoryShow }}" defaultValue="{{ slipAddForm.inventory_name }}" bind:confirmItem="inventoryConfirmFunction" />
+<component-kucunPicker id="kucunPicker" pickerShow="{{ inventoryShow }}" supplierId="{{ slipAddForm.supplier_id }}" defaultValue="{{ slipAddForm.inventory_name }}" bind:confirmItem="inventoryConfirmFunction" />
 <!-- 采购客户 -->
 <component-fuzzyPicker id="fuzzyPicker" pickerShow="{{ caigoukehuShow }}" companycode="{{ slipAddForm.supplier_code }}" synUrl="{{ slipAddForm.syn_url }}" defaultValue="{{ slipAddForm.Customer_name }}" bind:confirmItem="caigoukehuConfirmFunction" />
 
