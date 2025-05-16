@@ -1,10 +1,18 @@
-
+<!-- 选择公司 -->
+<component-choosePicker pickerShow="{{ allcompanyShow }}" pickerTitle="选择公司" dataList="{{ allcompanyList }}" bind:confirmItem="confirmAllcompany" />
 <!-- 选择仓库 -->
 <component-choosePicker pickerShow="{{ cangkuShow }}" pickerTitle="选择仓库" dataList="{{ cangkuList }}" bind:confirmItem="confirmCangku" />
 
 <view class="inventorySearchPage">
 	<view class="gengxinshijian">{{ inventory_update_time }}</view>
 	<view class="cardBox">
+		<view class="searchItem frbc">
+			<view class="itemTitle">销售公司：</view>
+			<view class="frcc">
+				<input value="{{ supplier_name }}" class="searchInput" placeholder-class="placeholderClass" placeholder="请选择销售公司" disabled bind:tap="allcompanyShowFunction" />
+				<image src="/images/salesModule/xiajiantou.png" mode="aspectFill" style="width: 30rpx; height: 30rpx;" />
+			</view>
+		</view>
 		<view class="searchItem frbc">
 			<view class="itemTitle">仓库：</view>
 			<view class="frcc">

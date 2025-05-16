@@ -84,13 +84,6 @@ Page({
 	},
 
 	onLoad: function () {
-		// // 获取部门列表
-		// esRequest('customers', {
-		// 	companycode: '04',
-		// 	customername: '陕西'
-		// }).then(async res => {
-		//   console.log(res);
-		// })
 		this.getAllcompany()
 		this.getdictionaryList()
 	},
@@ -152,12 +145,24 @@ Page({
 	},
 
 	// 销售公司 - 选中
-	confirmAllcompany: function (e) {
+	confirmAllcompany: async function (e) {
 		this.setData({
       'slipAddForm.syn_url': e.detail.value.syn_url,
       'slipAddForm.supplier_id': e.detail.value.id,
 			'slipAddForm.supplier_code': e.detail.value.code,
 			'slipAddForm.supplier_name': e.detail.value.name,
+			'slipAddForm.warehouse_id': '',
+			'slipAddForm.warehouse_name': '',
+			cangkuList: []
+		})
+		// 带出仓库
+		let cangkuList = e.detail.value.cangku
+		await cangkuList.forEach((item) => {
+			item.value = item.code
+			item.text = item.name
+		})
+		this.setData({
+			cangkuList: cangkuList,
 		})
 	},
 
@@ -330,13 +335,6 @@ Page({
 		})
   },
 
-	// // 仓库
-	// cangkuInput: function (e) {
-	//   this.setData({
-	//     'slipAddForm.cangku': e.detail.value
-	//   })
-	// },
-
 	// 选择仓库 - 列表
 	getdictionaryList: function () {
 		esRequest('getdictionary').then(async res => {
@@ -351,15 +349,9 @@ Page({
 						"text": item
 					})
 				})
-				await res.data.data.cangku.forEach((item) => {
-					item.value = item.code
-					item.text = item.name
-				})
 				this.setData({
 					supplyList: supplyList,
-					cangkuList: res.data.data.cangku,
 				})
-				console.log(this.data.supplyList);
 			} else {
 				wx.showToast({
 					title: res.data.message,

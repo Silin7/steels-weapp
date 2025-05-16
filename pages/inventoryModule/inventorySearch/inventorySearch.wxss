@@ -23,6 +23,7 @@
 }
 
 .itemTitle {
+	min-width: 120rpx;
 	font-size: 28rpx;
 	line-height: 48rpx;
 	color: rgba(51, 51, 51, 1);

@@ -2,9 +2,12 @@ import esRequest from '../../../utils/esRequest';
 
 Page({
 	data: {
+		allcompanyShow: false,
+		allcompanyList: [],
 		cangkuShow: false,
 		cangkuList: [],
 		inventory_update_time: '',
+		supplier_name: '',
 		searchForm: {
 			warehouse_code: '',
 			warehouse_name: '',
@@ -16,15 +19,19 @@ Page({
 	},
 
 	onLoad: function () {
-		// 选择仓库 - 列表
-		esRequest('getdictionary').then(async res => {
+		this.getAllcompany()
+	},
+
+	// 销售公司 - 列表
+	getAllcompany: function () {
+		esRequest('allcompany').then(async res => {
 			if (res && res.data.status) {
-				await res.data.data.cangku.forEach((item) => {
+				await res.data.data.company.forEach((item) => {
 					item.value = item.code
 					item.text = item.name
 				})
 				this.setData({
-					cangkuList: res.data.data.cangku,
+					allcompanyList: res.data.data.company,
 					inventory_update_time: res.data.data.inventory_update_time
 				})
 			} else {
@@ -34,6 +41,32 @@ Page({
 					duration: 2000
 				})
 			}
+		})
+	},
+
+	// 销售公司 - 弹出
+	allcompanyShowFunction: function () {
+		this.setData({
+			allcompanyShow: true
+		})
+	},
+
+	// 销售公司 - 选中
+	confirmAllcompany: async function (e) {
+		this.setData({
+			'searchForm.warehouse_code': '',
+			'searchForm.warehouse_name': '',
+			cangkuList: []
+		})
+		// 带出仓库
+		let cangkuList = e.detail.value.cangku
+		await cangkuList.forEach((item) => {
+			item.value = item.code
+			item.text = item.name
+		})
+		this.setData({
+			supplier_name: e.detail.value.name,
+			cangkuList: cangkuList,
 		})
 	},
 
