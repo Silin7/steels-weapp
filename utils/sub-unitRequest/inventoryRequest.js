@@ -9,6 +9,11 @@ let inventoryRequest = {
     apiName: '/srchcurrentstock',
     name: '获取当前库存'
 	},
+  srchstock: {
+    apiMethod: 'POST',
+    apiName: '/srchstock',
+    name: '获取当前库存'
+	},
 	
 }
 

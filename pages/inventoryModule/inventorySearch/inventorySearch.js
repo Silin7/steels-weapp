@@ -54,6 +54,7 @@ Page({
 	// 销售公司 - 选中
 	confirmAllcompany: async function (e) {
 		this.setData({
+			'searchForm.supplier_id': e.detail.value.id,
 			'searchForm.warehouse_code': '',
 			'searchForm.warehouse_name': '',
 			cangkuList: []

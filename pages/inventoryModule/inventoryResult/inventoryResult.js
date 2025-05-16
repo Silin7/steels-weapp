@@ -11,7 +11,7 @@ Page({
 
   onShow() {
 		const inventoryStorage = wx.getStorageSync('inventoryStorage')
-		esRequest('srchcurrentstock', inventoryStorage).then(async res => {
+		esRequest('srchstock', inventoryStorage).then(async res => {
 			if (res && res.data.status) {
 				this.setData({
 					inventoryList: res.data.data.data
