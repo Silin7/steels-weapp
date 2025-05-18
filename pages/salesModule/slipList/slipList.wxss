@@ -56,7 +56,7 @@
 }
 
 .danleixing {
-  width: 160rpx;
+  width: 180rpx;
   height: 60rpx;
   font-size: 28rpx;
   line-height: 58rpx;

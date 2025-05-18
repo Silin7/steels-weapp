@@ -13,6 +13,10 @@
       </view>
       <view class="centerbox">
         <view class="frsc">
+          <view class="centeritemz">订单类型：</view>
+          <view class="centeritemy">{{ item.ordertypename }}</view>
+        </view>
+        <view class="frsc">
           <view class="centeritemz">车号：</view>
           <view class="centeritemy">{{ item.TransVehicleInfo }}</view>
         </view>
@@ -38,7 +42,8 @@
           <view class="xiadanshijian">下单时间：</view>
           <view class="xiadanshijian">{{ item.created_at }}</view>
         </view>
-        <view class="danleixing">{{ item.ordertypename }}</view>
+        <view wx:if="{{ sliptype == '99' || sliptype == '0' }}" class="danleixing">检索出库单</view>
+        <view wx:if="{{ sliptype == '1' }}" class="danleixing">查看详细</view>
       </view>
     </view>
     <view wx:if="{{ slipData.length === 0 }}" class="nodataBox">
