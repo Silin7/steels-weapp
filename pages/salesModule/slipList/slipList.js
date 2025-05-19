@@ -104,6 +104,35 @@ Page({
 		})
 	},
 
+	// 检索出库单
+	retrieveOrder: function (e) {
+		const item = e.currentTarget.dataset.item
+		esRequest('srchDeliveryByCode', {
+    }, item.id, item.supplier.syn_url || null).then(res => {
+			console.log();
+			if (res.data.code === 200) {
+				wx.showToast({
+					title: '已出库',
+					icon: 'none'
+				})
+			}
+			if (res.data.code === 400) {
+				wx.showToast({
+					title: '未出库',
+					icon: 'none'
+				})
+			}
+    })
+	},
+
+	// 页面跳转 - 查看详细 - 横屏
+	goDetails: function (e) {
+		const item = e.currentTarget.dataset.item
+		wx.navigateTo({
+			url: `/pages/webModule/webView/webView?webUrl=${item.orderurl}`
+		})
+	},
+
 	// 自定义下拉刷新被触发
 	permessagerePull: function () {
 		this.setData({

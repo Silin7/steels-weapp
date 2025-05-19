@@ -9,6 +9,11 @@ let examineRequest = {
     apiName: '/voucher/detail',
     name: '审核 销售订单详细'
 	},
+  srchDeliveryByCode: {
+    apiMethod: 'GET',
+    apiName: '/srchDeliveryByCode',
+    name: '检索出库单'
+	},
 }
 
 module.exports = examineRequest

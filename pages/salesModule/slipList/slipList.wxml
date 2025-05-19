@@ -8,8 +8,7 @@
     <view wx:for="{{ slipData }}" wx:key="index" class="slipItem" bind:tap="goSlipDetail" data-item="{{ item }}">
       <view class="frbc" style="padding-bottom: 20rpx;">
         <view class="dingdanhao">订单号：{{ item.ExternalCode }}</view>
-				<!-- 对是这个，订单状态现在没有你默认一个待发货就可以 -->
-        <view class="dingdanzhuangtai">待发货</view>
+        <view class="dingdanzhuangtai">{{ item.status_name }}</view>
       </view>
       <view class="centerbox">
         <view class="frsc">
@@ -42,8 +41,8 @@
           <view class="xiadanshijian">下单时间：</view>
           <view class="xiadanshijian">{{ item.created_at }}</view>
         </view>
-        <view wx:if="{{ sliptype == '99' || sliptype == '0' }}" class="danleixing">检索出库单</view>
-        <view wx:if="{{ sliptype == '1' }}" class="danleixing">查看详细</view>
+        <view wx:if="{{ (sliptype == '99' || sliptype == '0') && item.status_name !== '待审核' }}" class="danleixing" catch:tap="retrieveOrder" data-item="{{ item }}">检索出库单</view>
+        <view wx:if="{{ sliptype == '1' }}" class="danleixing" catch:tap="goDetails" data-item="{{ item }}">查看详细</view>
       </view>
     </view>
     <view wx:if="{{ slipData.length === 0 }}" class="nodataBox">
