@@ -1,0 +1,4 @@
+<view class="webViewPage">
+  <web-view src="{{ webUrl }}" header="cache-control: no-cache" style="position: relative;">
+  </web-view>
+</view>

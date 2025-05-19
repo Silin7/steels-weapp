@@ -3,6 +3,7 @@
 		"pages/homeModule/homePage",
 		"pages/loginModule/loginLdcw",
 		"pages/loginModule/loginPage",
+		"pages/webModule/webView/webView",
 		"pages/mineModule/minePage/minePage",
 		"pages/mineModule/userInfo/userInfo",
 		"pages/noticeModule/noticeList/noticeList",
