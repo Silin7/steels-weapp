@@ -158,7 +158,7 @@ Page({
     // 带出仓库
     let cangkuList = e.detail.value.cangku
     await cangkuList.forEach((item) => {
-      item.value = item.code
+      item.value = item.id
       item.text = item.name
     })
     this.setData({
