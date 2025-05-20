@@ -372,7 +372,7 @@ Page({
   // 选择仓库 - 选中
   confirmCangku: function (e) {
     this.setData({
-      'slipAddForm.warehouse_id': e.detail.value.code,
+      'slipAddForm.warehouse_id': e.detail.value.id,
       'slipAddForm.warehouse_name': e.detail.value.name,
     })
   },
