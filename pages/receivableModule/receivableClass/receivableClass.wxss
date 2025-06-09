@@ -11,7 +11,7 @@
 }
 
 .navButtons {
-	margin-top: 80rpx;
+	margin: 80rpx 0;
 }
 
 .btnItem {
@@ -20,4 +20,12 @@
 	line-height: 120rpx;
 	background-color: #fff;
 	border-radius: 120rpx;
+}
+
+.webviewItem {
+  width: 240rpx;
+  height: 88rpx;
+  color: #2A82E4;
+  border: 1rpx solid #2A82E4;
+  border-radius: 10rpx;
 }

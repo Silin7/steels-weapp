@@ -4,6 +4,15 @@
 	background-color: rgba(232, 238, 255, 1);
 }
 
+.reLoadBtn {
+  margin: 0 auto 20rpx;
+  width: 240rpx;
+  height: 88rpx;
+  border-radius: 10rpx;
+  color: #2D56EB;
+  border: 1rpx solid #2D56EB;
+}
+
 .slipItem {
 	margin-bottom: 20rpx;
 	padding: 30rpx 20rpx;

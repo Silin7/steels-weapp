@@ -1,5 +1,8 @@
 <scroll-view scroll-y="{{ true }}" refresher-enabled="{{ true }}" refresher-triggered="{{ triggered }}" bindrefresherrefresh="permessagerePull" bindscrolltolower="onScrollBottom" style="height: 100vh;">
 	<view class="myReceivablePage">
+    <view class="reLoadBtn frcc" bind:tap="initFunction">
+      页面刷新
+    </view>
 		<view wx:for="{{ slipData }}" wx:key="index" class="slipItem" bind:tap="goReceivableList" data-item="{{ item }}">
 			<view style="padding-bottom: 20rpx;">
 				<view class="gongsimingcheng">{{ item.customer_name }}</view>
