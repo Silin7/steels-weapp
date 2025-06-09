@@ -1,0 +1,47 @@
+.receivableListPage {
+	padding: 20rpx 20rpx;
+	min-height: 100vh;
+	background-color: rgba(232, 238, 255, 1);
+}
+
+.slipItem {
+	margin-bottom: 20rpx;
+	padding: 30rpx 20rpx;
+	border-radius: 10rpx;
+	background: #FFFFFF;
+	box-shadow: 4rpx 8rpx 20rpx #E6EBFA;
+}
+
+.gongsimingcheng {
+	padding-bottom: 20rpx;
+	font-size: 32rpx;
+	line-height: 50rpx;
+	font-weight: 700;
+	border-bottom: 1rpx solid #eee;
+}
+
+.centeritemz {
+	font-size: 28rpx;
+	line-height: 40rpx;
+	font-weight: 600;
+	text-align: center;
+	color: rgba(51, 51, 51, 1);
+}
+
+.centeritemy {
+	font-size: 36rpx;
+	line-height: 60rpx;
+	font-weight: 600;
+	text-align: center;
+	color: rgba(51, 51, 51, 1);
+}
+
+.danleixing {
+	padding: 0 40rpx;
+	line-height: 80rpx;
+	text-align: center;
+	border-radius: 4rpx;
+	color: #FFF;
+	background-color: #2D56EB;
+	border-radius: 100rpx;
+}

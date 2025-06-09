@@ -10,6 +10,7 @@
 		"pages/noticeModule/noticeDetail/noticeDetail",
 		"pages/receivableModule/receivableClass/receivableClass",
 		"pages/receivableModule/myReceivable/myReceivable",
+		"pages/receivableModule/receivableList/receivableList",
 		"pages/inventoryModule/inventorySearch/inventorySearch",
 		"pages/inventoryModule/inventoryResult/inventoryResult",
 		"pages/examineModule/examineList/examineList",

@@ -1,0 +1,19 @@
+<view class="receivableListPage">
+		<view wx:for="{{ receivableOrders }}" wx:key="index" class="slipItem" bind:tap="ckdxxBtn" data-item="{{ item }}">
+			<view style="padding-bottom: 20rpx;">
+				<view class="gongsimingcheng">{{ item.delivery_code }}</view>
+			</view>
+			<view class="frsc contentItem">
+				<view class="centeritemz">客户已支付：</view>
+				<view class="centeritemy">{{ item.delivery_amount }}</view>
+			</view>
+			<view class="frsc contentItem">
+				<view class="centeritemz">出库单费用合计：</view>
+				<view class="centeritemy">{{ item.warehouse_name }}</view>
+			</view>
+			<view class="frbc">
+				<view></view>
+				<view class="danleixing">出库单详细</view>
+			</view>
+		</view>
+</view>

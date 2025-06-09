@@ -55,7 +55,7 @@ Page({
 	// 页面跳转 - 应收
 	goMyReceivable: function () {
 		wx.navigateTo({
-			url: '/pages/receivableModule/myReceivable/myReceivable',
+			url: '/pages/receivableModule/receivableClass/receivableClass',
 		})
 	},
 
