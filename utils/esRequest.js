@@ -4,10 +4,11 @@ import homeRequest from "./sub-unitRequest/homeRequest"
 import inventoryRequest from "./sub-unitRequest/inventoryRequest"
 import noticeRequest from "./sub-unitRequest/noticeRequest"
 import salesRequest from "./sub-unitRequest/salesRequest"
+import receivableRequest from "./sub-unitRequest/receivableRequest"
 import systemRequest from "./sub-unitRequest/systemRequest"
 
 export default (localObjects, parametersData, parameters, synUrl) => {
-  let globalObjects = Object.assign({}, examineRequest, homeRequest, inventoryRequest, noticeRequest, salesRequest, systemRequest)
+  let globalObjects = Object.assign({}, examineRequest, homeRequest, inventoryRequest, noticeRequest, receivableRequest, salesRequest, systemRequest)
   let apiMethod = globalObjects[localObjects].apiMethod
   if (parameters) {
     var requestURL = (synUrl ? synUrl : baseURL.baseURL) + globalObjects[localObjects].apiName + '/' + parameters

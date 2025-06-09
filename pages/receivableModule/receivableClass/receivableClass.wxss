@@ -1,0 +1,23 @@
+.receivableClassPage {
+	overflow-y: auto;
+	height: 100vh;
+	padding: 20rpx;
+	background: linear-gradient(180deg, rgba(201, 216, 255, 1) 0%, rgba(232, 238, 255, 0) 100%);
+}
+
+.bannerImg {
+  width: 100%;
+	border-radius: 16rpx;
+}
+
+.navButtons {
+	margin-top: 80rpx;
+}
+
+.btnItem {
+	margin-bottom: 40rpx;
+	padding: 0 40rpx;
+	line-height: 120rpx;
+	background-color: #fff;
+	border-radius: 120rpx;
+}

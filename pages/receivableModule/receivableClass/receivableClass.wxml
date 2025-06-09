@@ -1,0 +1,12 @@
+<view class="receivableClassPage">
+	<!-- Banner 图区域 -->
+	<image src="{{ banner }}" mode="widthFix" class="bannerImg"></image>
+
+	<!-- 导航按钮区域 -->
+	<view class="navButtons">
+		<view wx:for="{{ company }}" wx:key="index" class="frbc btnItem" bindtap="companyBtn" data-item="{{ item }}">
+			<view class="placeholderText">{{ item.name }}</view>
+			<image src="/images/mineModule/youjiantou.png" mode="" style="width: 30rpx; height: 30rpx;" />
+		</view>
+	</view>
+</view>

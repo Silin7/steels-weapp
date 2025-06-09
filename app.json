@@ -8,6 +8,7 @@
 		"pages/mineModule/userInfo/userInfo",
 		"pages/noticeModule/noticeList/noticeList",
 		"pages/noticeModule/noticeDetail/noticeDetail",
+		"pages/receivableModule/receivableClass/receivableClass",
 		"pages/receivableModule/myReceivable/myReceivable",
 		"pages/inventoryModule/inventorySearch/inventorySearch",
 		"pages/inventoryModule/inventoryResult/inventoryResult",
