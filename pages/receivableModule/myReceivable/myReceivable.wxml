@@ -12,9 +12,13 @@
 				<view class="centeritemz">出库单费用合计：</view>
 				<view class="centeritemy">{{ item.delivery_total }}</view>
 			</view>
-			<view class="frsc contentItem">
+			<view wx:if="{{ item.receivable_amount <= 0 }}"  class="frsc contentItem">
 				<view class="centeritemz">应收：</view>
-				<view class="centeritemy" style="color: red;">{{ item.receivable_amount }}</view>
+				<view class="centeritemy" style="color: red;">{{ item.receivable_amount < 0 ? -item.receivable_amount : item.receivable_amount }}</view>
+			</view>
+			<view wx:if="{{ item.receivable_amount > 0 }}"  class="frsc contentItem">
+				<view class="centeritemz">余额：</view>
+				<view class="centeritemy" style="color: #2D56EB;">{{ item.receivable_amount }}</view>
 			</view>
 			<view class="frbc">
 				<view></view>

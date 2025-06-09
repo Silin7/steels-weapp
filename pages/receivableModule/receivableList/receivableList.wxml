@@ -4,11 +4,11 @@
 				<view class="gongsimingcheng">{{ item.delivery_code }}</view>
 			</view>
 			<view class="frsc contentItem">
-				<view class="centeritemz">客户已支付：</view>
+				<view class="centeritemz">含税销售金额：</view>
 				<view class="centeritemy">{{ item.delivery_amount }}</view>
 			</view>
 			<view class="frsc contentItem">
-				<view class="centeritemz">出库单费用合计：</view>
+				<view class="centeritemz">仓库：</view>
 				<view class="centeritemy">{{ item.warehouse_name }}</view>
 			</view>
 			<view class="frbc">
