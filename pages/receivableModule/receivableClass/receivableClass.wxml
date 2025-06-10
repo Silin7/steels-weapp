@@ -10,7 +10,7 @@
 		</view>
 	</view>
 
-  <view class="frac">
+  <view wx:if="{{ profile.role && profile.role > 1 }}" class="frac">
     <view class="webviewItem frcc" bind:tap="xytjBtn">信誉统计</view>
     <view class="webviewItem frcc" bind:tap="bstjBtn">博仕统计</view>
   </view>

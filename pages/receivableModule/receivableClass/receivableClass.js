@@ -3,7 +3,8 @@ import esRequest from '../../../utils/esRequest';
 Page({
   data: {
     banner: '',
-    company: []
+		company: [],
+		profile: {}
   },
 
   onShow: function () {
@@ -25,7 +26,10 @@ Page({
         }
       })
       return
-    }
+		}
+		this.setData({
+			profile: wx.getStorageSync('profile')
+		})
     this.getDataList()
   },
 
