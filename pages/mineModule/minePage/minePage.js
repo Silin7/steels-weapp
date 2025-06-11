@@ -78,4 +78,11 @@ Page({
 			url: '/pages/mineModule/userInfo/userInfo',
 		})
 	},
+
+	// 页面跳转 - 使用说明
+  instructionsFunction: function () {
+    wx.navigateTo({
+      url: `/pages/webModule/webView/webView?webUrl=https://gwapi.duoqixin.com/usertips`
+    })
+  }
 })
