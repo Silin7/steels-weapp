@@ -74,7 +74,7 @@ Page({
 
   // 页面跳转 - 公告列表
   goNoticeList: function () {
-    wx.switchTab({
+    wx.navigateTo({
       url: '/pages/noticeModule/noticeList/noticeList'
     })
   },
