@@ -53,14 +53,14 @@
       <view class="itemTitle">车牌：</view>
       <input value="{{ slipAddForm.TransVehicleInfo }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="chepaiInput" />
     </view>
-    <view class="slipAddItem frbc">
+    <!-- <view class="slipAddItem frbc">
       <view class="itemTitle">物流电话：</view>
       <input type="digit" value="{{ slipAddForm.TransDriverPhone }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="wuliudianhuaInput" />
-    </view>
-    <view class="slipAddItem frbc">
+    </view> -->
+    <!-- <view class="slipAddItem frbc">
       <view class="itemTitle">司机名称：</view>
       <input value="{{ slipAddForm.TransDriverName }}" class="slipAddInput" placeholder-class="placeholderClass" placeholder="请录入" bind:input="sijimingchengInput" />
-    </view>
+    </view> -->
     <view class="slipAddItem frbc">
       <view class="itemTitle">仓库：</view>
       <view class="frcc">
@@ -172,7 +172,7 @@
         </radio-group>
       </view>
     </view>
-    <view class="slipAddItem frbc">
+    <view class="slipAddItem frbc" style="border: 0;">
       <view class="itemTitle">采购客户：</view>
       <view class="frcc">
         <!-- bind:input="caigoukehuInput" -->
@@ -180,12 +180,12 @@
         <image src="/images/salesModule/xiajiantou.png" mode="aspectFill" style="width: 30rpx; height: 30rpx;" />
       </view>
     </view>
-    <view class="slipAddItem" style="border: 0;">
+    <!-- <view class="slipAddItem" style="border: 0;">
       <view class="itemTitle">备注：</view>
       <view class="textareaBox">
         <textarea value="{{ slipAddForm.reason }}" class="slipAddInput3" placeholder-class="placeholderClass" placeholder="请输入备注信息" auto-height bind:input="beizhuInput" />
       </view>
-    </view>
+    </view> -->
   </view>
   <view class="saveBtnBox">
     <view class="saveBtn frcc" bind:tap="quedingtijiao">确定提交</view>

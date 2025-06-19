@@ -22,8 +22,8 @@ Page({
       supply_name: '',
       deposit: '',
       TransVehicleInfo: '',
-      TransDriverPhone: '',
-      TransDriverName: '',
+      // TransDriverPhone: '',
+      // TransDriverName: '',
       warehouse_id: '',
       warehouse_name: '',
       Trans_type: '',
@@ -31,21 +31,7 @@ Page({
       pay_type: '',
       Customer_code: '',
       Customer_name: '',
-      reason: '',
-      // order_type: '0',
-      // supplier_id: '1',
-      // supplier_name: '山东信誉添城物资有限公司',
-      // TransVehicleInfo: '鲁A12345',
-      // TransDriverPhone: '18812345678',
-      // TransDriverName: '司机姓名',
-      // warehouse_id: '04',
-      // warehouse_name: '聊城库',
-      // Trans_type: '0',
-      // Trans_fee: '998',
-      // pay_type: '0',
-      // Customer_code: '0010163',
-      // Customer_name: '陕西五岳工贸有限公司',
-      // reason: '123123123123212',
+      // reason: '',
     },
     productIndex: 0,
     products: [{
@@ -59,28 +45,6 @@ Page({
       Quantity2: '',
       OrigTaxPrice: '',
     }]
-    // {
-    // 	inventory_max: '1.9480',
-    // 	inventory_code: '0303001',
-    // 	inventory_name: '祛筋焊管Q195A',
-    // 	outer_diameter: '1',
-    // 	wall_thickness: '2',
-    // 	length: '3',
-    // 	Quantity: '1',
-    // 	Quantity2: '5',
-    // 	OrigTaxPrice: '6',
-    // }, {
-    // 	inventory_max: '6.4340',
-    // 	inventory_code: '02011563',
-    // 	inventory_name: '焊管Q235B',
-    // 	outer_diameter: '11',
-    // 	wall_thickness: '22',
-    // 	length: '33',
-    // 	Quantity: '1',
-    // 	Quantity2: '55',
-    // 	OrigTaxPrice: '66',
-    // }
-
   },
 
   onLoad: function () {
@@ -445,13 +409,13 @@ Page({
       });
       return
     }
-    if (!this.data.slipAddForm.TransDriverPhone) {
-      wx.showToast({
-        title: '请输入物流电话',
-        icon: 'none'
-      });
-      return
-    }
+    // if (!this.data.slipAddForm.TransDriverPhone) {
+    //   wx.showToast({
+    //     title: '请输入物流电话',
+    //     icon: 'none'
+    //   });
+    //   return
+    // }
     if (!this.data.slipAddForm.warehouse_id) {
       wx.showToast({
         title: '请选择仓库',
@@ -487,13 +451,13 @@ Page({
       });
       return
     }
-    if (!this.data.slipAddForm.reason) {
-      wx.showToast({
-        title: '请输入备注',
-        icon: 'none'
-      });
-      return
-    }
+    // if (!this.data.slipAddForm.reason) {
+    //   wx.showToast({
+    //     title: '请输入备注',
+    //     icon: 'none'
+    //   });
+    //   return
+    // }
     var isNext = true
     this.data.slipAddForm.products = this.data.products
     if (this.data.slipAddForm.products.length === 0) {
