@@ -82,6 +82,9 @@ Page({
 
 	// 页面跳转 - 公告详情
 	goSlipDetail: function (e) {
+		if (e.currentTarget.dataset.item.haveupload === 1) {
+			return
+		}
 		wx.navigateTo({
 			url: `/pages/examineModule/examineDetail/examineDetail?id=${e.currentTarget.dataset.item.id}`
 		})

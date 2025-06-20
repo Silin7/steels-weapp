@@ -1,7 +1,7 @@
 <van-tabs active="{{ sliptype }}" color="#2D56EB" bind:change="tabChange">
   <van-tab title="全部" name='99'></van-tab>
-  <van-tab title="未上传" name='0'></van-tab>
-  <van-tab title="已上传" name='1'></van-tab>
+  <van-tab title="待审核" name='0'></van-tab>
+  <van-tab title="已审核" name='1'></van-tab>
 </van-tabs>
 <scroll-view scroll-y="{{ true }}" refresher-enabled="{{ true }}" refresher-triggered="{{ triggered }}" bindrefresherrefresh="permessagerePull" bindscrolltolower="onScrollBottom" style="height: calc(100vh - 88rpx);">
   <view class="slipListPage">
@@ -38,7 +38,8 @@
           <view class="xiadanshijian">下单时间：</view>
           <view class="xiadanshijian">{{ item.created_at }}</view>
         </view>
-        <view class="danleixing">审核</view>
+        <view wx:if="{{ item.haveupload === 0 }}" class="danleixing">审核</view>
+        <view wx:if="{{ item.haveupload === 1 }}" class="danleixing2">已审</view>
       </view>
     </view>
     <view wx:if="{{ slipData.length === 0 }}" class="nodataBox">

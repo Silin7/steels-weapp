@@ -65,3 +65,14 @@
   color: #43CF7C;
   border: 1rpx solid #43CF7C;
 }
+
+.danleixing2 {
+  width: 160rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  line-height: 58rpx;
+  text-align: center;
+  border-radius: 60rpx;
+  color: #2D56EB;
+  border: 1rpx solid #2D56EB;
+}
