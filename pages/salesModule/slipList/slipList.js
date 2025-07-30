@@ -109,7 +109,6 @@ Page({
 		const item = e.currentTarget.dataset.item
 		esRequest('srchDeliveryByCode', {
     }, item.id, item.supplier.syn_url || null).then(res => {
-			console.log();
 			if (res.data.code === 200) {
 				wx.showToast({
 					title: '已出库',

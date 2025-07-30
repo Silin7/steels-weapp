@@ -41,8 +41,13 @@
           <view class="xiadanshijian">下单时间：</view>
           <view class="xiadanshijian">{{ item.created_at }}</view>
         </view>
-        <view wx:if="{{ (sliptype == '99' || sliptype == '0') && item.status_name !== '待审核' }}" class="danleixing" catch:tap="retrieveOrder" data-item="{{ item }}">检索出库单</view>
-        <view wx:if="{{ sliptype == '1' }}" class="danleixing" catch:tap="goDetails" data-item="{{ item }}">查看详细</view>
+        <!-- <view wx:if="{{ (sliptype == '99' || sliptype == '0') && item.status_name !== '待审核' }}" class="danleixing" catch:tap="retrieveOrder" data-item="{{ item }}">检索出库单</view>
+        <view wx:if="{{ sliptype == '1' }}" class="danleixing" catch:tap="goDetails" data-item="{{ item }}">查看详细</view> -->
+					<view wx:if="{{sliptype == '99' && item.status_name === '待审核'}}" class="danleixing">待审核</view>
+					<view wx:if="{{sliptype == '99' && item.status_name === '待发货' }}" class="danleixing" catch:tap="retrieveOrder" data-item="{{ item }}">检索出库单</view>
+					<view wx:if="{{sliptype == '99' && item.status_name === '已发货' }}" class="danleixing" catch:tap="goDetails" data-item="{{ item }}">查看详细</view>
+					<view wx:if="{{ sliptype == '0' }}" class="danleixing" >待审核</view>
+					<view wx:if="{{ sliptype == '1' }}" class="danleixing" catch:tap="goDetails" data-item="{{ item }}" >查看详细</view>
       </view>
     </view>
     <view wx:if="{{ slipData.length === 0 }}" class="nodataBox">
