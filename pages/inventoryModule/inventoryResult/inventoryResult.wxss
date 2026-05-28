@@ -1,7 +1,7 @@
 .tableHeader {
 	height: 50rpx;
-	font-size: 24rpx;
-	line-height: 24rpx;
+	font-size: 20rpx;
+	line-height: 20rpx;
 	color: #fff;
 	background: #1065C7;
 }
@@ -13,8 +13,8 @@
 
 .tableBody {
 	height: 70rpx;
-	font-size: 24rpx;
-	line-height: 24rpx;
+	font-size: 20rpx;
+	line-height: 20rpx;
 	color: #333;
 }
 
